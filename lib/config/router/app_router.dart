@@ -7,7 +7,7 @@ import '../../features/projects/projects.dart';
 import '../../features/characterization/characterization.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/tutorial',
+  initialLocation: '/project',
   routes: [
 
     //* Tutorial route
