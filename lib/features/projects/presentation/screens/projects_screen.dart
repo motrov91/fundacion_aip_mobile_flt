@@ -63,12 +63,13 @@ class ProjectsScreen extends StatelessWidget {
                     child: Container(
                       margin: const EdgeInsets.only(right: 10),
                       child: FadeInRight(
-                        delay: const Duration(seconds: 2),
+                        delay: const Duration(seconds: 1),
                         child: FilledButton.tonal(
                           onPressed: (){
                             //TODO: Seleccion del proyecto.
                             //TODO: Obtener los datos.
                             context.pushReplacementNamed(Characterizationcreen.name);
+                            // context.go(Characterizationcreen.name);
                           }, 
                           child: const Text('Ingresar'),
                         ),

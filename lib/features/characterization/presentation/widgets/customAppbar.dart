@@ -13,10 +13,6 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget{
 
     return AppBar(
       backgroundColor: colors.primary,
-      leading: IconButton(
-        onPressed: (){},
-        icon: const Icon(Icons.menu_outlined, color: Colors.white,),
-      ),
       title: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
