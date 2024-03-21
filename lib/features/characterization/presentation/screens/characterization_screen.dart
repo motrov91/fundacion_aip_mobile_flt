@@ -1,7 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:fundacion_aip_mobile/config/menu/menu_items.dart';
 import 'package:fundacion_aip_mobile/features/characterization/characterization.dart';
+import 'package:fundacion_aip_mobile/features/createFarm/presentation/screens/create_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
+import 'package:go_router/go_router.dart';
 
 class Farm {
   final String nombre;
@@ -95,7 +98,7 @@ class Characterizationcreen extends StatelessWidget {
       appBar: const CustomAppbar(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.greenAccent[600],
-        onPressed: () => print(''),
+        onPressed: () => context.pushNamed(CreateFarmScreen.name),
         child: Icon(Icons.list_alt_outlined,
             color: Theme.of(context).colorScheme.primary),
       ),

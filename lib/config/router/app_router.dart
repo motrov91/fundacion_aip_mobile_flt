@@ -1,4 +1,5 @@
 
+import 'package:fundacion_aip_mobile/features/createFarm/presentation/screens/create_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/tutorial/screens/tutorial_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -7,7 +8,7 @@ import '../../features/projects/projects.dart';
 import '../../features/characterization/characterization.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/tutorial',
+  initialLocation: '/create_farm',
   routes: [
 
     //* Tutorial route
@@ -36,6 +37,12 @@ final appRouter = GoRouter(
       path: '/',
       name: Characterizationcreen.name,
       builder: (context, state) => const Characterizationcreen()
+    ),
+    //* Create farm
+    GoRoute(
+      path: '/create_farm',
+      name: CreateFarmScreen.name,
+      builder: (context, state) => const CreateFarmScreen()
     ),
 
   ]);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fundacion_aip_mobile/features/shared/infrastructure/menu/menu_items.dart';
+import 'package:fundacion_aip_mobile/config/menu/menu_items.dart';
 import 'package:go_router/go_router.dart';
 
 class SideMenu extends StatelessWidget {

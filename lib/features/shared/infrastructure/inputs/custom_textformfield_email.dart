@@ -43,7 +43,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       obscureText: widget.isObscure ?? true,
       decoration: InputDecoration(
         enabledBorder: border,
-        focusedBorder: border.copyWith(
+        focusedBorder: border.copyWith(  
           borderSide: BorderSide(
             color: colors.primary,
             width: 2
