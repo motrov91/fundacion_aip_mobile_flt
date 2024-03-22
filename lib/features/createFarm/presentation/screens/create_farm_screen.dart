@@ -25,7 +25,7 @@ class CreateFarmScreen extends StatelessWidget {
             child: Stack(
               children: [
                 PageView(
-                  children: const [
+                  children:  [
                     DatosContactoTitular(),
                     DatosPredio(),
                     DatosAprendizaje(),

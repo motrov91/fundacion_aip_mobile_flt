@@ -5,6 +5,7 @@ class CustomTextFormField extends StatefulWidget {
   final String? label;
   bool? isObscure;
   final String? errorText;
+  final TextInputType? keyType;
   final bool? prefix;
   final bool? sufix;
   final IconData? iconInput;
@@ -20,6 +21,7 @@ class CustomTextFormField extends StatefulWidget {
     this.onChanged, 
     this.validator, 
     this.errorText, 
+    this.keyType = TextInputType.text,
     this.sufix = false
   });
 
@@ -40,6 +42,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
     return TextFormField(
       onChanged: (value){},
+      keyboardType: widget.keyType,
       obscureText: widget.isObscure ?? true,
       decoration: InputDecoration(
         enabledBorder: border,

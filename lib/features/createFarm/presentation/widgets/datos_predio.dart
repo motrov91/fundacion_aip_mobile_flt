@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fundacion_aip_mobile/features/createFarm/Utils/data_dropdown.dart';
+import 'package:fundacion_aip_mobile/features/shared/infrastructure/inputs/inputs.dart';
 
 class DatosPredio extends StatelessWidget {
   const DatosPredio({super.key});
@@ -11,17 +13,86 @@ class DatosPredio extends StatelessWidget {
       color: Theme.of(context).colorScheme.primary
     );
 
-    return SizedBox(
+    const sizedBox = SizedBox(height: 9);
+
+    return Container(
+      margin: const EdgeInsets.all(5),
       width: double.infinity,
       height: double.infinity,
-      child: Column(
-        children: [
-
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 5),
-            child: Center(
-              child: Text('Datos del predio a registrar', style: txtText))),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+        
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 5),
+              child: Center(
+                child: Text('Datos del predio a registrar', style: txtText))),
+        
+            CustomTextFormField(label: 'Nombre de la finca',),
+            sizedBox,
+            CustomTextFormField(label: 'Municipio',),
+            sizedBox,
+            CustomTextFormField(label: 'Corregimiento',),
+            sizedBox,
+            CustomTextFormField(label: 'Vereda',),
+            sizedBox,
+            CustomDropdownField(dropdownItems: DropdownOptionsProvider.getTitulos(), labelText: 'Titulo de posesión'),
+            sizedBox,
+            CustomTextFormField(label: 'Extención total (m²)', keyType: TextInputType.number,),
+            sizedBox,
+            CustomTextFormField(label: 'Área en cultivos actualmente (m²)',keyType: TextInputType.number,),
+            sizedBox,
+            CustomTextFormField(label: 'Área de libre destinación (m²)',keyType: TextInputType.number,),
+            sizedBox,
+            CustomTextFormField(label: 'Área de conservación (m²)',keyType: TextInputType.number,),
+            sizedBox,
+            CustomTextFormField(label: 'Área de otros usos (m²)',keyType: TextInputType.number,),
+            sizedBox,
+            CustomTextFormField(label: 'Metros lineales de afluentes',keyType: TextInputType.number,),
+            sizedBox,
+            CustomDropdownField(dropdownItems: DropdownOptionsProvider.usoSuelo(), labelText: 'Uso de suelo y vocación'),
+            sizedBox,
+            CustomTextFormField(label: 'Linea productiva mas implementada',),
+            sizedBox,
+            CustomTextFormField(label: 'Linea productiva mas implementada',),
+            sizedBox,
+            CustomTextFormField(label: 'Tipo de certificación sobre el manejo del predio',),
+            sizedBox,
+            CustomTextFormField(label: 'Presencia de proyectos actuales',),
+            sizedBox,
+            CustomDropdownField(dropdownItems: DropdownOptionsProvider.getSiNo(), labelText: 'Manejo de químicos'),
+            sizedBox,
+            CustomDropdownField(dropdownItems: DropdownOptionsProvider.buenasPracticas(), labelText: 'Implementación de buenas prácticas'),
+            sizedBox,
+            CustomTextFormField(label: 'Lindero al Norte',),
+            sizedBox,
+            CustomTextFormField(label: 'Lindero al Sur',),
+            sizedBox,
+            CustomTextFormField(label: 'Lindero al Oriente',),
+            sizedBox,
+            CustomTextFormField(label: 'Lindero al Occidente',),
+            sizedBox,
+            CustomTextFormField(label: 'Lindero al altura MSNM',),
+            sizedBox,
+            CustomTextFormField(label: 'Latitud',),
+            sizedBox,
+            CustomTextFormField(label: 'Longitud',),
+            sizedBox,
+            CustomTextFormField(label: 'Años en la propiedad', keyType: TextInputType.number,),
+            sizedBox,
+            CustomTextFormField(label: 'Linea productiva 1',),
+            sizedBox,
+            CustomTextFormField(label: 'Linea productiva 2',),
+            sizedBox,
+            CustomTextFormField(label: 'Linea productiva 3',),
+            sizedBox,
+            CustomTextFormField(label: 'Linea productiva 4',),
+            sizedBox,
+            CustomTextFormField(label: 'Linea productiva 5',),
+            sizedBox,
+            
+          ],
+        ),
       ),
     );
   }
