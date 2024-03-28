@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fundacion_aip_mobile/features/shared/infrastructure/inputs/inputs.dart';
+import 'package:provider/provider.dart';
 
+import 'package:fundacion_aip_mobile/features/createFarm/createFarm.dart';
+import 'package:fundacion_aip_mobile/features/shared/infrastructure/inputs/inputs.dart';
 import '../../Utils/data_dropdown.dart';
 
 class DatosContactoTitular extends StatelessWidget {
@@ -8,6 +10,8 @@ class DatosContactoTitular extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final farmService = Provider.of<CreateFarmProvider>(context);
 
     final txtText = Theme.of(context).textTheme.bodyMedium!.copyWith(
       fontWeight: FontWeight.w500,
@@ -29,24 +33,98 @@ class DatosContactoTitular extends StatelessWidget {
               child: Center(
                 child: Text('Datos del titular del predio', style: txtText))),
         
-            CustomTextFormField(label: 'Primer Nombre'),
+            CustomTextFormField(
+              label: 'Primer Nombre',
+              initalValueData: farmService.primerNombre != '' ? farmService.primerNombre : null, 
+              onChanged: (value){
+                farmService.primerNombre = value;
+              },
+              validator: (value){
+                return (value != null && value != '') 
+                  ? null 
+                  : 'Este campo no puede estar vacío';
+              }, 
+              isValidator: true, 
+            ),
             sizedBox,
             CustomTextFormField(label: 'Segundo Nombre'),
             sizedBox,
-            CustomTextFormField(label: 'Primer Apellido'),
+            CustomTextFormField(
+              label: 'Primer Apellido', 
+              initalValueData: farmService.primerApellido != '' ? farmService.primerApellido : null,  
+              onChanged: (value){
+                farmService.primerApellido = value;
+              },
+              validator: (value){
+                return (value != null && value != '') 
+                  ? null 
+                  : 'Este campo no puede estar vacío';
+              }, 
+              isValidator: true, 
+            ),
             sizedBox,
             CustomTextFormField(label: 'Segundo Apellido'),
             sizedBox,
-            CustomTextFormField(label: 'Cedula', keyType: TextInputType.number,),
+            CustomTextFormField(
+              label: 'Cedula', keyType: TextInputType.number,
+              initalValueData: farmService.cedulaAgricultor != '' ? farmService.cedulaAgricultor : null,  
+              onChanged: (value){
+                farmService.cedulaAgricultor = value;
+              },
+              validator: (value){
+                return (value != null && value != '') 
+                  ? null 
+                  : 'Este campo no puede estar vacío';
+              }, 
+              isValidator: true,   
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Lugar de Expedición'),
+            CustomTextFormField(
+              label: 'Lugar de Expedición',
+              initalValueData: farmService.lugarExpedicion != '' ? farmService.lugarExpedicion : null,  
+              onChanged: (value){
+                farmService.lugarExpedicion = value;
+              },
+              validator: (value){
+                return (value != null && value != '') 
+                  ? null 
+                  : 'Este campo no puede estar vacío';
+              }, 
+              isValidator: true,     
+            ),
+            sizedBox,
+            CustomTextFormField(
+              label: 'Fecha de nacimiento',
+              initalValueData: farmService.fechaExpedicion != '' ? farmService.fechaExpedicion : null,  
+              onChanged: (value){
+                farmService.fechaExpedicion = value;
+              },
+              validator: (value){
+                return (value != null && value != '') 
+                  ? null 
+                  : 'Este campo no puede estar vacío';
+              }, 
+              isValidator: true,     
+            ),
             sizedBox,
             CustomDropdownField(
               labelText: 'Etnia',
               dropdownItems: DropdownOptionsProvider.getDropdownsEtnia()
             ),
             sizedBox,
-            CustomTextFormField(label: 'Celular 1', keyType: TextInputType.number,),
+            CustomTextFormField(
+              label: 'Celular 1', keyType: TextInputType.number,
+              initalValueData: farmService.celularAgricultor != '' ? farmService.celularAgricultor : null,  
+              onChanged: (value){
+                farmService.celularAgricultor = value;
+              },
+              validator: (value){
+                return (value != null && value != '') 
+                  ? null 
+                  : 'Este campo no puede estar vacío';
+              }, 
+              isValidator: true,     
+            ),
             sizedBox,
             CustomTextFormField(label: 'Celular 2', keyType: TextInputType.number,),
             sizedBox,

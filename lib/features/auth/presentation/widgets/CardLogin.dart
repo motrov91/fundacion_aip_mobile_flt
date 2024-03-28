@@ -3,6 +3,8 @@ import 'package:fundacion_aip_mobile/features/auth/auth.dart';
 
 
 class CardLogin extends StatelessWidget {
+  const CardLogin({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class CardLogin extends StatelessWidget {
 
     return Container(
       width: 280,
-      height: 300,
+      height: 350,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
         color: Colors.white,

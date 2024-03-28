@@ -1,18 +1,22 @@
 
 import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
+import 'package:provider/provider.dart';
 import '../../createFarm.dart';
 
 class CreateFarmScreen extends StatelessWidget {
 
-  static const String name = '/create_farm';
+  static const String name = '/create_farm';  
 
-  const CreateFarmScreen({super.key});
+  CreateFarmScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
 
     final scaffoldKey = GlobalKey<ScaffoldState>();
+    //final listLength = DataPageViewProvider.pageList().length;
+    final farmService = Provider.of<CreateFarmProvider>(context);
+
     
     return Scaffold(
       key: scaffoldKey,
@@ -20,29 +24,32 @@ class CreateFarmScreen extends StatelessWidget {
       drawer: SideMenu(scaffoldKey: scaffoldKey,),
       body: Column(
         children: [
-          
           Expanded(
             child: Stack(
               children: [
-                PageView(
-                  children:  [
-                    DatosContactoTitular(),
-                    DatosPredio(),
-                    DatosAprendizaje(),
-                    DatosLote1(),
-                    DatosLote2(),
-                    DatosLote3(),
-                    DatosLote4(),
-                    DatosLote5(),
-                    DatosVisita()
-                  ],
+                Form(
+                  key: farmService.formkey,
+                  child: PageView(    
+                    children:  const [
+                      DatosContactoTitular(),
+                      DatosPredio(),
+                      DatosAprendizaje(),
+                      DatosLote1(),
+                      DatosLote2(),
+                      DatosLote3(),
+                      DatosLote4(),
+                      DatosLote5(),
+                      DatosVisita()
+                    ],
+                  ),
                 ),
-                Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: _DotIndicator()
-                )
+                // Positioned(
+                //   bottom: 0,
+                //   left: 0,
+                //   right: 0,
+                //   //child: _DotIndicator()
+                //   child: _DotIndicator(pageLength: listLength),
+                // )
               ],
             ),
           ),
@@ -56,17 +63,31 @@ class CreateFarmScreen extends StatelessWidget {
 
 class _DotIndicator extends StatelessWidget {
 
+  final int pageLength;
+
+  const _DotIndicator({
+    super.key, 
+    required this.pageLength, 
+  });
+
   @override
   Widget build(BuildContext context) {
+
+    final currentPage = Provider.of<ControlDotsPageviesProvider>(context).getCurrentPage;
+    print(currentPage);
+
     return Container(
-      alignment: Alignment.center,
-      margin: const EdgeInsets.only(bottom: 15),
-      child: ClipOval(
-        child: Container(
-          width: 8,
-          height: 8,
-          color: Colors.red,
-        ),
+      margin: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: List<Widget>.generate(pageLength, (index) => Container(
+          margin: const EdgeInsets.all(3),
+          width: currentPage == index ? 13 : 10,
+          height: currentPage == index ? 13 : 10,
+          decoration: BoxDecoration(
+              color: currentPage == index ? const Color(0xff4caf50) : Colors.lightGreen[100],
+              shape: BoxShape.circle),
+        ))
       ),
     );
   }

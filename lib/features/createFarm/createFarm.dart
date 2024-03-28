@@ -7,3 +7,8 @@ export 'package:fundacion_aip_mobile/features/createFarm/presentation/widgets/da
 export 'package:fundacion_aip_mobile/features/createFarm/presentation/widgets/datos_aprendizaje.dart';
 export 'package:fundacion_aip_mobile/features/createFarm/presentation/widgets/datos_contacto_titular.dart';
 export 'package:fundacion_aip_mobile/features/createFarm/presentation/widgets/datos_predio.dart';
+
+
+//SERVICE
+export 'package:fundacion_aip_mobile/features/createFarm/presentation/providers/control_dots_pageview_provider.dart';
+export 'package:fundacion_aip_mobile/features/createFarm/presentation/providers/create_farm_provider.dart';

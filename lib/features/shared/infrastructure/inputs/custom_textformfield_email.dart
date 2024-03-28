@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//* En este punto esta en statefull porque estamos cambiando el icono de vista de contraseña
+// ignore: must_be_immutable
 class CustomTextFormField extends StatefulWidget {
 
   final String? label;
@@ -11,6 +13,8 @@ class CustomTextFormField extends StatefulWidget {
   final IconData? iconInput;
   final Function(String)? onChanged;
   final String? Function(String?)? validator;
+  final String? initalValueData;
+  final bool isValidator;
 
   CustomTextFormField({
     super.key, 
@@ -22,7 +26,9 @@ class CustomTextFormField extends StatefulWidget {
     this.validator, 
     this.errorText, 
     this.keyType = TextInputType.text,
-    this.sufix = false
+    this.sufix = false, 
+    this.initalValueData, 
+    this.isValidator = false
   });
 
   @override
@@ -41,9 +47,12 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     );
 
     return TextFormField(
-      onChanged: (value){},
+      onChanged: widget.onChanged,
+      validator: widget.validator,
       keyboardType: widget.keyType,
+      initialValue: widget.initalValueData,
       obscureText: widget.isObscure ?? true,
+      autovalidateMode: AutovalidateMode.always,
       decoration: InputDecoration(
         enabledBorder: border,
         focusedBorder: border.copyWith(  
@@ -53,7 +62,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           )
         ),
         isDense: true,
-        label: widget.label != null ? Text(widget.label!) : null,
+        label: widget.label != null ? Text(widget.label!, maxLines: 1, overflow: TextOverflow.ellipsis) : null,
         prefixIcon: widget.iconInput != null ? Icon(widget.iconInput) : null,
         prefixIconColor: colors.primary,
         errorText: widget.errorText ?? widget.errorText,

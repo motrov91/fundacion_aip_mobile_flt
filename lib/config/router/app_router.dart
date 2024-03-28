@@ -8,7 +8,7 @@ import '../../features/projects/projects.dart';
 import '../../features/characterization/characterization.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/create_farm',
+  initialLocation: '/tutorial',
   routes: [
 
     //* Tutorial route
@@ -42,7 +42,7 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/create_farm',
       name: CreateFarmScreen.name,
-      builder: (context, state) => const CreateFarmScreen()
+      builder: (context, state) =>  CreateFarmScreen()
     ),
 
   ]);

@@ -15,17 +15,17 @@ class AppTheme{
     scaffoldBackgroundColor: scaffoldBackgroundColor,
 
     //* Textos
-    textTheme: TextTheme(
-      titleLarge: GoogleFonts.montserratAlternates().copyWith(
-        fontSize: 40, fontWeight: FontWeight.bold
-      ),
-      titleMedium: GoogleFonts.montserratAlternates().copyWith(
-        fontSize: 30, fontWeight: FontWeight.bold
-      ),
-      titleSmall: GoogleFonts.montserratAlternates().copyWith(
-        fontSize: 20
-      ),
-    ),
+    // textTheme: TextTheme(
+    //   titleLarge: GoogleFonts.montserratAlternates().copyWith(
+    //     fontSize: 40, fontWeight: FontWeight.bold
+    //   ),
+    //   titleMedium: GoogleFonts.montserratAlternates().copyWith(
+    //     fontSize: 30, fontWeight: FontWeight.bold
+    //   ),
+    //   titleSmall: GoogleFonts.montserratAlternates().copyWith(
+    //     fontSize: 20
+    //   ),
+    // ),
 
     //* Appbar
     appBarTheme: AppBarTheme(
