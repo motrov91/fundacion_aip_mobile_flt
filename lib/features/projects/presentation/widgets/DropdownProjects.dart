@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fundacion_aip_mobile/features/auth/presentation/providers/auth_provider.dart';
+import 'package:provider/provider.dart';
+
+import '../../../auth/domain/domain.dart';
 
 class DropdownFormField extends StatefulWidget {
 
@@ -11,43 +15,48 @@ class DropdownFormField extends StatefulWidget {
 }
 
 class _DropdownFormFieldState extends State<DropdownFormField> {
-  List<DropdownMenuItem<String>> get dropdownItems{
-    List<DropdownMenuItem<String>> menuItems = const[
-      DropdownMenuItem(child: Text("USA"),value: "USA"),
-      DropdownMenuItem(child: Text("Canada"),value: "Canada"),
-      DropdownMenuItem(child: Text("Brazil"),value: "Brazil"),
-      DropdownMenuItem(child: Text("England"),value: "England"),
-    ];
-    
-    return menuItems;
-  }
+  
+  int? projectSelected;
 
   @override
   Widget build(BuildContext context) {
 
-    String selectedValue = "USA";
+    final List<ProjectByUser> _projectsList;
+
+    _projectsList = Provider.of<AuthProvider>(context, listen: false).projectsList; 
 
     return Padding(
       padding: const EdgeInsets.all(10),
       child: DropdownButtonFormField(
-        decoration: const InputDecoration(
-          enabledBorder: OutlineInputBorder(
+        decoration:  InputDecoration(
+          enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey, width: 1),
             borderRadius: BorderRadius.all(Radius.circular(10))
           ),
-          border: OutlineInputBorder(
+          hintText: 'Seleccione',
+          hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary),
+          border: const OutlineInputBorder(
             borderSide: BorderSide(width: 1)
           )
         ),
         style: TextStyle( color: Theme.of(context).colorScheme.primary),
-        value: selectedValue,
-        items: dropdownItems, 
+        value: projectSelected,
+        items: _projectsList.map(
+          (project) {
+            return DropdownMenuItem(
+              value: project.projectId,
+              child: Center(
+                child: Text(project.projectNom),
+              )
+            );
+          }
+        ).toList(), 
         onChanged: (value){
           setState(() {
-            selectedValue = value!;
+            projectSelected = value!;
           });
 
-          print(selectedValue);
+          print(projectSelected);
         }
       ),
     );

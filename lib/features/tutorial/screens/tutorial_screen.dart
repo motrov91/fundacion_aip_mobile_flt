@@ -55,7 +55,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF2FFF2),
       body: Stack(
         children: [
           PageView(
@@ -110,8 +110,12 @@ class _Slide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final textTheme = Theme.of(context).textTheme.titleMedium;
-    final subtitleTheme = Theme.of(context).textTheme.bodyLarge;
+    final textTheme = Theme.of(context).textTheme.titleLarge!.copyWith(
+      color: Theme.of(context).colorScheme.primary
+    );
+    final subtitleTheme = Theme.of(context).textTheme.bodyMedium!.copyWith(
+      color: Theme.of(context).colorScheme.secondary
+    );
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -120,9 +124,9 @@ class _Slide extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image(image: AssetImage( imageUrl )),
+            FadeInDown(child: Image(image: AssetImage( imageUrl ))),
             const SizedBox(height: 20,),
-            Text( title, style: textTheme, ),
+            FadeInRight(child: Text( title, style: textTheme, )),
             const SizedBox(height: 10,),
             Text( caption, style: subtitleTheme, ),
           ],

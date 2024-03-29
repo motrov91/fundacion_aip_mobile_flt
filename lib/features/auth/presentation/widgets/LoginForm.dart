@@ -59,28 +59,39 @@ class LoginForm extends StatelessWidget {
               height: 15,
             ),
             const Spacer(),
-            FilledButton.tonal(
-                onPressed: () {
+            SizedBox(
+              width: 200,
+              child: FilledButton.tonal(
+                  onPressed: () async{
+              
+                    final username = authService.getUsername;
+                    final password = authService.getPassword;
+              
+              
+                    if(authService.isValidForm()){
+                      //TODO: Envie los datos  para el login
+                      await authService.loginUser(username!, password!);
+                      context.pushReplacementNamed(ProjectsScreen.name);
 
-                  final username = authService.getUsername;
-                  final password = authService.getPassword;
-
-
-                  if(authService.isValidForm()){
-                    //TODO: Envie los datos  para el login
-                    authService.loginUser(username!, password!);
-                    context.pushReplacementNamed(ProjectsScreen.name);
-                  }else{
-                    //TODO: infique que los campos deben ser obligatorios
-                    //TODO: Si es un error notifique el error con un snackbar
-                  }
-
-
-                },
-                child: Text(
-                  'Ingresar',
-                  style: txtButton,
-                ))
+                    }else{
+                      //TODO: infique que los campos deben ser obligatorios
+                      //TODO: Si es un error notifique el error con un snackbar
+                    }              
+                  },
+                  child: authService.isLoading
+                    ? SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 3,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    )
+                    : Text(
+                    'Ingresar',
+                    style: txtButton,
+                  )),
+            )
           ],
         ),
       ),

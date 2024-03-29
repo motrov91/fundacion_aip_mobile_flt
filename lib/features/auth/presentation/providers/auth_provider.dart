@@ -4,12 +4,17 @@ import 'package:fundacion_aip_mobile/features/auth/infrastructure/errors/auth_er
 
 class AuthProvider extends ChangeNotifier{
 
-  AuthRepository _authRepository;
+  final AuthRepository _authRepository;
+  //Creamos una instancia de ProjectsProvider para poder consumir la lista vacia y pasarle datos
   User? user;
+  bool isLoading = false;
 
   String? _username;
   String? _password;
+  List<ProjectByUser> projectsList = [];
+  String? errorMesage;
 
+  //Constructor
   AuthProvider(this._authRepository);
 
   String? get getUsername => _username;
@@ -25,12 +30,22 @@ class AuthProvider extends ChangeNotifier{
     notifyListeners();
   }
 
-  void loginUser( String username, String password) async {
+  Future<void> loginUser( String username, String password) async {
     try{
-      user = await _authRepository.login(username, password);
-      print('USER DESDE EL PROVIDER ${user!.projectByUser[0].projectNom}');
+      isLoading = true;
       notifyListeners();
-    } on WrongCredentials catch(e){
+      user = await _authRepository.login(username, password);
+
+      /**
+        * Una vez se ha obtenido el usuario obtenemos los proyectos que tiene vinculados
+        * y los pasamos a otro provider en este caso ProjectsProvider a una nueva lista.
+        * esto con el fin de mostrarlos en el dropdown de seleccionar el proyecto.
+      */
+      projectsList = user!.projectByUser;
+      isLoading = false;
+
+      notifyListeners();
+    } on WrongCredentials {
       logout('Las credenciales no son correctas');
     } catch(e){
       logout('Error no controlado');

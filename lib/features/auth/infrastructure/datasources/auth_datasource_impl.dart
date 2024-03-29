@@ -28,15 +28,18 @@ class AuthDatasourceImpl extends AuthDatasource{
         'password': password
       });
 
-      print('RESPONSE despues del response ${response.data}');
+      //print('RESPONSE despues del response ${response.data}');
 
       final user = UserMapper.userJsonToEntity(response.data);
 
       return user;
 
-    }catch(e){
-      print('IMPRIMIENDO EL ERROR $e');
-      throw WrongCredentials();
+    } on DioException catch(e){
+      if(e.response?.statusCode == 401) throw WrongCredentials();
+      if(e.type == DioExceptionType.connectionTimeout) throw ConnectionTimeout();
+      throw CustomError('Sucedio algo inesperado', 501);
+    }catch (e){
+      throw CustomError('Sucedio algo inesperado', 501);
     }
   }
 
