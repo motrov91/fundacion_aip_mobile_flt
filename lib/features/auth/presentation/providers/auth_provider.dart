@@ -5,7 +5,9 @@ import 'package:fundacion_aip_mobile/features/auth/infrastructure/errors/auth_er
 class AuthProvider extends ChangeNotifier{
 
   final AuthRepository _authRepository;
-  //Creamos una instancia de ProjectsProvider para poder consumir la lista vacia y pasarle datos
+
+  GlobalKey<FormState> formkeyLogin = GlobalKey<FormState>();
+
   User? user;
   bool isLoading = false;
 
@@ -41,12 +43,20 @@ class AuthProvider extends ChangeNotifier{
         * y los pasamos a otro provider en este caso ProjectsProvider a una nueva lista.
         * esto con el fin de mostrarlos en el dropdown de seleccionar el proyecto.
       */
-      projectsList = user!.projectByUser;
-      isLoading = false;
-
-      notifyListeners();
+      if(user != null){
+        projectsList = user!.projectByUser;
+        isLoading = false;
+        errorMesage = null;
+        notifyListeners();
+      }else{
+        errorMesage = 'No se ha podido obtener el usuario';
+        notifyListeners();
+      }
     } on WrongCredentials {
+      errorMesage = "Las credenciales no son correctas";
+      isLoading = false;
       logout('Las credenciales no son correctas');
+      notifyListeners();
     } catch(e){
       logout('Error no controlado');
     }
@@ -54,12 +64,11 @@ class AuthProvider extends ChangeNotifier{
 
   bool isValidForm(){
 
-    if(_username == null) return false;
-    if(_password == null) return false;
-
-    notifyListeners();
-
-    return true;
+    if(formkeyLogin.currentState!.validate()){
+      return true;
+    }else{
+      return false;
+    }
   }
 
   Future<void> logout([String? errorMesage]) async{

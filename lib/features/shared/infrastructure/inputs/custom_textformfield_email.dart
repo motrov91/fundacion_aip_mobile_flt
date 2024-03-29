@@ -52,7 +52,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardType: widget.keyType,
       initialValue: widget.initalValueData,
       obscureText: widget.isObscure ?? true,
-      autovalidateMode: AutovalidateMode.always,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         enabledBorder: border,
         focusedBorder: border.copyWith(  

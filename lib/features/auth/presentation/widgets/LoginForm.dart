@@ -7,18 +7,32 @@ import 'package:provider/provider.dart';
 import '../../../shared/infrastructure/inputs/inputs.dart';
 
 class LoginForm extends StatelessWidget {
-  const LoginForm();
+  const LoginForm({super.key});
+
+  void showSnackbar(BuildContext ctx, String message) {
+    ScaffoldMessenger.of(ctx).hideCurrentSnackBar();
+    ScaffoldMessenger.of(ctx).showSnackBar(
+        SnackBar(backgroundColor: Colors.red[300], content: Text(message)));
+  }
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthProvider>(context);
+
     final txtButton = Theme.of(context)
         .textTheme
         .labelLarge!
         .copyWith(color: Theme.of(context).colorScheme.primary);
 
-    final authService = Provider.of<AuthProvider>(context);
+    //Error Message
+    errorMessage() {
+      if (authService.errorMesage == null) return;
+
+      showSnackbar(context, authService.errorMesage!);
+    }
 
     return Form(
+      key: authService.formkeyLogin,
         child: Expanded(
       child: Container(
         padding: const EdgeInsets.all(10),
@@ -49,9 +63,9 @@ class LoginForm extends StatelessWidget {
                 authService.setPassword = value;
               },
               validator: (value) {
-                return (value != null && value != '')
-                    ? null
-                    : 'Este campo no puede estar vacío';
+                return (value == null || value.isEmpty)
+                    ? 'Este campo no puede estar vacío'
+                    : null;
               },
               isValidator: true,
             ),
@@ -62,35 +76,35 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: 200,
               child: FilledButton.tonal(
-                  onPressed: () async{
-              
+                  onPressed: () async {
                     final username = authService.getUsername;
                     final password = authService.getPassword;
-              
-              
-                    if(authService.isValidForm()){
-                      //TODO: Envie los datos  para el login
-                      await authService.loginUser(username!, password!);
-                      context.pushReplacementNamed(ProjectsScreen.name);
 
-                    }else{
-                      //TODO: infique que los campos deben ser obligatorios
-                      //TODO: Si es un error notifique el error con un snackbar
-                    }              
+                    if (authService.isValidForm() == false) return;
+
+                    await authService. loginUser(username!, password!);
+
+                    if (authService.errorMesage != null) {
+                      errorMessage();
+                    }
+
+                    if (authService.user == null) return;
+
+                    context.pushReplacementNamed(ProjectsScreen.name);
                   },
                   child: authService.isLoading
-                    ? SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 3,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    )
-                    : Text(
-                    'Ingresar',
-                    style: txtButton,
-                  )),
+                      ? SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 3,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        )
+                      : Text(
+                          'Ingresar',
+                          style: txtButton,
+                        )),
             )
           ],
         ),

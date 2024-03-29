@@ -37,9 +37,9 @@ class AuthDatasourceImpl extends AuthDatasource{
     } on DioException catch(e){
       if(e.response?.statusCode == 401) throw WrongCredentials();
       if(e.type == DioExceptionType.connectionTimeout) throw ConnectionTimeout();
-      throw CustomError('Sucedio algo inesperado', 501);
+      throw CustomError('Sucedio algo inesperado');
     }catch (e){
-      throw CustomError('Sucedio algo inesperado', 501);
+      throw CustomError('Sucedio algo inesperado');
     }
   }
 

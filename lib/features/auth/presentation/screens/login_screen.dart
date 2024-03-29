@@ -19,13 +19,15 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 20,),
             FadeInRight(child: const CardLogin()),
             const SizedBox(height: 5,),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children:[
-                Icon(Icons.copyright_outlined, size: 10, color: Colors.grey,),
-                SizedBox(width: 3,),
-                Text('Fundacion AIP 2024', style: TextStyle(color: Colors.grey),)
-              ],
+            FadeInUp(
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:[
+                  Icon(Icons.copyright_outlined, size: 10, color: Colors.grey,),
+                  SizedBox(width: 3,),
+                  Text('Fundacion AIP 2024', style: TextStyle(color: Colors.grey),)
+                ],
+              ),
             )
           ],
         ),
