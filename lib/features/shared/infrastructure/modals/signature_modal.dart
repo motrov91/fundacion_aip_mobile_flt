@@ -1,8 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:fundacion_aip_mobile/features/createFarm/presentation/providers/create_farm_provider.dart';
+import 'package:fundacion_aip_mobile/features/farm/presentation/providers/create_farm_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:signature/signature.dart';
 

@@ -1,17 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:fundacion_aip_mobile/config/dio/dioConfig.dart';
 import 'package:fundacion_aip_mobile/features/auth/infrastructure/errors/auth_errors.dart';
 import 'package:fundacion_aip_mobile/features/auth/infrastructure/mappers/user_mapper.dart';
-
-import '../../../../config/constants/enviroment.dart';
 import '../../domain/domain.dart';
 
 class AuthDatasourceImpl extends AuthDatasource{
-
-  final dio = Dio(
-    BaseOptions(
-      baseUrl: Enviroment.aipUrl
-    )
-  );
 
 
   @override
@@ -22,11 +15,14 @@ class AuthDatasourceImpl extends AuthDatasource{
 
   @override
   Future<User> login(String username, String password) async {
+
+    Map<String, String> data = {
+      'username': username,
+      'password': password
+    };
+
     try{
-      final response = await dio.post('/signin', data: {
-        'username': username,
-        'password': password
-      });
+      final response = await DioConfig.httpPost('/signin', data);
 
       //print('RESPONSE despues del response ${response.data}');
 

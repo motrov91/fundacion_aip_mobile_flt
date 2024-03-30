@@ -1,11 +1,11 @@
 
-import 'package:fundacion_aip_mobile/features/createFarm/presentation/screens/create_farm_screen.dart';
+import 'package:fundacion_aip_mobile/features/farm/presentation/screens/create_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/tutorial/screens/tutorial_screen.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/auth/auth.dart';
+import '../../features/farm/presentation/screens/characterization_screen.dart';
 import '../../features/projects/projects.dart';
-import '../../features/characterization/characterization.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/tutorial',

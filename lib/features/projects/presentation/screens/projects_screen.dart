@@ -1,8 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:fundacion_aip_mobile/features/characterization/characterization.dart';
 import 'package:fundacion_aip_mobile/features/projects/projects.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../farm/presentation/screens/characterization_screen.dart';
 
 class ProjectsScreen extends StatelessWidget {
 

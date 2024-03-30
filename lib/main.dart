@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:fundacion_aip_mobile/config/router/app_router.dart';
 import 'package:fundacion_aip_mobile/config/theme/app_theme.dart';
-import 'package:fundacion_aip_mobile/features/createFarm/createFarm.dart';
+import 'package:fundacion_aip_mobile/features/farm/farm.dart';
 
 Future<void> main() async{
 
