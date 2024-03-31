@@ -4,23 +4,9 @@ import 'package:fundacion_aip_mobile/features/farm/farm.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/create_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
-class Farm {
-  final String nombre;
-  final int cedula;
-  final String nombrePredio;
-  final String municipio;
-  final String vereda;
-  final bool uploaded;
-
-  Farm(
-      {required this.uploaded,
-      required this.cedula,
-      required this.nombre,
-      required this.nombrePredio,
-      required this.municipio,
-      required this.vereda});
-}
+import '../providers/farms_projects_provider.dart';
 
 class Characterizationcreen extends StatelessWidget {
   static const String name = 'characterization_screen';
@@ -32,62 +18,12 @@ class Characterizationcreen extends StatelessWidget {
 
     final scaffoldKey = GlobalKey<ScaffoldState>();
 
-    List<Farm> farmList = [
-      Farm(
-          cedula: 11111111,
-          nombre: 'Manuel Fernando Ramirez',
-          nombrePredio: 'El jaragual',
-          municipio: 'Popayán',
-          vereda: 'La sabana de calibio',
-          uploaded: false),
-      Farm(
-          cedula: 11111112,
-          nombre: 'Manuel Fernando Ramirez',
-          nombrePredio: 'El jaragual',
-          municipio: 'Popayán',
-          vereda: 'La sabana de calibio',
-          uploaded: true),
-      Farm(
-          cedula: 11111113,
-          nombre: 'Manuel Fernando Ramirez',
-          nombrePredio: 'El jaragual',
-          municipio: 'Popayán',
-          vereda: 'La sabana de calibio',
-          uploaded: false),
-      Farm(
-          cedula: 11111114,
-          nombre: 'Manuel Fernando Ramirez',
-          nombrePredio: 'El jaragual',
-          municipio: 'Popayán',
-          vereda: 'La sabana de calibio',
-          uploaded: false),
-      Farm(
-          cedula: 11111115,
-          nombre: 'Manuel Fernando Ramirez',
-          nombrePredio: 'El jaragual',
-          municipio: 'Popayán',
-          vereda: 'La sabana de calibio',
-          uploaded: true),
-      Farm(
-          cedula: 11111116,
-          nombre: 'Manuel Fernando Ramirez',
-          nombrePredio: 'El jaragual',
-          municipio: 'Popayán',
-          vereda: 'La sabana de calibio',
-          uploaded: true),
-      Farm(
-          cedula: 11111117,
-          nombre: 'Manuel Fernando Ramirez',
-          nombrePredio: 'El jaragual',
-          municipio: 'Popayán',
-          vereda: 'La sabana de calibio',
-          uploaded: true),
-    ];
-
     final txtTitle = Theme.of(context)
         .textTheme
         .labelLarge!
         .copyWith(color: Theme.of(context).colorScheme.primary);
+
+    final farmListService = Provider.of<FarmsProjectProvider>(context).farmCharacterizationList;
 
     return Scaffold(
       key: scaffoldKey,
@@ -120,12 +56,12 @@ class Characterizationcreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 10),
               width: double.infinity,
               child: ListView.builder(
-                  itemCount: farmList.length,
+                  itemCount: farmListService.length,
                   itemBuilder: (context, index) => FadeInRight(
                       duration: const Duration(milliseconds: 500),
                       delay: Duration(milliseconds: index * 300),
                       child: ItemList(
-                        item: farmList[index],
+                        item: farmListService[index],
                       ))),
             ),
           )

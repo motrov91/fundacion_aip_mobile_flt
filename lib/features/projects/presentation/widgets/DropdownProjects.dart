@@ -3,20 +3,14 @@ import 'package:fundacion_aip_mobile/features/auth/presentation/providers/auth_p
 import 'package:provider/provider.dart';
 
 import '../../../auth/domain/domain.dart';
+import '../../../farm/presentation/providers/farms_projects_provider.dart';
 
-class DropdownFormField extends StatefulWidget {
-
-  const DropdownFormField({
-    super.key,
-  });
-
-  @override
-  State<DropdownFormField> createState() => _DropdownFormFieldState();
-}
-
-class _DropdownFormFieldState extends State<DropdownFormField> {
+// ignore: must_be_immutable
+class DropdownFormField extends StatelessWidget {
   
   int? projectSelected;
+
+  DropdownFormField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +18,7 @@ class _DropdownFormFieldState extends State<DropdownFormField> {
     final List<ProjectByUser> _projectsList;
 
     _projectsList = Provider.of<AuthProvider>(context, listen: false).projectsList; 
+    final farmService = Provider.of<FarmsProjectProvider>(context);
 
     return Padding(
       padding: const EdgeInsets.all(10),
@@ -52,11 +47,9 @@ class _DropdownFormFieldState extends State<DropdownFormField> {
           }
         ).toList(), 
         onChanged: (value){
-          setState(() {
-            projectSelected = value!;
-          });
+          projectSelected = value!;
 
-          print(projectSelected);
+          farmService.setProjectId = projectSelected!;
         }
       ),
     );

@@ -1,8 +1,12 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:fundacion_aip_mobile/features/auth/presentation/providers/auth_provider.dart';
+import 'package:fundacion_aip_mobile/features/projects/presentation/providers/projects_provider.dart';
 import 'package:fundacion_aip_mobile/features/projects/projects.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
+import '../../../farm/presentation/providers/farms_projects_provider.dart';
 import '../../../farm/presentation/screens/characterization_screen.dart';
 
 class ProjectsScreen extends StatelessWidget {
@@ -22,6 +26,9 @@ class ProjectsScreen extends StatelessWidget {
     );
     
     final  textStyleBottom = TextStyle(color: Colors.green.shade700, fontSize: 16, fontWeight: FontWeight.normal);
+
+    final userService = Provider.of<AuthProvider>(context).user;
+    final projectService = Provider.of<FarmsProjectProvider>(context);
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2FFF2),
@@ -72,7 +79,7 @@ class ProjectsScreen extends StatelessWidget {
                         style: txtTitleStyle,
                       ),
                     ),
-                    const DropdownFormField(),
+                    DropdownFormField(),
                     const SizedBox(height: 10,),
                     Align(
                       alignment: Alignment.centerRight,
@@ -80,17 +87,35 @@ class ProjectsScreen extends StatelessWidget {
                         margin: const EdgeInsets.only(right: 10),
                         child: FadeInRight(
                           delay: const Duration(seconds: 1),
-                          child: FilledButton.tonal(
-                            onPressed: (){
-                              //TODO: Seleccion del proyecto.
-                              //TODO: Obtener los datos.
-                              context.pushReplacementNamed(Characterizationcreen.name);
-                              // context.go(Characterizationcreen.name);
-                            }, 
-                            child: Text(
-                              'Ingresar',
-                              style: TextStyle(
-                                color: Theme.of(context).colorScheme.primary
+                          child: SizedBox(
+                            width: 150,
+                            child: FilledButton.tonal(
+                              onPressed: () async {
+                                
+                                final user = userService!.id;
+                                final project = projectService.getProjectId;
+                            
+                                await projectService.getCharaterizarionFarmsList(user, project!);
+                            
+                                if (projectService.isLoading) return;
+                            
+                                context.pushReplacementNamed(Characterizationcreen.name);
+                                // context.go(Characterizationcreen.name);
+                              }, 
+                              child: projectService.isLoading 
+                                ? SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 3,
+                                    color: Colors.green[900],
+                                  ),
+                                )
+                                : Text(
+                                  'Ingresar',
+                                  style: TextStyle(
+                                  color: Theme.of(context).colorScheme.primary
+                                ),
                               ),
                             ),
                           ),
