@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/repositories/farm_Repository.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/repositories/local_storage_repository.dart';
 
@@ -12,21 +13,17 @@ class FarmsProjectProvider extends ChangeNotifier{
   final LocalStorageRepository _isarRepository;
 
   List<Farm> farmCharacterizationList = [];
+  List<Farm> localstorageFarmsList = [];
 
-  int? _userId;
   int? _projectId;
   bool isLoading = false;
 
   //Constructor
   FarmsProjectProvider(this._farmRepository, this._isarRepository);
 
-  int? get getUserId => _userId;
   int? get getProjectId => _projectId;
 
-  set setUserId(int value) {
-    _userId = value;
-    notifyListeners();
-  }
+  
 
   set setProjectId(int value) {
     _projectId = value;
@@ -38,14 +35,18 @@ class FarmsProjectProvider extends ChangeNotifier{
       isLoading = true;
       notifyListeners();
 
+      const storage = FlutterSecureStorage();
+      await storage.write(key: 'projectId', value: projectId.toString());
+
       final response = await _farmRepository.getFarmsCharacterization(userId, projectId);
       
       farmCharacterizationList = response!;
 
       for(var farm in farmCharacterizationList){
-        print('CHARACTERIZATIONLISTPROVIDER ${farm.toString()}');
          _isarRepository.createFarm(farm);
       }
+
+      localstorageFarmsList = await _isarRepository.loadFarms();
 
       isLoading = false;
       notifyListeners();

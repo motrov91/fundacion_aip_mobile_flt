@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
 import 'package:provider/provider.dart';
 import '../../farm.dart';
+import '../providers/farms_projects_provider.dart';
 
 class CreateFarmScreen extends StatelessWidget {
 
@@ -16,11 +17,24 @@ class CreateFarmScreen extends StatelessWidget {
     final scaffoldKey = GlobalKey<ScaffoldState>();
     //final listLength = DataPageViewProvider.pageList().length;
     final farmService = Provider.of<CreateFarmProvider>(context);
+    final color = Theme.of(context).colorScheme.primary;
+
+    final dataProjectService = Provider.of<FarmsProjectProvider>(context);
+    final saveFarm = Provider.of<CreateFarmProvider>(context);
 
     
     return Scaffold(
       key: scaffoldKey,
       appBar: const CustomAppbar(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: color,
+        onPressed: (){
+
+          saveFarm.saveFarm(10, 81);
+
+        },
+        child: const Icon(Icons.save, color: Colors.white),
+      ),
       drawer: SideMenu(scaffoldKey: scaffoldKey,),
       body: Column(
         children: [

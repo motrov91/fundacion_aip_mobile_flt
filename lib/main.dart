@@ -19,7 +19,7 @@ Future<void> main() async{
   runApp(
   MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (context) => CreateFarmProvider()),
+      ChangeNotifierProvider(create: (context) => CreateFarmProvider(LocalStorageRepositoryImpl(datasource: IsarDatasourceImpl()))),
       ChangeNotifierProvider(create: (context) => ControlDotsPageviesProvider()),
       ChangeNotifierProvider(create: (context) => AuthProvider(AuthRepositoryImpl()),),
       ChangeNotifierProvider(create: (context) => ProjectsProvider()),

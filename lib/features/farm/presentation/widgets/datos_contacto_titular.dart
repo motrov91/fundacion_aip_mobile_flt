@@ -47,7 +47,13 @@ class DatosContactoTitular extends StatelessWidget {
               isValidator: true, 
             ),
             sizedBox,
-            CustomTextFormField(label: 'Segundo Nombre'),
+            CustomTextFormField(
+              label: 'Segundo Nombre',
+              initalValueData: farmService.secondName != '' ? farmService.secondName : null,
+              onChanged: (value){
+                farmService.secondName = value;
+              },
+            ),
             sizedBox,
             CustomTextFormField(
               label: 'Primer Apellido', 
@@ -63,7 +69,13 @@ class DatosContactoTitular extends StatelessWidget {
               isValidator: true, 
             ),
             sizedBox,
-            CustomTextFormField(label: 'Segundo Apellido'),
+            CustomTextFormField(
+              label: 'Segundo Apellido',
+              initalValueData: farmService.secondSurname != '' ? farmService.secondSurname : null,
+              onChanged: (value){
+                farmService.secondSurname = value;
+              },
+            ),
             sizedBox,
             CustomTextFormField(
               label: 'Cedula', keyType: TextInputType.number,
@@ -109,7 +121,10 @@ class DatosContactoTitular extends StatelessWidget {
             sizedBox,
             CustomDropdownField(
               labelText: 'Etnia',
-              dropdownItems: DropdownOptionsProvider.getDropdownsEtnia()
+              dropdownItems: DropdownOptionsProvider.getDropdownsEtnia(),
+              onChanged: (value){
+                farmService.ethnicity = value;
+              },
             ),
             sizedBox,
             CustomTextFormField(
@@ -126,38 +141,104 @@ class DatosContactoTitular extends StatelessWidget {
               isValidator: true,     
             ),
             sizedBox,
-            CustomTextFormField(label: 'Celular 2', keyType: TextInputType.number,),
+            CustomTextFormField(
+              label: 'Celular 2', 
+              keyType: TextInputType.number,
+              initalValueData: farmService.celphone2 != '' ? farmService.celphone2 : null,
+              onChanged: (value){
+                farmService.celphone2 = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Correo Electrónico'),
+            CustomTextFormField(
+              label: 'Correo Electrónico',
+              initalValueData: farmService.email != '' ? farmService.email : null,
+              onChanged: (value){
+                farmService.email = value;
+              },
+            ),
             sizedBox,
             CustomDropdownField(
               labelText: 'Genero',
               dropdownItems: DropdownOptionsProvider.getGender(),
+              onChanged: (value){
+                farmService.gender = value;
+              },
             ),
             sizedBox,
             CustomDropdownField(
               labelText: 'Estudios',
               dropdownItems: DropdownOptionsProvider.getDataStudies(),
+              onChanged: (value){
+                farmService.scholarLevel = value;
+              },
             ),
             sizedBox,
-            CustomTextFormField(label: 'Organización'),
+            CustomTextFormField(
+              label: 'Organización',
+              initalValueData: farmService.organization != '' ? farmService.organization : null,
+              onChanged: (value){
+                farmService.organization = value;
+              },
+            ),
             sizedBox,
             CustomDropdownField(
               labelText: 'Estado Civil',
               dropdownItems: DropdownOptionsProvider.getStatusMaried(),
+              onChanged: (value){
+                farmService.maritalStatus = value;
+              },
             ),
             sizedBox,
-            CustomTextFormField(label: 'Nombres y apellidos del conyuge'),
+            CustomTextFormField(
+              label: 'Nombres y apellidos del conyuge',
+              initalValueData: farmService.fullnameSpouse != '' ? farmService.fullnameSpouse : null,
+              onChanged: (value){
+                farmService.fullnameSpouse = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Lugar de expedición'),
+            CustomTextFormField(
+              label: 'Lugar de expedición',
+              initalValueData: farmService.expeditionSpouse != '' ? farmService.expeditionSpouse : null,
+              onChanged: (value){
+                farmService.expeditionSpouse = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Cedula conyuge', keyType: TextInputType.number,),
+            CustomTextFormField(
+              label: 'Cedula conyuge', 
+              keyType: TextInputType.number,
+              initalValueData: farmService.nitSpouse != '' ? farmService.nitSpouse : null,
+              onChanged: (value){
+                farmService.nitSpouse = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Fecha de nacimiento del conyuge'),
+            CustomTextFormField(
+              label: 'Fecha de nacimiento del conyuge',
+              initalValueData: farmService.dateSpouse != '' ? farmService.dateSpouse : null,
+              onChanged: (value){
+                farmService.dateSpouse = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Celular', keyType: TextInputType.number,),
+            CustomTextFormField(
+              label: 'Celular', 
+              keyType: TextInputType.number,
+              initalValueData: farmService.celphoneSpouse != '' ? farmService.celphoneSpouse : null,
+              onChanged: (value){
+                farmService.celphoneSpouse = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Correo Electrónico'),
+            CustomTextFormField(
+              label: 'Correo Electrónico',
+              initalValueData: farmService.emailSpouse != '' ? farmService.emailSpouse : null,
+              onChanged: (value){
+                farmService.emailSpouse = value;
+              },
+            ),
             sizedBox,
           ],
         ),

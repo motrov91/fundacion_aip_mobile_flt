@@ -4,7 +4,7 @@ class CustomDropdownField extends StatelessWidget {
 
   final List<DropdownMenuItem<String>> dropdownItems;  
   final String labelText;
-  final Function(String)? onChanged;
+  final void Function(String?)? onChanged;
 
   const CustomDropdownField({super.key, required this.dropdownItems, required this.labelText, this.onChanged});
 
@@ -29,7 +29,7 @@ class CustomDropdownField extends StatelessWidget {
       style: TextStyle(color: Colors.grey[800]),
       value: selectedValue,
       items: dropdownItems, 
-      onChanged: (value){}
+      onChanged: onChanged
     );
   }
 }

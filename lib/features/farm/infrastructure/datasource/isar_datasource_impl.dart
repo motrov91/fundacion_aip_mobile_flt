@@ -62,9 +62,10 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
   }
 
   @override
-  Future<List<Farm>> loadFarms() {
-    // TODO: implement loadFarms
-    throw UnimplementedError();
+  Future<List<Farm>> loadFarms() async {
+    final isar = await db;
+
+    return isar.farms.where().findAll();
   }
 
 }

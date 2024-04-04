@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fundacion_aip_mobile/features/auth/domain/domain.dart';
 import 'package:fundacion_aip_mobile/features/auth/infrastructure/errors/auth_errors.dart';
 
@@ -44,6 +45,12 @@ class AuthProvider extends ChangeNotifier{
         * esto con el fin de mostrarlos en el dropdown de seleccionar el proyecto.
       */
       if(user != null){
+
+        const storage = FlutterSecureStorage();
+
+        await storage.write(key: 'userId', value: user!.id.toString());
+        await storage.write(key: 'token', value: user!.token.toString());
+
         projectsList = user!.projectByUser;
         isLoading = false;
         errorMesage = null;
@@ -71,7 +78,7 @@ class AuthProvider extends ChangeNotifier{
     }
   }
 
-  Future<void> logout([String? errorMesage]) async{
+  Future<void> logout([String? errorMesage]) async {
     //TODO: Limpiar el token que se almeca persistentemente
   }
 

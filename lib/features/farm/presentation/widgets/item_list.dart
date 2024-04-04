@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../domain/entities/farm.dart';
 
@@ -13,10 +11,7 @@ class ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const status = true;
     final colors = Theme.of(context).colorScheme.primary;
-
-    print('FARM***> ${item.firstName} ${item.firstSurname}');
 
     return Container(
       margin: const EdgeInsets.only(bottom: 10, left: 10, right: 10, top: 10),
@@ -59,7 +54,7 @@ class ItemList extends StatelessWidget {
           const Spacer(),
           SizedBox(
             width: 50,
-            child: status
+            child: item.isModified!
                 ? IconButton(
                     onPressed: () {},
                     icon: Icon(

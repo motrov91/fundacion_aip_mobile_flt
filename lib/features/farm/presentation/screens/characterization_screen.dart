@@ -13,6 +13,7 @@ class Characterizationcreen extends StatelessWidget {
 
   const Characterizationcreen({super.key});
 
+
   @override
   Widget build(BuildContext context) {
 
@@ -23,7 +24,9 @@ class Characterizationcreen extends StatelessWidget {
         .labelLarge!
         .copyWith(color: Theme.of(context).colorScheme.primary);
 
-    final farmListService = Provider.of<FarmsProjectProvider>(context).farmCharacterizationList;
+    final colors = Theme.of(context).colorScheme.primary;
+    final farmListService =
+        Provider.of<FarmsProjectProvider>(context).localstorageFarmsList;
 
     return Scaffold(
       key: scaffoldKey,
@@ -47,6 +50,28 @@ class Characterizationcreen extends StatelessWidget {
           Center(
             child: Text('Mis predios caracterizados',
                 textAlign: TextAlign.center, style: txtTitle),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.file_upload,
+                color: colors,
+              ),
+              const SizedBox(width: 3,),
+              Text('Sin sincronizar', style: TextStyle(color: colors),),
+              const SizedBox(width: 15,),
+              Icon(
+                Icons.cloud_done_outlined,
+                size: 22,
+                color: Colors.amber.shade700,
+              ),
+              const SizedBox(width: 3,),
+              Text('Sincronizado', style: TextStyle(color: Colors.amber.shade700),)
+            ],
           ),
           const SizedBox(
             height: 5,
