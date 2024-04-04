@@ -31,7 +31,7 @@ class FarmResponse {
       await json["resultado"].forEach((item){
 
         final itemFarm = Farm(
-          idFarm: item['idFarm'],
+          id_farm: item['id_farm'],
           imgBeneficiario: item['img_beneficiario'], 
           firstName: item['firstName'], 
           secondName: item['secondName'], 
@@ -89,14 +89,14 @@ class FarmResponse {
           waterAvailable: item['waterAvailable'], 
           accessRoads: item['accessRoads'], 
           electricityAvailability: item['electricityAvailability'], 
-          comunicationAvailable: item['comunicationAvailable'], 
+          comunicationAvailable: item['ComunicationAvailable'], 
           projectParticipation: item['projectParticipation'], 
           cropTools: item['cropTools'], 
           firstAidKit: item['firstAidKit'], 
           fumigateKit: item['fumigateKit'], 
           irrigationSystem: item['irrigationSystem'], 
           machines: item['machines'], 
-          participateInProyects: item['participateInProyects'], 
+          participateInProyects: item['ParticipateInProyects'], 
           workingCapital: item['workingCapital'], 
           implementationTecnologyLevel: item['implementationTecnologyLevel'], 
           productLine1: item['productLine1'], 
@@ -175,7 +175,7 @@ class FarmResponse {
           priceKgSoldLote4: item['priceKgSoldLote4'], 
           cantKgByYearLote5: item['cantKgByYearLote5'], 
           priceKgSoldLote5: item['priceKgSoldLote5'], 
-          timeCreation: item['timeCreation'], 
+          timeCreation: item['time_creation'], 
           typeofanimal: item['typeofanimal'], 
           typeofanimal5: item['typeofanimal5'], 
         );

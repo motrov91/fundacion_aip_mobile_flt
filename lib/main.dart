@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/features/auth/infrastructure/repositories/auth_repository_impl.dart';
 import 'package:fundacion_aip_mobile/features/auth/presentation/providers/auth_provider.dart';
+import 'package:fundacion_aip_mobile/features/farm/infrastructure/datasource/isar_datasource_impl.dart';
 import 'package:fundacion_aip_mobile/features/farm/infrastructure/repositories/farm_repository_impl.dart';
+import 'package:fundacion_aip_mobile/features/farm/infrastructure/repositories/local_stororage_repository_impl.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/providers/farms_projects_provider.dart';
 import 'package:fundacion_aip_mobile/features/projects/presentation/providers/projects_provider.dart';
 import 'package:provider/provider.dart';
@@ -20,8 +22,8 @@ Future<void> main() async{
       ChangeNotifierProvider(create: (context) => CreateFarmProvider()),
       ChangeNotifierProvider(create: (context) => ControlDotsPageviesProvider()),
       ChangeNotifierProvider(create: (context) => AuthProvider(AuthRepositoryImpl()),),
-      ChangeNotifierProvider(create: (context) => ProjectsProvider(), lazy: true,),
-      ChangeNotifierProvider(create: (context) => FarmsProjectProvider(FarmRepositoryImpl()))
+      ChangeNotifierProvider(create: (context) => ProjectsProvider()),
+      ChangeNotifierProvider(create: (context) => FarmsProjectProvider(FarmRepositoryImpl(), LocalStorageRepositoryImpl(datasource: IsarDatasourceImpl())))
 
     ],
     child: const MyApp(),

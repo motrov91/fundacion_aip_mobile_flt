@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../domain/entities/farm.dart';
 
@@ -104,8 +106,9 @@ class _LocationFarm extends StatelessWidget {
               item.vereda,
               style: style,
             )),
+
         Container(
-            margin: const EdgeInsets.fromLTRB(10, 0, 0, 6),
+            margin: const EdgeInsets.fromLTRB(5, 0, 0, 6),
             child: Text(
               item.municipality,
               style: style,

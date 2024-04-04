@@ -1,12 +1,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/repositories/farm_Repository.dart';
+import 'package:fundacion_aip_mobile/features/farm/domain/repositories/local_storage_repository.dart';
 
 import '../../domain/entities/farm.dart';
 
 class FarmsProjectProvider extends ChangeNotifier{
 
   final FarmRepository _farmRepository;
+  //Instancia de la base de datos local
+  final LocalStorageRepository _isarRepository;
 
   List<Farm> farmCharacterizationList = [];
 
@@ -15,7 +18,7 @@ class FarmsProjectProvider extends ChangeNotifier{
   bool isLoading = false;
 
   //Constructor
-  FarmsProjectProvider(this._farmRepository);
+  FarmsProjectProvider(this._farmRepository, this._isarRepository);
 
   int? get getUserId => _userId;
   int? get getProjectId => _projectId;
@@ -38,6 +41,12 @@ class FarmsProjectProvider extends ChangeNotifier{
       final response = await _farmRepository.getFarmsCharacterization(userId, projectId);
       
       farmCharacterizationList = response!;
+
+      for(var farm in farmCharacterizationList){
+        print('CHARACTERIZATIONLISTPROVIDER ${farm.toString()}');
+         _isarRepository.createFarm(farm);
+      }
+
       isLoading = false;
       notifyListeners();
 
