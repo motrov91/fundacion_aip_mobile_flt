@@ -178,7 +178,7 @@ class FarmResponse {
           timeCreation: item['time_creation'], 
           typeofanimal: item['typeofanimal'], 
           typeofanimal5: item['typeofanimal5'], 
-          isModified: item['isModified'] ?? false,
+          isModified: item['isModified'],
         );
 
         farmListCharacterization.add(itemFarm);

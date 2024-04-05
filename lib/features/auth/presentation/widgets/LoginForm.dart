@@ -50,6 +50,7 @@ class LoginForm extends StatelessWidget {
                     : 'Este campo no puede estar vacío';
               },
               isValidator: true,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
             ),
             const SizedBox(
               height: 8,
@@ -68,6 +69,7 @@ class LoginForm extends StatelessWidget {
                     : null;
               },
               isValidator: true,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
             ),
             const SizedBox(
               height: 15,

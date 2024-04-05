@@ -457,7 +457,7 @@ class Farm {
       "timeCreation": timeCreation,
       "typeofanimal": typeofanimal,
       "typeofanimal5": typeofanimal5,
-      "isModified": isModified ?? false,   
+      "isModified": isModified,   
     };
   }
 

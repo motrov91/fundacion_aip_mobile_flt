@@ -15,6 +15,7 @@ class CustomTextFormField extends StatefulWidget {
   final String? Function(String?)? validator;
   final String? initalValueData;
   final bool isValidator;
+  final AutovalidateMode? autovalidateMode;
 
   CustomTextFormField({
     super.key, 
@@ -28,7 +29,8 @@ class CustomTextFormField extends StatefulWidget {
     this.keyType = TextInputType.text,
     this.sufix = false, 
     this.initalValueData, 
-    this.isValidator = false
+    this.isValidator = false, 
+    this.autovalidateMode = AutovalidateMode.always
   });
 
   @override
@@ -52,7 +54,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardType: widget.keyType,
       initialValue: widget.initalValueData,
       obscureText: widget.isObscure ?? true,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
+      autovalidateMode: widget.autovalidateMode,
       decoration: InputDecoration(
         enabledBorder: border,
         focusedBorder: border.copyWith(  

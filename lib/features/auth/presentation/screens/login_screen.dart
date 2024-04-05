@@ -17,6 +17,7 @@ class LoginScreen extends StatelessWidget {
           children: [
             _HeaderLogin(),
             const SizedBox(height: 20,),
+            //* CardLogin contenedor del formulario de login
             FadeInRight(child: const CardLogin()),
             const SizedBox(height: 5,),
             FadeInUp(

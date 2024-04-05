@@ -18,8 +18,6 @@ class CreateFarmScreen extends StatelessWidget {
     //final listLength = DataPageViewProvider.pageList().length;
     final farmService = Provider.of<CreateFarmProvider>(context);
     final color = Theme.of(context).colorScheme.primary;
-
-    final dataProjectService = Provider.of<FarmsProjectProvider>(context);
     final saveFarm = Provider.of<CreateFarmProvider>(context);
 
     
