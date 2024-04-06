@@ -3,13 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
 import 'package:provider/provider.dart';
 import '../../farm.dart';
-import '../providers/farms_projects_provider.dart';
 
 class CreateFarmScreen extends StatelessWidget {
 
   static const String name = '/create_farm';  
 
   CreateFarmScreen({super.key});
+
+  /*
+   * Función que ejecuta el snackbar si no se cumple con los campos obligatorios
+  */
+  void showCumtomSnackbar(BuildContext ctx){
+
+    ScaffoldMessenger.of(ctx).clearSnackBars();
+
+    final snackBar = SnackBar(
+      backgroundColor: Colors.red[400],
+      content: const Text('Falta diligenciar algunos campos obligatorios, verifica tambien la foto y la firma antes de crear el predio en el dispositivo'),
+      duration: const Duration(seconds: 5),  
+      action: SnackBarAction(
+        label: 'Ok', onPressed: (){}, textColor: Colors.amber,),
+    );
+
+    ScaffoldMessenger.of(ctx).showSnackBar(snackBar);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +45,12 @@ class CreateFarmScreen extends StatelessWidget {
         backgroundColor: color,
         onPressed: (){
 
-          saveFarm.saveFarm(10, 81);
+          if(farmService.isValidForm()){
+            saveFarm.saveFarm(10, 81);
+          }else{
+            showCumtomSnackbar(context);
+          }
+
 
         },
         child: const Icon(Icons.save, color: Colors.white),

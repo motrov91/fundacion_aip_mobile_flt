@@ -558,6 +558,7 @@ class Farm {
     exist.variety2 = farm.variety2;
     exist.cantPlants2 = farm.cantPlants2;
     exist.ageCrop2 = farm.ageCrop2;
+    exist.stageCrop2 = farm.stageCrop2;
     exist.cantKgProducedByYear2 = farm.cantKgProducedByYear2;
     exist.cropStatus2 = farm.cropStatus2;
     exist.aproxArea2 = farm.aproxArea2;

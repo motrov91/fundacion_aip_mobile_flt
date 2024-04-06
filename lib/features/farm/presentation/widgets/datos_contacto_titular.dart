@@ -107,9 +107,9 @@ class DatosContactoTitular extends StatelessWidget {
             sizedBox,
             CustomTextFormField(
               label: 'Fecha de nacimiento',
-              initalValueData: farmService.fechaExpedicion != '' ? farmService.fechaExpedicion : null,  
+              initalValueData: farmService.birthdate != '' ? farmService.birthdate : null,  
               onChanged: (value){
-                farmService.fechaExpedicion = value;
+                farmService.birthdate = value;
               },
               validator: (value){
                 return (value != null && value != '') 
@@ -121,6 +121,7 @@ class DatosContactoTitular extends StatelessWidget {
             sizedBox,
             CustomDropdownField(
               labelText: 'Etnia',
+              initialValue: farmService.ethnicity != '' ? farmService.ethnicity : null,
               dropdownItems: DropdownOptionsProvider.getDropdownsEtnia(),
               onChanged: (value){
                 farmService.ethnicity = value;
@@ -160,6 +161,7 @@ class DatosContactoTitular extends StatelessWidget {
             sizedBox,
             CustomDropdownField(
               labelText: 'Genero',
+              initialValue: farmService.gender != '' ? farmService.gender : null,
               dropdownItems: DropdownOptionsProvider.getGender(),
               onChanged: (value){
                 farmService.gender = value;
@@ -168,6 +170,7 @@ class DatosContactoTitular extends StatelessWidget {
             sizedBox,
             CustomDropdownField(
               labelText: 'Estudios',
+              initialValue: farmService.scholarLevel != '' ? farmService.scholarLevel : null,
               dropdownItems: DropdownOptionsProvider.getDataStudies(),
               onChanged: (value){
                 farmService.scholarLevel = value;
@@ -184,6 +187,7 @@ class DatosContactoTitular extends StatelessWidget {
             sizedBox,
             CustomDropdownField(
               labelText: 'Estado Civil',
+              initialValue: farmService.maritalStatus != '' ? farmService.maritalStatus : null,
               dropdownItems: DropdownOptionsProvider.getStatusMaried(),
               onChanged: (value){
                 farmService.maritalStatus = value;

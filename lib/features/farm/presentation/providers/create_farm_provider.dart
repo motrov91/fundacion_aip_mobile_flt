@@ -20,11 +20,12 @@ class CreateFarmProvider extends ChangeNotifier{
   String primerApellido = '';
   String cedulaAgricultor = '';
   String lugarExpedicion = '';
-  String fechaExpedicion = '';
+  String birthdate= '';
   String celularAgricultor = '';
   String nombreFinca = '';
   String municipioFinca = '';
   String veredaFinca = '';
+  String possession = '';
   String extensionTotal = '';
   String areaCultivadaActualmente = '';
   String areaLibreDestinacion = '';
@@ -190,11 +191,12 @@ class CreateFarmProvider extends ChangeNotifier{
     if(primerApellido == '') return false;
     if(cedulaAgricultor == '') return false;
     if(lugarExpedicion == '') return false;
-    if(fechaExpedicion == '') return false;
+    if(birthdate == '') return false;
     if(celularAgricultor == '') return false;
     if(nombreFinca == '') return false;
     if(municipioFinca == '') return false;
     if(veredaFinca == '') return false;
+    if(possession == '') return false;
     if(extensionTotal == '') return false;
     if(areaCultivadaActualmente == '') return false;
     if(areaLibreDestinacion == '') return false;
@@ -206,9 +208,9 @@ class CreateFarmProvider extends ChangeNotifier{
     if(linderoOccidente == '') return false;
     if(latitudPredio == '') return false;
     if(longitudPredio == '') return false;
-    //if(comentarioVisita == '') return false;
-    if(_imageSignature == null) return false;
-    if(_imageFarm == null) return false;
+    // if(comentarioVisita == '') return false;
+    // if(_imageSignature == null) return false;
+    // if(_imageFarm == null) return false;
 
     notifyListeners();
 
@@ -228,12 +230,12 @@ class CreateFarmProvider extends ChangeNotifier{
       firstSurname: primerApellido, 
       nitProducer: cedulaAgricultor, 
       expedition: lugarExpedicion, 
-      birthdate: '', 
+      birthdate: birthdate, 
       celphone1: celularAgricultor, 
       nameFarm: nombreFinca, 
       municipality: municipioFinca, 
       vereda: veredaFinca, 
-      possession: '', 
+      possession: possession, 
       totalExtension: extensionTotal, 
       cropsArea: areaCultivadaActualmente, 
       freeArea: areaLibreDestinacion, 

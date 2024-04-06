@@ -44,6 +44,7 @@ class DatosPredio extends StatelessWidget {
                   : 'Este campo no puede estar vacío';
               }, 
               isValidator: true,   
+
             ),
             sizedBox,
             CustomTextFormField(
@@ -60,7 +61,13 @@ class DatosPredio extends StatelessWidget {
               isValidator: true,     
             ),
             sizedBox,
-            CustomTextFormField(label: 'Corregimiento',),
+            CustomTextFormField(
+              label: 'Corregimiento',
+              initalValueData: farmService.corregimiento != '' ? farmService.corregimiento : null,
+              onChanged: (value){
+                farmService.corregimiento = value;
+              },
+            ),
             sizedBox,
             CustomTextFormField(
               label: 'Vereda',
@@ -76,7 +83,14 @@ class DatosPredio extends StatelessWidget {
               isValidator: true,     
             ),
             sizedBox,
-            CustomDropdownField(dropdownItems: DropdownOptionsProvider.getTitulos(), labelText: 'Titulo de posesión'),
+            CustomDropdownField(
+              dropdownItems: DropdownOptionsProvider.getTitulos(), 
+              initialValue: farmService.possession != '' ? farmService.possession : null,
+              labelText: 'Titulo de posesión',
+              onChanged: (value){
+                farmService.possession = value!;
+              },
+            ),
             sizedBox,
             CustomTextFormField(
               label: 'Extención total (m²)', 
@@ -138,11 +152,32 @@ class DatosPredio extends StatelessWidget {
               isValidator: true,   
             ),
             sizedBox,
-            CustomTextFormField(label: 'Área de otros usos (m²)',keyType: TextInputType.number,),
+            CustomTextFormField(
+              label: 'Área de otros usos (m²)',
+              initalValueData: farmService.otherAreas != '' ? farmService.otherAreas : null,
+              keyType: TextInputType.number,
+              onChanged: (value){
+                farmService.otherAreas = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Metros lineales de afluentes',keyType: TextInputType.number,),
+            CustomTextFormField(
+              label: 'Metros lineales de afluentes',
+              initalValueData: farmService.afluentes != '' ? farmService.afluentes : null,
+              keyType: TextInputType.number,
+              onChanged: (value){
+                farmService.afluentes = value;
+              },  
+            ),
             sizedBox,
-            CustomDropdownField(dropdownItems: DropdownOptionsProvider.usoSuelo(), labelText: 'Uso de suelo y vocación'),
+            CustomDropdownField(
+              dropdownItems: DropdownOptionsProvider.usoSuelo(), 
+              initialValue: farmService.vocationAndLandUse != '' ? farmService.vocationAndLandUse : null,
+              labelText: 'Uso de suelo y vocación',
+              onChanged: (value){
+                farmService.vocationAndLandUse = value;
+              },
+            ),
             sizedBox,
             CustomTextFormField(
               label: 'Linea productiva mas implementada',
@@ -158,13 +193,39 @@ class DatosPredio extends StatelessWidget {
               isValidator: true,   
             ),
             sizedBox,
-            CustomTextFormField(label: 'Tipo de certificación sobre el manejo del predio',),
+            CustomTextFormField(
+              label: 'Tipo de certificación sobre el manejo del predio',
+              initalValueData: farmService.certificationType != '' ? farmService.certificationType : null, 
+              onChanged: (value){
+                farmService.certificationType = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Presencia de proyectos actuales',),
+            CustomTextFormField(
+              label: 'Presencia de proyectos actuales',
+              initalValueData: farmService.currentProjects != '' ? farmService.currentProjects : null, 
+              onChanged: (value){
+                farmService.currentProjects = value;
+              },  
+            ),
             sizedBox,
-            CustomDropdownField(dropdownItems: DropdownOptionsProvider.getSiNo(), labelText: 'Manejo de químicos'),
+            CustomDropdownField(
+              dropdownItems: DropdownOptionsProvider.getSiNo(), 
+              initialValue: farmService.agrochemical != '' ? farmService.agrochemical : null, 
+              labelText: 'Manejo de químicos',
+              onChanged: (value){
+                farmService.agrochemical = value;
+              },
+            ),
             sizedBox,
-            CustomDropdownField(dropdownItems: DropdownOptionsProvider.buenasPracticas(), labelText: 'Implementación de buenas prácticas'),
+            CustomDropdownField(
+              dropdownItems: DropdownOptionsProvider.buenasPracticas(), 
+              initialValue: farmService.bestPractices != '' ? farmService.bestPractices : null,
+              labelText: 'Implementación de buenas prácticas',
+              onChanged: (value){
+                farmService.bestPractices = value;
+              },
+            ),
             sizedBox,
             CustomTextFormField(
               label: 'Lindero al Norte',
@@ -222,7 +283,13 @@ class DatosPredio extends StatelessWidget {
               isValidator: true,  
             ),
             sizedBox,
-            CustomTextFormField(label: 'Lindero al altura MSNM',),
+            CustomTextFormField(
+              label: 'Lindero al altura MSNM',
+              initalValueData: farmService.altura != '' ? farmService.altura : null,
+              onChanged: (value){
+                farmService.altura = value;
+              }, 
+            ),
             sizedBox,
             CustomTextFormField(
               label: 'Latitud',
@@ -252,19 +319,54 @@ class DatosPredio extends StatelessWidget {
               isValidator: true,  
             ),
             sizedBox,
-            CustomTextFormField(label: 'Años en la propiedad', keyType: TextInputType.number,),
+            CustomTextFormField(
+              label: 'Años en la propiedad', keyType: TextInputType.number,
+              initalValueData: farmService.anosPropiedad != '' ? farmService.anosPropiedad : null,
+              onChanged: (value){
+                farmService.anosPropiedad = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Linea productiva 1',),
+            CustomTextFormField(
+              label: 'Linea productiva 1',
+              initalValueData: farmService.productiveLine1 != '' ? farmService.productiveLine1 : null,
+              onChanged: (value){
+                farmService.productiveLine1 = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Linea productiva 2',),
+            CustomTextFormField(
+              initalValueData: farmService.productiveLine2 != '' ? farmService.productiveLine2 : null,
+              label: 'Linea productiva 2',
+              onChanged: (value){
+                farmService.productiveLine2 = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Linea productiva 3',),
+            CustomTextFormField(
+              initalValueData: farmService.productiveLine3 != '' ? farmService.productLine3 : null,
+              label: 'Linea productiva 3',
+              onChanged: (value){
+                farmService.productiveLine3 = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Linea productiva 4',),
+            CustomTextFormField(
+              initalValueData: farmService.productiveLine4 != '' ? farmService.productiveLine4 : null,
+              label: 'Linea productiva 4',
+              onChanged: (value){
+                farmService.productiveLine4 = value;
+              },
+            ),
             sizedBox,
-            CustomTextFormField(label: 'Linea productiva 5',),
+            CustomTextFormField(
+              initalValueData: farmService.productiveLine5 != '' ? farmService.productiveLine5 : null, 
+              label: 'Linea productiva 5',
+              onChanged: (value){
+                farmService.productiveLine5 = value;
+              },
+            ),
             sizedBox,
-            
           ],
         ),
       ),
