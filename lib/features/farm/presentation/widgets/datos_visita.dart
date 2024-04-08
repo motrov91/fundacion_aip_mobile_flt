@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -63,6 +64,13 @@ class DatosVisita extends StatelessWidget {
                 if( photoPath == null ) return;
 
                 farmService.setImgFarm = FileImage(File(photoPath));
+
+                // Leemos la ruta de la foto tomada y la almacenamos en la variable imageFile
+                File imageFile = File(photoPath);
+                //Leemos la imagen como una lista de bytes
+                Uint8List bytes = await imageFile.readAsBytes();
+                //Convertimos la imagen en base64
+                farmService.createNewFarm.imgBeneficiario = base64Encode(bytes);
         
                 photoPath;
               }, 
@@ -76,6 +84,14 @@ class DatosVisita extends StatelessWidget {
                 if( photoPath == null ) return;
 
                 farmService.setImgFarm = FileImage(File(photoPath));
+
+                // Leemos la ruta de la foto tomada y la almacenamos en la variable imageFile
+                File imageFile = File(photoPath);
+                //Leemos la imagen como una lista de bytes
+                Uint8List bytes = await imageFile.readAsBytes();
+                //Convertimos la imagen en base64
+                farmService.createNewFarm.imgBeneficiario = base64Encode(bytes);
+
         
                 photoPath;
               }, 

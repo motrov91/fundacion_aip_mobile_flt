@@ -1,4 +1,6 @@
 
+import 'dart:typed_data';
+
 import 'package:isar/isar.dart';
 
 part 'farm.g.dart';

@@ -23,12 +23,21 @@ class FarmsProjectProvider extends ChangeNotifier{
 
   int? get getProjectId => _projectId;
 
-  
-
   set setProjectId(int value) {
     _projectId = value;
     notifyListeners();
   }
+
+  //Agregar un nuevo predio a la lista que se visualiza en la lista de predios caracterizados
+  void addNewFarmLocalStorageCharacterization(Farm farm){
+
+    localstorageFarmsList.add(farm);
+    notifyListeners();
+
+    return;
+
+  }
+
 
   Future<List<Farm>>? getCharaterizarionFarmsList(int userId, int projectId) async{
     try{ 

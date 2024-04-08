@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'dart:typed_data';
 
@@ -71,23 +73,27 @@ class CreateFarmProvider extends ChangeNotifier{
     return true;
   }
 
-  Future<void> saveFarm() async{
+  Future<Farm?> saveFarm() async{
 
     const storage = FlutterSecureStorage();
 
     final user = await storage.read(key: 'userId');
     final project = await storage.read(key: 'projectId');
 
+    if(_imageSignature != null){
+      createNewFarm.imgSignature = base64Encode(_imageSignature!);
+    }
+
     createNewFarm.projectId = int.parse(project!);
     createNewFarm.userId = int.parse(user!);
     createNewFarm.isarId = null;
     createNewFarm.isModified = true;
 
-    final test = await _isarRepository.createFarm(createNewFarm);
+    final farm = await _isarRepository.createFarm(createNewFarm);
 
-    //TODO: Añadir el predio creado a la lista de characterizationlistfarm
+    createNewFarm = Farm();   
 
-    createNewFarm = Farm();
+    return farm; 
 
   }
 }
