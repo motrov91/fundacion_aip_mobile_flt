@@ -43,7 +43,7 @@ class ItemList extends StatelessWidget {
               Container(
                   margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                   child: Text(
-                    item.nitProducer,
+                    item.nitProducer ?? 'Cedula del productor',
                     style: style,
                   )),
               const Spacer(),
@@ -100,14 +100,14 @@ class _LocationFarm extends StatelessWidget {
         Container(
             margin: const EdgeInsets.fromLTRB(5, 0, 0, 6),
             child: Text(
-              item.vereda,
+              item.vereda ?? '',
               style: style,
             )),
 
         Container(
             margin: const EdgeInsets.fromLTRB(5, 0, 0, 6),
             child: Text(
-              item.municipality,
+              item.municipality ?? '',
               style: style,
             ))
       ],

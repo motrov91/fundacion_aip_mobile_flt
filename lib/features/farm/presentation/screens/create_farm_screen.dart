@@ -1,6 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:fundacion_aip_mobile/features/farm/presentation/providers/farms_projects_provider.dart';
+import 'package:fundacion_aip_mobile/features/farm/presentation/screens/characterization_screen.dart';
+import 'package:fundacion_aip_mobile/features/projects/presentation/providers/projects_provider.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../farm.dart';
 
@@ -33,8 +37,9 @@ class CreateFarmScreen extends StatelessWidget {
 
     final scaffoldKey = GlobalKey<ScaffoldState>();
     //final listLength = DataPageViewProvider.pageList().length;
-    final farmService = Provider.of<CreateFarmProvider>(context);
     final color = Theme.of(context).colorScheme.primary;
+    final farmService = Provider.of<CreateFarmProvider>(context);
+    final localStorageFarmList = Provider.of<FarmsProjectProvider>(context).localstorageFarmsList;
     final saveFarm = Provider.of<CreateFarmProvider>(context);
 
     
@@ -46,11 +51,11 @@ class CreateFarmScreen extends StatelessWidget {
         onPressed: (){
 
           if(farmService.isValidForm()){
-            saveFarm.saveFarm(10, 81);
+            saveFarm.saveFarm();
+            context.pushReplacementNamed(Characterizationcreen.name);
           }else{
             showCumtomSnackbar(context);
           }
-
 
         },
         child: const Icon(Icons.save, color: Colors.white),
@@ -66,14 +71,14 @@ class CreateFarmScreen extends StatelessWidget {
                   child: PageView(    
                     children:  const [
                       DatosContactoTitular(),
-                      DatosPredio(),
-                      DatosAprendizaje(),
-                      DatosLote1(),
-                      DatosLote2(),
-                      DatosLote3(),
-                      DatosLote4(),
-                      DatosLote5(),
-                      DatosVisita()
+                      //DatosPredio(),
+                      //DatosAprendizaje(),
+                      //DatosLote1(),
+                      //DatosLote2(),
+                      //DatosLote3(),
+                      //DatosLote4(),
+                      //DatosLote5(),
+                      //DatosVisita()
                     ],
                   ),
                 ),

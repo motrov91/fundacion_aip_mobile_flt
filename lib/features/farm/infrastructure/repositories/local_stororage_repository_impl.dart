@@ -10,7 +10,7 @@ class LocalStorageRepositoryImpl extends LocalStorageRepository{
   LocalStorageRepositoryImpl({required this.datasource});
 
   @override
-  Future<void> createFarm(Farm farm) {
+  Future<Farm?> createFarm(Farm farm) {
     return datasource.createFarm(farm);
   }
 

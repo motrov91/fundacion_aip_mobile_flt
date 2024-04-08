@@ -24,15 +24,26 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
   }
 
   @override
-  Future<void> createFarm(Farm farm) async{
+  Future<Farm?> createFarm(Farm farm) async{
     
+    //Creamos una instancia de la base de datos
     final isar = await db;
+
+    //Verificamos si el predio ingresado como parametro tiene algun registro similar con su id_farm en la bd local
+    //si lo tiene retorna existFarm si no lo tiene retorna null.
     Farm? existFarm = await isar.farms
       .filter()
       .id_farmEqualTo(farm.id_farm)
       .findFirst();
 
-    if( existFarm != null ){
+    /*Si existFarm es difernte de null indica que encontro un predio con ese id_farm en la base de datos.
+      en caso contrario el id_farm que viene desde la API no esta en la base de datos local entonces debera saltarse el if y 
+      crear el predio. Cuando viene de la API siempre viene in farm_id, cuando se crea desde la aplicacion nunca trae el farm_id
+      por eso cuando se hace la consulta desde una farm creada desde la aplicacion siempre retornara existFarm ya que habrá muchas sin farm_id,
+      pero con el findFirst de la consulta obtenemos solo el primero, entonces ahora evaluamos, del existFarm obtenido desde el producto enviado desde la app
+      nunca abra un farm_id lo que indica que el predio se deberá crear localmente. */
+    if( existFarm?.id_farm != null){
+      //* Ya sabemos que retorna un predio de la base de datos local
       //Actualizar 
       isar.writeTxnSync(() async {
         /* 
@@ -40,19 +51,26 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
           el predio que llega al mometo de crear la farm, en la clase Farm se   
           hacen las asignaciones de los nuevos valores y se le pasa a la actualizacion
           de isar.
-        
         */
-        Farm.extractAsignations(existFarm, farm);
-        
+        Farm.extractAsignations(existFarm!, farm);
         isar.farms.putSync(existFarm);
-        return;
+        return existFarm;
       });
-      return;
-    }
+    }else{
+      //Insertar
+      final test = isar.writeTxnSync(() => isar.farms.putSync(farm));
+      Farm? newFarmCreated = await isar.farms
+      .filter()
+      .isarIdEqualTo(test)
+      .findFirst();
 
-    //Insertar
-    isar.writeTxnSync(() => isar.farms.putSync(farm));
-    return;
+      if(newFarmCreated != null){
+        return newFarmCreated;
+      } else{
+        return null;
+      }
+    }
+    return farm;
   }
 
   @override

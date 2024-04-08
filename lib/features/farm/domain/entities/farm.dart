@@ -6,19 +6,19 @@ part 'farm.g.dart';
 @collection
 class Farm {
 
-  Id isarId = Isar.autoIncrement; // you can also use id = null to auto increment
+  Id? isarId = Isar.autoIncrement; // you can also use id = null to auto increment
 
   int? id_farm;
-  String imgBeneficiario;
-  String firstName;
+  String? imgBeneficiario;
+  String? firstName;
   String? secondName;
-  String firstSurname;
+  String? firstSurname;
   String? secondSurname;
-  String nitProducer;
-  String expedition;
-  String birthdate;
+  String? nitProducer;
+  String? expedition;
+  String? birthdate;
   String? ethnicity;
-  String celphone1;
+  String? celphone1;
   String? celphone2;
   String? email;
   String? gender;
@@ -31,29 +31,29 @@ class Farm {
   String? dateSpouse;
   String? celphoneSpouse;
   String? emailSpouse;
-  String nameFarm;
-  String municipality;
+  String? nameFarm;
+  String? municipality;
   String? corregimiento;
-  String vereda;
-  String possession;
-  String totalExtension;
-  String cropsArea;
-  String freeArea;
-  String conservationArea;
+  String? vereda;
+  String? possession;
+  String? totalExtension;
+  String? cropsArea;
+  String? freeArea;
+  String? conservationArea;
   String? currentProjects;
   String? agrochemical;
   String? bestPractices;
   String? otherAreas;
   String? afluentes;
   String? vocationAndLandUse;
-  String productiveLine;
+  String? productiveLine;
   String? certificationType;
-  String purlieuNorth;
-  String purlieuSouth;
-  String purlieuEast;
-  String purlieuWest;
+  String? purlieuNorth;
+  String? purlieuSouth;
+  String? purlieuEast;
+  String? purlieuWest;
   String? altura;
-  String latitudeLongitude;
+  String? latitudeLongitude;
   String? anosPropiedad;
   String? productiveLine1;
   String? productiveLine2;
@@ -109,7 +109,7 @@ class Farm {
   String? coordenates3;
   String? useType3;
   String? promKgComercializateValu3;
-  int projectId;
+  int? projectId;
   String? productLine4Pecuaria;
   String? breed;
   String? cantAnimals;
@@ -138,7 +138,7 @@ class Farm {
   String? productiveLine5;
   String? imgSignature;
   String? creationDate;
-  int userId;
+  int? userId;
   String? comments;
   String? plantsDistance1;
   String? groovesDistance1;
@@ -159,16 +159,16 @@ class Farm {
 
   Farm({
     this.id_farm, 
-    required this.imgBeneficiario, 
-    required this.firstName, 
+    this.imgBeneficiario, 
+    this.firstName, 
     this.secondName, 
-    required this.firstSurname, 
+    this.firstSurname, 
     this.secondSurname, 
-    required this.nitProducer, 
-    required this.expedition, 
-    required this.birthdate, 
+    this.nitProducer, 
+    this.expedition, 
+    this.birthdate, 
     this.ethnicity, 
-    required this.celphone1, 
+    this.celphone1, 
     this.celphone2, 
     this.email, 
     this.gender, 
@@ -181,29 +181,29 @@ class Farm {
     this.dateSpouse, 
     this.celphoneSpouse, 
     this.emailSpouse, 
-    required this.nameFarm, 
-    required this.municipality, 
+    this.nameFarm, 
+    this.municipality, 
     this.corregimiento, 
-    required this.vereda, 
-    required this.possession, 
-    required this.totalExtension, 
-    required this.cropsArea, 
-    required this.freeArea, 
-    required this.conservationArea, 
+    this.vereda, 
+    this.possession, 
+    this.totalExtension, 
+    this.cropsArea, 
+    this.freeArea, 
+    this.conservationArea, 
     this.currentProjects, 
     this.agrochemical, 
     this.bestPractices, 
     this.otherAreas, 
     this.afluentes, 
     this.vocationAndLandUse, 
-    required this.productiveLine, 
+    this.productiveLine, 
     this.certificationType, 
-    required this.purlieuNorth, 
-    required this.purlieuSouth, 
-    required this.purlieuEast, 
-    required this.purlieuWest, 
+    this.purlieuNorth, 
+    this.purlieuSouth, 
+    this.purlieuEast, 
+    this.purlieuWest, 
     this.altura, 
-    required this.latitudeLongitude, 
+    this.latitudeLongitude, 
     this.anosPropiedad, 
     this.productiveLine1, 
     this.productiveLine2, 
@@ -259,7 +259,7 @@ class Farm {
     this.coordenates3, 
     this.useType3, 
     this.promKgComercializateValu3, 
-    required this.projectId, 
+    this.projectId, 
     this.productLine4Pecuaria, 
     this.breed, 
     this.cantAnimals, 
@@ -288,7 +288,7 @@ class Farm {
     this.productiveLine5, 
     this.imgSignature, 
     this.creationDate, 
-    required this.userId, 
+    this.userId, 
     this.comments, 
     this.plantsDistance1, 
     this.groovesDistance1, 
@@ -514,6 +514,9 @@ class Farm {
     exist.afluentes = farm.afluentes;
     exist.vocationAndLandUse = farm.vocationAndLandUse;
     exist.productiveLine = farm.productiveLine;
+    exist.productiveLine1 = farm.productiveLine1;
+    exist.productiveLine2 = farm.productiveLine2;
+    exist.productiveLine3 = farm.productiveLine3;
     exist.certificationType = farm.certificationType;
     exist.purlieuNorth = farm.purlieuNorth;
     exist.purlieuSouth = farm.purlieuSouth;
@@ -622,7 +625,6 @@ class Farm {
     exist.timeCreation = farm.timeCreation;
     exist.typeofanimal = farm.typeofanimal;
     exist.typeofanimal5 = farm.typeofanimal5;
-
   }
 
 }

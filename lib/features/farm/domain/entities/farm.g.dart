@@ -892,7 +892,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.birthdate.length * 3;
+  {
+    final value = object.birthdate;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.breed;
     if (value != null) {
@@ -977,7 +982,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.celphone1.length * 3;
+  {
+    final value = object.celphone1;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.celphone2;
     if (value != null) {
@@ -1014,7 +1024,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.conservationArea.length * 3;
+  {
+    final value = object.conservationArea;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.coordenates1;
     if (value != null) {
@@ -1093,7 +1108,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.cropsArea.length * 3;
+  {
+    final value = object.cropsArea;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.currentProjects;
     if (value != null) {
@@ -1130,7 +1150,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.expedition.length * 3;
+  {
+    final value = object.expedition;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.expeditionSpouse;
     if (value != null) {
@@ -1143,9 +1168,24 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.firstName.length * 3;
-  bytesCount += 3 + object.firstSurname.length * 3;
-  bytesCount += 3 + object.freeArea.length * 3;
+  {
+    final value = object.firstName;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
+  {
+    final value = object.firstSurname;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
+  {
+    final value = object.freeArea;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.fullnameSpouse;
     if (value != null) {
@@ -1182,7 +1222,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.imgBeneficiario.length * 3;
+  {
+    final value = object.imgBeneficiario;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.imgSignature;
     if (value != null) {
@@ -1231,7 +1276,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.latitudeLongitude.length * 3;
+  {
+    final value = object.latitudeLongitude;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.machines;
     if (value != null) {
@@ -1244,9 +1294,24 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.municipality.length * 3;
-  bytesCount += 3 + object.nameFarm.length * 3;
-  bytesCount += 3 + object.nitProducer.length * 3;
+  {
+    final value = object.municipality;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
+  {
+    final value = object.nameFarm;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
+  {
+    final value = object.nitProducer;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.nitSpouse;
     if (value != null) {
@@ -1313,7 +1378,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.possession.length * 3;
+  {
+    final value = object.possession;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.priceKgSoldLote4;
     if (value != null) {
@@ -1356,7 +1426,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.productiveLine.length * 3;
+  {
+    final value = object.productiveLine;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.productiveLine1;
     if (value != null) {
@@ -1423,10 +1498,30 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.purlieuEast.length * 3;
-  bytesCount += 3 + object.purlieuNorth.length * 3;
-  bytesCount += 3 + object.purlieuSouth.length * 3;
-  bytesCount += 3 + object.purlieuWest.length * 3;
+  {
+    final value = object.purlieuEast;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
+  {
+    final value = object.purlieuNorth;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
+  {
+    final value = object.purlieuSouth;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
+  {
+    final value = object.purlieuWest;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.scholarLevel;
     if (value != null) {
@@ -1469,7 +1564,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.totalExtension.length * 3;
+  {
+    final value = object.totalExtension;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.typeofanimal;
     if (value != null) {
@@ -1518,7 +1618,12 @@ int _farmEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  bytesCount += 3 + object.vereda.length * 3;
+  {
+    final value = object.vereda;
+    if (value != null) {
+      bytesCount += 3 + value.length * 3;
+    }
+  }
   {
     final value = object.vocationAndLandUse;
     if (value != null) {
@@ -1722,7 +1827,7 @@ Farm _farmDeserialize(
     aproxArea5: reader.readStringOrNull(offsets[16]),
     bestPractices: reader.readStringOrNull(offsets[17]),
     biopreparadosProduction: reader.readStringOrNull(offsets[18]),
-    birthdate: reader.readString(offsets[19]),
+    birthdate: reader.readStringOrNull(offsets[19]),
     breed: reader.readStringOrNull(offsets[20]),
     breed5: reader.readStringOrNull(offsets[21]),
     cantAnimals: reader.readStringOrNull(offsets[22]),
@@ -1737,14 +1842,14 @@ Farm _farmDeserialize(
     cantPlants1: reader.readStringOrNull(offsets[31]),
     cantPlants2: reader.readStringOrNull(offsets[32]),
     cantPlants3: reader.readStringOrNull(offsets[33]),
-    celphone1: reader.readString(offsets[34]),
+    celphone1: reader.readStringOrNull(offsets[34]),
     celphone2: reader.readStringOrNull(offsets[35]),
     celphoneSpouse: reader.readStringOrNull(offsets[36]),
     certificationType: reader.readStringOrNull(offsets[37]),
     comercializationType: reader.readStringOrNull(offsets[38]),
     comments: reader.readStringOrNull(offsets[39]),
     comunicationAvailable: reader.readStringOrNull(offsets[40]),
-    conservationArea: reader.readString(offsets[41]),
+    conservationArea: reader.readStringOrNull(offsets[41]),
     coordenates1: reader.readStringOrNull(offsets[42]),
     coordenates2: reader.readStringOrNull(offsets[43]),
     coordenates3: reader.readStringOrNull(offsets[44]),
@@ -1758,19 +1863,19 @@ Farm _farmDeserialize(
     cropStatus4: reader.readStringOrNull(offsets[52]),
     cropStatus5: reader.readStringOrNull(offsets[53]),
     cropTools: reader.readStringOrNull(offsets[54]),
-    cropsArea: reader.readString(offsets[55]),
+    cropsArea: reader.readStringOrNull(offsets[55]),
     currentProjects: reader.readStringOrNull(offsets[56]),
     dateSpouse: reader.readStringOrNull(offsets[57]),
     electricityAvailability: reader.readStringOrNull(offsets[58]),
     email: reader.readStringOrNull(offsets[59]),
     emailSpouse: reader.readStringOrNull(offsets[60]),
     ethnicity: reader.readStringOrNull(offsets[61]),
-    expedition: reader.readString(offsets[62]),
+    expedition: reader.readStringOrNull(offsets[62]),
     expeditionSpouse: reader.readStringOrNull(offsets[63]),
     firstAidKit: reader.readStringOrNull(offsets[64]),
-    firstName: reader.readString(offsets[65]),
-    firstSurname: reader.readString(offsets[66]),
-    freeArea: reader.readString(offsets[67]),
+    firstName: reader.readStringOrNull(offsets[65]),
+    firstSurname: reader.readStringOrNull(offsets[66]),
+    freeArea: reader.readStringOrNull(offsets[67]),
     fullnameSpouse: reader.readStringOrNull(offsets[68]),
     fumigateKit: reader.readStringOrNull(offsets[69]),
     gender: reader.readStringOrNull(offsets[70]),
@@ -1778,7 +1883,7 @@ Farm _farmDeserialize(
     groovesDistance2: reader.readStringOrNull(offsets[72]),
     groovesDistance3: reader.readStringOrNull(offsets[73]),
     id_farm: reader.readLongOrNull(offsets[74]),
-    imgBeneficiario: reader.readString(offsets[75]),
+    imgBeneficiario: reader.readStringOrNull(offsets[75]),
     imgSignature: reader.readStringOrNull(offsets[76]),
     implementationTecnologyLevel: reader.readStringOrNull(offsets[77]),
     irrigationSystem: reader.readStringOrNull(offsets[78]),
@@ -1788,12 +1893,12 @@ Farm _farmDeserialize(
     knowProductiveLine2: reader.readStringOrNull(offsets[82]),
     knowProductiveLine4: reader.readStringOrNull(offsets[83]),
     knowProductiveLine5: reader.readStringOrNull(offsets[84]),
-    latitudeLongitude: reader.readString(offsets[85]),
+    latitudeLongitude: reader.readStringOrNull(offsets[85]),
     machines: reader.readStringOrNull(offsets[86]),
     maritalStatus: reader.readStringOrNull(offsets[87]),
-    municipality: reader.readString(offsets[88]),
-    nameFarm: reader.readString(offsets[89]),
-    nitProducer: reader.readString(offsets[90]),
+    municipality: reader.readStringOrNull(offsets[88]),
+    nameFarm: reader.readStringOrNull(offsets[89]),
+    nitProducer: reader.readStringOrNull(offsets[90]),
     nitSpouse: reader.readStringOrNull(offsets[91]),
     numberPlaces: reader.readStringOrNull(offsets[92]),
     numberPlaces5: reader.readStringOrNull(offsets[93]),
@@ -1805,7 +1910,7 @@ Farm _farmDeserialize(
     plantsDistance1: reader.readStringOrNull(offsets[99]),
     plantsDistance2: reader.readStringOrNull(offsets[100]),
     plantsDistance3: reader.readStringOrNull(offsets[101]),
-    possession: reader.readString(offsets[102]),
+    possession: reader.readStringOrNull(offsets[102]),
     priceKgSoldLote4: reader.readStringOrNull(offsets[103]),
     priceKgSoldLote5: reader.readStringOrNull(offsets[104]),
     productLine1: reader.readStringOrNull(offsets[105]),
@@ -1813,23 +1918,23 @@ Farm _farmDeserialize(
     productLine3: reader.readStringOrNull(offsets[107]),
     productLine4Pecuaria: reader.readStringOrNull(offsets[108]),
     productLine5Pecuaria: reader.readStringOrNull(offsets[109]),
-    productiveLine: reader.readString(offsets[110]),
+    productiveLine: reader.readStringOrNull(offsets[110]),
     productiveLine1: reader.readStringOrNull(offsets[111]),
     productiveLine2: reader.readStringOrNull(offsets[112]),
     productiveLine3: reader.readStringOrNull(offsets[113]),
     productiveLine4: reader.readStringOrNull(offsets[114]),
     productiveLine5: reader.readStringOrNull(offsets[115]),
-    projectId: reader.readLong(offsets[116]),
+    projectId: reader.readLongOrNull(offsets[116]),
     projectParticipation: reader.readStringOrNull(offsets[117]),
     promKgComercializateValu2: reader.readStringOrNull(offsets[118]),
     promKgComercializateValu3: reader.readStringOrNull(offsets[119]),
     promKgComercializateValu4: reader.readStringOrNull(offsets[120]),
     promKgComercializateValu5: reader.readStringOrNull(offsets[121]),
     promKgComercializateValue: reader.readStringOrNull(offsets[122]),
-    purlieuEast: reader.readString(offsets[123]),
-    purlieuNorth: reader.readString(offsets[124]),
-    purlieuSouth: reader.readString(offsets[125]),
-    purlieuWest: reader.readString(offsets[126]),
+    purlieuEast: reader.readStringOrNull(offsets[123]),
+    purlieuNorth: reader.readStringOrNull(offsets[124]),
+    purlieuSouth: reader.readStringOrNull(offsets[125]),
+    purlieuWest: reader.readStringOrNull(offsets[126]),
     scholarLevel: reader.readStringOrNull(offsets[127]),
     secondName: reader.readStringOrNull(offsets[128]),
     secondSurname: reader.readStringOrNull(offsets[129]),
@@ -1837,17 +1942,17 @@ Farm _farmDeserialize(
     stageCrop2: reader.readStringOrNull(offsets[131]),
     stageCrop3: reader.readStringOrNull(offsets[132]),
     timeCreation: reader.readStringOrNull(offsets[133]),
-    totalExtension: reader.readString(offsets[134]),
+    totalExtension: reader.readStringOrNull(offsets[134]),
     typeofanimal: reader.readStringOrNull(offsets[135]),
     typeofanimal5: reader.readStringOrNull(offsets[136]),
     useType: reader.readStringOrNull(offsets[137]),
     useType2: reader.readStringOrNull(offsets[138]),
     useType3: reader.readStringOrNull(offsets[139]),
-    userId: reader.readLong(offsets[140]),
+    userId: reader.readLongOrNull(offsets[140]),
     variety1: reader.readStringOrNull(offsets[141]),
     variety2: reader.readStringOrNull(offsets[142]),
     variety3: reader.readStringOrNull(offsets[143]),
-    vereda: reader.readString(offsets[144]),
+    vereda: reader.readStringOrNull(offsets[144]),
     vocationAndLandUse: reader.readStringOrNull(offsets[145]),
     waterAvailable: reader.readStringOrNull(offsets[146]),
     workingCapital: reader.readStringOrNull(offsets[147]),
@@ -1902,7 +2007,7 @@ P _farmDeserializeProp<P>(
     case 18:
       return (reader.readStringOrNull(offset)) as P;
     case 19:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 20:
       return (reader.readStringOrNull(offset)) as P;
     case 21:
@@ -1932,7 +2037,7 @@ P _farmDeserializeProp<P>(
     case 33:
       return (reader.readStringOrNull(offset)) as P;
     case 34:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 35:
       return (reader.readStringOrNull(offset)) as P;
     case 36:
@@ -1946,7 +2051,7 @@ P _farmDeserializeProp<P>(
     case 40:
       return (reader.readStringOrNull(offset)) as P;
     case 41:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 42:
       return (reader.readStringOrNull(offset)) as P;
     case 43:
@@ -1974,7 +2079,7 @@ P _farmDeserializeProp<P>(
     case 54:
       return (reader.readStringOrNull(offset)) as P;
     case 55:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 56:
       return (reader.readStringOrNull(offset)) as P;
     case 57:
@@ -1988,17 +2093,17 @@ P _farmDeserializeProp<P>(
     case 61:
       return (reader.readStringOrNull(offset)) as P;
     case 62:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 63:
       return (reader.readStringOrNull(offset)) as P;
     case 64:
       return (reader.readStringOrNull(offset)) as P;
     case 65:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 66:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 67:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 68:
       return (reader.readStringOrNull(offset)) as P;
     case 69:
@@ -2014,7 +2119,7 @@ P _farmDeserializeProp<P>(
     case 74:
       return (reader.readLongOrNull(offset)) as P;
     case 75:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 76:
       return (reader.readStringOrNull(offset)) as P;
     case 77:
@@ -2034,17 +2139,17 @@ P _farmDeserializeProp<P>(
     case 84:
       return (reader.readStringOrNull(offset)) as P;
     case 85:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 86:
       return (reader.readStringOrNull(offset)) as P;
     case 87:
       return (reader.readStringOrNull(offset)) as P;
     case 88:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 89:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 90:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 91:
       return (reader.readStringOrNull(offset)) as P;
     case 92:
@@ -2068,7 +2173,7 @@ P _farmDeserializeProp<P>(
     case 101:
       return (reader.readStringOrNull(offset)) as P;
     case 102:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 103:
       return (reader.readStringOrNull(offset)) as P;
     case 104:
@@ -2084,7 +2189,7 @@ P _farmDeserializeProp<P>(
     case 109:
       return (reader.readStringOrNull(offset)) as P;
     case 110:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 111:
       return (reader.readStringOrNull(offset)) as P;
     case 112:
@@ -2096,7 +2201,7 @@ P _farmDeserializeProp<P>(
     case 115:
       return (reader.readStringOrNull(offset)) as P;
     case 116:
-      return (reader.readLong(offset)) as P;
+      return (reader.readLongOrNull(offset)) as P;
     case 117:
       return (reader.readStringOrNull(offset)) as P;
     case 118:
@@ -2110,13 +2215,13 @@ P _farmDeserializeProp<P>(
     case 122:
       return (reader.readStringOrNull(offset)) as P;
     case 123:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 124:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 125:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 126:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 127:
       return (reader.readStringOrNull(offset)) as P;
     case 128:
@@ -2132,7 +2237,7 @@ P _farmDeserializeProp<P>(
     case 133:
       return (reader.readStringOrNull(offset)) as P;
     case 134:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 135:
       return (reader.readStringOrNull(offset)) as P;
     case 136:
@@ -2144,7 +2249,7 @@ P _farmDeserializeProp<P>(
     case 139:
       return (reader.readStringOrNull(offset)) as P;
     case 140:
-      return (reader.readLong(offset)) as P;
+      return (reader.readLongOrNull(offset)) as P;
     case 141:
       return (reader.readStringOrNull(offset)) as P;
     case 142:
@@ -2152,7 +2257,7 @@ P _farmDeserializeProp<P>(
     case 143:
       return (reader.readStringOrNull(offset)) as P;
     case 144:
-      return (reader.readString(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 145:
       return (reader.readStringOrNull(offset)) as P;
     case 146:
@@ -2165,7 +2270,7 @@ P _farmDeserializeProp<P>(
 }
 
 Id _farmGetId(Farm object) {
-  return object.isarId;
+  return object.isarId ?? Isar.autoIncrement;
 }
 
 List<IsarLinkBase<dynamic>> _farmGetLinks(Farm object) {
@@ -5032,8 +5137,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> birthdateIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'birthdate',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> birthdateIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'birthdate',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> birthdateEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -5046,7 +5167,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> birthdateGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -5061,7 +5182,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> birthdateLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -5076,8 +5197,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> birthdateBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -7234,8 +7355,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> celphone1IsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'celphone1',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> celphone1IsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'celphone1',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> celphone1EqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -7248,7 +7385,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> celphone1GreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -7263,7 +7400,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> celphone1LessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -7278,8 +7415,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> celphone1Between(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -8251,8 +8388,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> conservationAreaIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'conservationArea',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> conservationAreaIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'conservationArea',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> conservationAreaEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -8265,7 +8418,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> conservationAreaGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -8280,7 +8433,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> conservationAreaLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -8295,8 +8448,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> conservationAreaBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -10279,8 +10432,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> cropsAreaIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'cropsArea',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> cropsAreaIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'cropsArea',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> cropsAreaEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -10293,7 +10462,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> cropsAreaGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -10308,7 +10477,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> cropsAreaLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -10323,8 +10492,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> cropsAreaBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -11293,8 +11462,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> expeditionIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'expedition',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> expeditionIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'expedition',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> expeditionEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -11307,7 +11492,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> expeditionGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -11322,7 +11507,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> expeditionLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -11337,8 +11522,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> expeditionBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -11715,8 +11900,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> firstNameIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'firstName',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> firstNameIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'firstName',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> firstNameEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -11729,7 +11930,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> firstNameGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -11744,7 +11945,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> firstNameLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -11759,8 +11960,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> firstNameBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -11845,8 +12046,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> firstSurnameIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'firstSurname',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> firstSurnameIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'firstSurname',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> firstSurnameEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -11859,7 +12076,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> firstSurnameGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -11874,7 +12091,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> firstSurnameLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -11889,8 +12106,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> firstSurnameBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -11975,8 +12192,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> freeAreaIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'freeArea',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> freeAreaIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'freeArea',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> freeAreaEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -11989,7 +12222,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> freeAreaGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -12004,7 +12237,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> freeAreaLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -12019,8 +12252,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> freeAreaBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -13046,8 +13279,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> imgBeneficiarioIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'imgBeneficiario',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> imgBeneficiarioIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'imgBeneficiario',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> imgBeneficiarioEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -13060,7 +13309,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> imgBeneficiarioGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -13075,7 +13324,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> imgBeneficiarioLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -13090,8 +13339,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> imgBeneficiarioBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -13650,7 +13899,23 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
-  QueryBuilder<Farm, Farm, QAfterFilterCondition> isarIdEqualTo(Id value) {
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> isarIdIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'isarId',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> isarIdIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'isarId',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> isarIdEqualTo(Id? value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'isarId',
@@ -13660,7 +13925,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> isarIdGreaterThan(
-    Id value, {
+    Id? value, {
     bool include = false,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -13673,7 +13938,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> isarIdLessThan(
-    Id value, {
+    Id? value, {
     bool include = false,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -13686,8 +13951,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> isarIdBetween(
-    Id lower,
-    Id upper, {
+    Id? lower,
+    Id? upper, {
     bool includeLower = true,
     bool includeUpper = true,
   }) {
@@ -14447,8 +14712,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> latitudeLongitudeIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'latitudeLongitude',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> latitudeLongitudeIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'latitudeLongitude',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> latitudeLongitudeEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -14461,7 +14742,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> latitudeLongitudeGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -14476,7 +14757,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> latitudeLongitudeLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -14491,8 +14772,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> latitudeLongitudeBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -14869,8 +15150,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> municipalityIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'municipality',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> municipalityIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'municipality',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> municipalityEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -14883,7 +15180,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> municipalityGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -14898,7 +15195,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> municipalityLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -14913,8 +15210,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> municipalityBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -14999,8 +15296,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> nameFarmIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'nameFarm',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> nameFarmIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'nameFarm',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> nameFarmEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -15013,7 +15326,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> nameFarmGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -15028,7 +15341,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> nameFarmLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -15043,8 +15356,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> nameFarmBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -15128,8 +15441,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> nitProducerIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'nitProducer',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> nitProducerIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'nitProducer',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> nitProducerEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -15142,7 +15471,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> nitProducerGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -15157,7 +15486,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> nitProducerLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -15172,8 +15501,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> nitProducerBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -16870,8 +17199,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> possessionIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'possession',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> possessionIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'possession',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> possessionEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -16884,7 +17229,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> possessionGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -16899,7 +17244,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> possessionLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -16914,8 +17259,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> possessionBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -18032,8 +18377,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> productiveLineIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'productiveLine',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> productiveLineIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'productiveLine',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> productiveLineEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -18046,7 +18407,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> productiveLineGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -18061,7 +18422,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> productiveLineLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -18076,8 +18437,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> productiveLineBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -18892,7 +19253,23 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
-  QueryBuilder<Farm, Farm, QAfterFilterCondition> projectIdEqualTo(int value) {
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> projectIdIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'projectId',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> projectIdIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'projectId',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> projectIdEqualTo(int? value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'projectId',
@@ -18902,7 +19279,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> projectIdGreaterThan(
-    int value, {
+    int? value, {
     bool include = false,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -18915,7 +19292,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> projectIdLessThan(
-    int value, {
+    int? value, {
     bool include = false,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -18928,8 +19305,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> projectIdBetween(
-    int lower,
-    int upper, {
+    int? lower,
+    int? upper, {
     bool includeLower = true,
     bool includeUpper = true,
   }) {
@@ -19875,8 +20252,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuEastIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'purlieuEast',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuEastIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'purlieuEast',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuEastEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -19889,7 +20282,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuEastGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -19904,7 +20297,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuEastLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -19919,8 +20312,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuEastBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -20005,8 +20398,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuNorthIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'purlieuNorth',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuNorthIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'purlieuNorth',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuNorthEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -20019,7 +20428,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuNorthGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -20034,7 +20443,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuNorthLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -20049,8 +20458,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuNorthBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -20135,8 +20544,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuSouthIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'purlieuSouth',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuSouthIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'purlieuSouth',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuSouthEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -20149,7 +20574,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuSouthGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -20164,7 +20589,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuSouthLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -20179,8 +20604,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuSouthBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -20265,8 +20690,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuWestIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'purlieuWest',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuWestIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'purlieuWest',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuWestEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -20279,7 +20720,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuWestGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -20294,7 +20735,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuWestLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -20309,8 +20750,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> purlieuWestBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -21417,8 +21858,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> totalExtensionIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'totalExtension',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> totalExtensionIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'totalExtension',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> totalExtensionEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -21431,7 +21888,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> totalExtensionGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -21446,7 +21903,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> totalExtensionLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -21461,8 +21918,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> totalExtensionBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -22273,7 +22730,23 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
-  QueryBuilder<Farm, Farm, QAfterFilterCondition> userIdEqualTo(int value) {
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> userIdIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'userId',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> userIdIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'userId',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> userIdEqualTo(int? value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'userId',
@@ -22283,7 +22756,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> userIdGreaterThan(
-    int value, {
+    int? value, {
     bool include = false,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -22296,7 +22769,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> userIdLessThan(
-    int value, {
+    int? value, {
     bool include = false,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -22309,8 +22782,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> userIdBetween(
-    int lower,
-    int upper, {
+    int? lower,
+    int? upper, {
     bool includeLower = true,
     bool includeUpper = true,
   }) {
@@ -22760,8 +23233,24 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> veredaIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'vereda',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> veredaIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'vereda',
+      ));
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterFilterCondition> veredaEqualTo(
-    String value, {
+    String? value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
@@ -22774,7 +23263,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> veredaGreaterThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -22789,7 +23278,7 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> veredaLessThan(
-    String value, {
+    String? value, {
     bool include = false,
     bool caseSensitive = true,
   }) {
@@ -22804,8 +23293,8 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
   }
 
   QueryBuilder<Farm, Farm, QAfterFilterCondition> veredaBetween(
-    String lower,
-    String upper, {
+    String? lower,
+    String? upper, {
     bool includeLower = true,
     bool includeUpper = true,
     bool caseSensitive = true,
@@ -28123,7 +28612,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> birthdateProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> birthdateProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'birthdate');
     });
@@ -28218,7 +28707,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> celphone1Property() {
+  QueryBuilder<Farm, String?, QQueryOperations> celphone1Property() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'celphone1');
     });
@@ -28261,7 +28750,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> conservationAreaProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> conservationAreaProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'conservationArea');
     });
@@ -28345,7 +28834,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> cropsAreaProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> cropsAreaProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'cropsArea');
     });
@@ -28388,7 +28877,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> expeditionProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> expeditionProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'expedition');
     });
@@ -28406,19 +28895,19 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> firstNameProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> firstNameProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'firstName');
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> firstSurnameProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> firstSurnameProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'firstSurname');
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> freeAreaProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> freeAreaProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'freeArea');
     });
@@ -28466,7 +28955,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> imgBeneficiarioProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> imgBeneficiarioProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'imgBeneficiario');
     });
@@ -28527,7 +29016,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> latitudeLongitudeProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> latitudeLongitudeProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'latitudeLongitude');
     });
@@ -28545,19 +29034,19 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> municipalityProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> municipalityProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'municipality');
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> nameFarmProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> nameFarmProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'nameFarm');
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> nitProducerProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> nitProducerProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'nitProducer');
     });
@@ -28630,7 +29119,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> possessionProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> possessionProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'possession');
     });
@@ -28678,7 +29167,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> productiveLineProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> productiveLineProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'productiveLine');
     });
@@ -28714,7 +29203,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, int, QQueryOperations> projectIdProperty() {
+  QueryBuilder<Farm, int?, QQueryOperations> projectIdProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'projectId');
     });
@@ -28761,25 +29250,25 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> purlieuEastProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> purlieuEastProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'purlieuEast');
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> purlieuNorthProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> purlieuNorthProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'purlieuNorth');
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> purlieuSouthProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> purlieuSouthProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'purlieuSouth');
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> purlieuWestProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> purlieuWestProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'purlieuWest');
     });
@@ -28827,7 +29316,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> totalExtensionProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> totalExtensionProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'totalExtension');
     });
@@ -28863,7 +29352,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, int, QQueryOperations> userIdProperty() {
+  QueryBuilder<Farm, int?, QQueryOperations> userIdProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'userId');
     });
@@ -28887,7 +29376,7 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Farm, String, QQueryOperations> veredaProperty() {
+  QueryBuilder<Farm, String?, QQueryOperations> veredaProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'vereda');
     });

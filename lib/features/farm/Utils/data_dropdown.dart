@@ -77,8 +77,8 @@ class DropdownOptionsProvider {
   static List<DropdownMenuItem<String>> geViasAccesot() {
     return const[
       DropdownMenuItem(value: "Via_primaria", child: Text("Via primaria")),
-      DropdownMenuItem(value: "Via_secundaria", child: Text("Via pecundaria")),
-      DropdownMenuItem(value: "Via_Terciaria", child: Text("Via_Terciaria")),
+      DropdownMenuItem(value: "Via_secundaria", child: Text("Via secundaria")),
+      DropdownMenuItem(value: "Via_Terciaria", child: Text("Via terciaria")),
       DropdownMenuItem(value: "Camino_herradura", child: Text("Camino de herradura")),
     ];
   }
