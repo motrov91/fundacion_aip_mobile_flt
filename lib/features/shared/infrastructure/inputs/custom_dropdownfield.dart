@@ -34,7 +34,7 @@ class CustomDropdownField extends StatelessWidget {
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
         hintText: 'Seleccione',
-        hintStyle: TextStyle(color: Colors.orange)
+        hintStyle: const TextStyle(color: Colors.orange)
       ),
       style: TextStyle(color: Colors.grey[800]),
       value: selectedValue,

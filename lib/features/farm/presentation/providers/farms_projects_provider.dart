@@ -52,7 +52,7 @@ class FarmsProjectProvider extends ChangeNotifier{
       farmCharacterizationList = response!;
 
       for(var farm in farmCharacterizationList){
-         _isarRepository.createFarm(farm);
+         await _isarRepository.createFarm(farm);
       }
 
       localstorageFarmsList = await _isarRepository.loadFarms();
@@ -65,6 +65,21 @@ class FarmsProjectProvider extends ChangeNotifier{
     } catch(e){
       throw e;
     }
+  }
+
+  Future updateFarmInList(Farm farm) async{
+    localstorageFarmsList = localstorageFarmsList.map(
+      (e){
+        if(e.isarId != farm.isarId) return e;
+
+        Farm.extractAsignations(e, farm);
+
+        return e;
+      }).toList();
+
+      notifyListeners();
+
+      return;
   }
 
 }

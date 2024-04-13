@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/features/auth/presentation/providers/auth_provider.dart';
-import 'package:fundacion_aip_mobile/features/projects/presentation/providers/projects_provider.dart';
 import 'package:fundacion_aip_mobile/features/projects/projects.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';

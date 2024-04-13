@@ -1,7 +1,11 @@
+import 'dart:convert';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:fundacion_aip_mobile/features/farm/domain/entities/farm.dart';
 import 'package:fundacion_aip_mobile/features/farm/farm.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/create_farm_screen.dart';
+import 'package:fundacion_aip_mobile/features/farm/presentation/screens/edit_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +31,8 @@ class Characterizationcreen extends StatelessWidget {
     final colors = Theme.of(context).colorScheme.primary;
     final farmListService =
         Provider.of<FarmsProjectProvider>(context).localstorageFarmsList;
+    
+    final createFarmService = Provider.of<CreateFarmProvider>(context);
 
     return Scaffold(
       key: scaffoldKey,
@@ -36,7 +42,12 @@ class Characterizationcreen extends StatelessWidget {
       appBar: const CustomAppbar(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.greenAccent[600],
-        onPressed: () => context.pushNamed(CreateFarmScreen.name),
+        onPressed: () {
+          createFarmService.createNewFarm = Farm();
+          createFarmService.setImgSignature = null;
+          createFarmService.setImgFarm = null;
+          context.pushNamed(CreateFarmScreen.name);
+        },
         child: Icon(Icons.list_alt_outlined,
             color: Theme.of(context).colorScheme.primary),
       ),
@@ -85,8 +96,21 @@ class Characterizationcreen extends StatelessWidget {
                   itemBuilder: (context, index) => FadeInRight(
                       duration: const Duration(milliseconds: 500),
                       delay: Duration(milliseconds: index * 300),
-                      child: ItemList(
-                        item: farmListService[index],
+                      child: GestureDetector(
+                        onTap: (){
+                          //Le asigna a createNewFarm el item seleccionado de la lista para editarlo
+                          createFarmService.createNewFarm = farmListService[index];
+
+                          if(farmListService[index].imgSignature != null){
+                            final decodeSignature = base64.decode(farmListService[index].imgSignature!);
+                            createFarmService.setImgSignature = decodeSignature;
+                          }
+
+                          context.pushNamed(EditFarmScreen.name);
+                        },
+                        child: ItemList(
+                          item: farmListService[index],
+                        ),
                       ))),
             ),
           )

@@ -15,8 +15,8 @@ class LocalStorageRepositoryImpl extends LocalStorageRepository{
   }
 
   @override
-  Future<void> editFarm(int id) {
-    return datasource.editFarm(id);
+  Future<Farm?> editFarm(Farm farm) {
+    return datasource.editFarm(farm);
   }
 
   @override

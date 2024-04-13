@@ -54,9 +54,9 @@ class ItemList extends StatelessWidget {
           const Spacer(),
           SizedBox(
             width: 50,
-            child: item.isModified == null 
-                ? Container()
-                : item.isModified == true 
+            child: item.imgBeneficiario == null && item.imgSignature == null
+              ? const SizedBox()
+              : item.isModified == true 
                 ? IconButton(
                     onPressed: () {},
                     icon: Icon(

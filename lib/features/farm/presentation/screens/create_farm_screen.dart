@@ -59,8 +59,6 @@ class CreateFarmScreen extends StatelessWidget {
             // Ejecuta la creacion del predio y el almacenamiento en la bdlocal y en la lista
             createFarm(farmService, projectService);
 
-
-            
             context.pushReplacementNamed(Characterizationcreen.name);
           }else{
             showCumtomSnackbar(context);

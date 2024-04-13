@@ -11,12 +11,13 @@ class SearchFarm extends StatelessWidget {
     final colors = Theme.of(context).colorScheme.primary;
 
     var outlineInputBorder = OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(
-                color: colors.withOpacity(0.4),
-                width: 2
-              )
-            );
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(
+        color: colors.withOpacity(0.4),
+        width: 2
+      )
+    );
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(8),
@@ -24,6 +25,7 @@ class SearchFarm extends StatelessWidget {
       child: Form(
         child: TextFormField(
           decoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             filled: true,
             fillColor: colors.withOpacity(0.2),
             enabledBorder: outlineInputBorder,

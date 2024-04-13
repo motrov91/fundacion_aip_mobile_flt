@@ -57,8 +57,20 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
         return existFarm;
       });
     }else{
+
+      final test;
+
       //Insertar
-      final test = isar.writeTxnSync(() => isar.farms.putSync(farm));
+      if(farm.id_farm != null){
+        farm.isModified = false;
+        test = isar.writeTxnSync(() => isar.farms.putSync(farm));
+      } else {
+        test = isar.writeTxnSync(() => isar.farms.putSync(farm));
+      }
+       
+
+
+
       Farm? newFarmCreated = await isar.farms
       .filter()
       .isarIdEqualTo(test)
@@ -74,16 +86,40 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
   }
 
   @override
-  Future<void> editFarm(int id) {
-    // TODO: implement editFarm
-    throw UnimplementedError();
+  Future<Farm?> editFarm(Farm farm) async{
+    //Creamos una instancia de la base de datos
+    final isar = await db;
+
+    Farm? farmToEdit = await isar.farms
+      .filter()
+      .isarIdEqualTo(farm.isarId)
+      .findFirst();
+
+    if( farmToEdit?.isarId != null){
+
+      isar.writeTxnSync(() async {
+
+        Farm.extractAsignations(farmToEdit!, farm);
+        farmToEdit.isModified = true;
+        isar.farms.putSync(farmToEdit);
+        return farmToEdit;
+
+      });
+
+      return null;
+
+    }else{
+      return null;
+    }  
   }
 
   @override
   Future<List<Farm>> loadFarms() async {
     final isar = await db;
 
-    return isar.farms.where().findAll();
+    final List<Farm> localDataList = await isar.farms.where().findAll();
+
+    return localDataList;
   }
 
 }

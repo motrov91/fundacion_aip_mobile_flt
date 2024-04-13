@@ -1,6 +1,3 @@
-
-import 'dart:typed_data';
-
 import 'package:isar/isar.dart';
 
 part 'farm.g.dart';
@@ -469,14 +466,6 @@ class Farm {
   }
 
   static void extractAsignations(Farm exist, Farm farm){
-    //* Funciona pero tengo me crea una nueva instancia de Farm
-    // existProps.forEach((key, value){
-    //   if(farmProps.containsKey(key)){
-    //     if(existProps[key] == farmProps[key]){
-    //       existProps[key] = farmProps[key];
-    //     }
-    //   }
-    // });
     exist.id_farm = farm.id_farm;
     exist.imgBeneficiario = farm.imgBeneficiario;
     exist.firstName = farm.firstName;
@@ -627,6 +616,7 @@ class Farm {
     exist.timeCreation = farm.timeCreation;
     exist.typeofanimal = farm.typeofanimal;
     exist.typeofanimal5 = farm.typeofanimal5;
+    exist.isModified = false;
   }
 
 }

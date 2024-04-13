@@ -1,5 +1,6 @@
 
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/create_farm_screen.dart';
+import 'package:fundacion_aip_mobile/features/farm/presentation/screens/edit_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/tutorial/screens/tutorial_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -43,6 +44,12 @@ final appRouter = GoRouter(
       path: '/create_farm',
       name: CreateFarmScreen.name,
       builder: (context, state) =>  CreateFarmScreen()
+    ),
+    //* Edit farm
+    GoRoute(
+      path: '/edit_farm',
+      name: EditFarmScreen.name,
+      builder: (context, state) =>  const EditFarmScreen()
     ),
 
   ]);

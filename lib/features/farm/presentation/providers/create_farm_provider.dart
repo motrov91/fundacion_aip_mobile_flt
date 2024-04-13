@@ -28,12 +28,12 @@ class CreateFarmProvider extends ChangeNotifier{
   
 
   //* Asigna el valor obtenido de la firma, a la variable privada _imageSignature 
-  set setImgSignature(Uint8List val) {
+  set setImgSignature(Uint8List? val) {
     _imageSignature = val;
     notifyListeners();
   }
 
-  set setImgFarm(ImageProvider val){
+  set setImgFarm(ImageProvider? val){
     _imageFarm = val;
     notifyListeners();
   }
@@ -42,17 +42,15 @@ class CreateFarmProvider extends ChangeNotifier{
   bool isValidForm(){
 
     //TODO: FALTA AGRREGAR LA FOTO DEL PREDIO
-
     if(createNewFarm.firstName == null) return false;
     if(createNewFarm.firstSurname == null) return false;
     if(createNewFarm.nitProducer == null) return false;
     if(createNewFarm.expedition == null) return false;
     if(createNewFarm.birthdate == null) return false;
-    if(createNewFarm.nitProducer == null) return false;
+    if(createNewFarm.celphone1 == null) return false;
     if(createNewFarm.nameFarm == null) return false;
     if(createNewFarm.municipality == null) return false;
     if(createNewFarm.vereda == null) return false;
-    if(createNewFarm.possession == null) return false;
     if(createNewFarm.totalExtension == null) return false;
     if(createNewFarm.cropsArea == null) return false;
     if(createNewFarm.freeArea == null) return false;
@@ -92,8 +90,26 @@ class CreateFarmProvider extends ChangeNotifier{
     final farm = await _isarRepository.createFarm(createNewFarm);
 
     createNewFarm = Farm();   
+    _imageFarm = null;
 
     return farm; 
 
+  }
+
+  Future<Farm?> updateFarm() async{
+
+    if(_imageSignature != null){
+      createNewFarm.imgSignature = base64Encode(_imageSignature!);
+    }
+
+    //Recibe el farm que se va a editar y se guarda en createNewFarm porque
+    //tiene la estructura del farm
+    final farmEdited = await _isarRepository.editFarm(createNewFarm);
+
+    if(farmEdited != null){
+      return farmEdited;
+    }else{
+      return null;
+    }
   }
 }
