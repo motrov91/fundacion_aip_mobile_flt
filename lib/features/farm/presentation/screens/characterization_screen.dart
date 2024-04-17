@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
@@ -104,6 +105,13 @@ class Characterizationcreen extends StatelessWidget {
                           if(farmListService[index].imgSignature != null){
                             final decodeSignature = base64.decode(farmListService[index].imgSignature!);
                             createFarmService.setImgSignature = decodeSignature;
+                          }
+
+                          if(farmListService[index].imgBeneficiario != null){
+                            final Uint8List decodeFarm = base64.decode(farmListService[index].imgBeneficiario!);
+                            
+
+                            createFarmService.setImgFarm = MemoryImage(decodeFarm);
                           }
 
                           context.pushNamed(EditFarmScreen.name);

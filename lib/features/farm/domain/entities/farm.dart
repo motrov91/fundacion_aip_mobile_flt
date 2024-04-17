@@ -1,5 +1,7 @@
 import 'package:isar/isar.dart';
 
+import 'agricultural_registry.dart';
+
 part 'farm.g.dart';
 
 @collection
@@ -155,6 +157,9 @@ class Farm {
   String? typeofanimal;
   String? typeofanimal5;
   bool? isModified;
+
+  @Backlink(to: "farmFK")
+  final agriculturalFK = IsarLink<AgriculturalRegistry>();
 
   Farm({
     this.id_farm, 

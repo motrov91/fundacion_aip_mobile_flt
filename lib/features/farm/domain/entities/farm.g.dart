@@ -764,7 +764,15 @@ const FarmSchema = CollectionSchema(
   deserializeProp: _farmDeserializeProp,
   idName: r'isarId',
   indexes: {},
-  links: {},
+  links: {
+    r'agriculturalFK': LinkSchema(
+      id: 5843124797256933552,
+      name: r'agriculturalFK',
+      target: r'AgriculturalRegistry',
+      single: true,
+      linkName: r'farmFK',
+    )
+  },
   embeddedSchemas: {},
   getId: _farmGetId,
   getLinks: _farmGetLinks,
@@ -2274,11 +2282,13 @@ Id _farmGetId(Farm object) {
 }
 
 List<IsarLinkBase<dynamic>> _farmGetLinks(Farm object) {
-  return [];
+  return [object.agriculturalFK];
 }
 
 void _farmAttach(IsarCollection<dynamic> col, Id id, Farm object) {
   object.isarId = id;
+  object.agriculturalFK.attach(
+      col, col.isar.collection<AgriculturalRegistry>(), r'agriculturalFK', id);
 }
 
 extension FarmQueryWhereSort on QueryBuilder<Farm, Farm, QWhere> {
@@ -23820,7 +23830,20 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
 
 extension FarmQueryObject on QueryBuilder<Farm, Farm, QFilterCondition> {}
 
-extension FarmQueryLinks on QueryBuilder<Farm, Farm, QFilterCondition> {}
+extension FarmQueryLinks on QueryBuilder<Farm, Farm, QFilterCondition> {
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> agriculturalFK(
+      FilterQuery<AgriculturalRegistry> q) {
+    return QueryBuilder.apply(this, (query) {
+      return query.link(q, r'agriculturalFK');
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition> agriculturalFKIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.linkLength(r'agriculturalFK', 0, true, 0, true);
+    });
+  }
+}
 
 extension FarmQuerySortBy on QueryBuilder<Farm, Farm, QSortBy> {
   QueryBuilder<Farm, Farm, QAfterSortBy> sortByAccessRoads() {

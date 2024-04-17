@@ -44,16 +44,23 @@ class EditFarmScreen extends StatelessWidget {
     
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: color,
-        onPressed: (){
-          if(farmService.isValidForm()){
-            updateFarm(farmService, projectService);
-          }
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FilledButton.icon(onPressed: (){}, icon: const Icon(Icons.note_alt_outlined), label: const Text('Reg. Agrícola')),
+          FilledButton.icon(onPressed: (){}, icon: const Icon(Icons.note_alt_outlined), label: const Text('Reg. Piscicola')),
 
-          context.pushReplacementNamed(Characterizationcreen.name);
-        },
-        child: const Icon(Icons.save, color: Colors.white,),
+          FilledButton.icon(
+            icon: const Icon(Icons.save),
+            label: const Text('Guardar predio'),
+            onPressed: (){
+              if(farmService.isValidForm()){
+                updateFarm(farmService, projectService);
+              }
+              context.pushReplacementNamed(Characterizationcreen.name);
+            },
+          ),
+        ],
       ),
       body: SizedBox(
         width: double.infinity,
