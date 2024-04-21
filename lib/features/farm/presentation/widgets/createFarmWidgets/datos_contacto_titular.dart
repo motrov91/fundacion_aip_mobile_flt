@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:fundacion_aip_mobile/features/farm/farm.dart';
 import 'package:fundacion_aip_mobile/features/shared/infrastructure/inputs/inputs.dart';
-import '../../Utils/data_dropdown.dart';
+import '../../../Utils/data_dropdown.dart';
 
 class DatosContactoTitular extends StatelessWidget {
   const DatosContactoTitular({super.key});

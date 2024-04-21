@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:fundacion_aip_mobile/features/farm/Utils/data_dropdown.dart';
 import 'package:fundacion_aip_mobile/features/shared/infrastructure/inputs/inputs.dart';
 
-import '../providers/create_farm_provider.dart';
+import '../../providers/create_farm_provider.dart';
 
 class DatosLote1 extends StatelessWidget {
   const DatosLote1({super.key});

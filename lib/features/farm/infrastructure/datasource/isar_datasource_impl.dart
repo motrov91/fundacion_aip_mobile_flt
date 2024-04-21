@@ -4,6 +4,8 @@ import 'package:fundacion_aip_mobile/features/farm/domain/entities/farm.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 
+import '../../domain/entities/agricultural_registry.dart';
+
 class IsarDatasourceImpl extends LocalStorageDatasource{
 
   late Future<Isar> db;
@@ -17,7 +19,7 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
     final dir = await getApplicationDocumentsDirectory();
 
     if(Isar.instanceNames.isEmpty){
-      return await Isar.open([FarmSchema], directory: dir.path);
+      return await Isar.open([FarmSchema, AgriculturalRegistrySchema], directory: dir.path);
     }
 
     return Future.value(Isar.getInstance());
@@ -59,7 +61,7 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
     }else{
 
       final test;
-
+      
       //Insertar
       if(farm.id_farm != null){
         farm.isModified = false;

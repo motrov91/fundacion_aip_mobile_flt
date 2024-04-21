@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/features/farm/farm.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/providers/farms_projects_provider.dart';
+import 'package:fundacion_aip_mobile/features/farm/presentation/screens/agricultural_registry_screen.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/characterization_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -47,8 +48,12 @@ class EditFarmScreen extends StatelessWidget {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FilledButton.icon(onPressed: (){}, icon: const Icon(Icons.note_alt_outlined), label: const Text('Reg. Agrícola')),
-          FilledButton.icon(onPressed: (){}, icon: const Icon(Icons.note_alt_outlined), label: const Text('Reg. Piscicola')),
+          FilledButton.icon(onPressed: (){
+
+            context.pushReplacementNamed(AgriculturalRegistryScreen.name);
+
+          }, icon: const Icon(Icons.note_alt_outlined), label: const Text('Reg. Agrícola')),
+          //FilledButton.icon(onPressed: (){}, icon: const Icon(Icons.note_alt_outlined), label: const Text('Reg. Piscicola')),
 
           FilledButton.icon(
             icon: const Icon(Icons.save),

@@ -35,6 +35,11 @@ const appMenuItems = <MenuItem>[
     icon: Icons.info_outline
   ),
   MenuItem(
+    title: "Registro agricola", 
+    link: '/agriculturalRegistry', 
+    icon: Icons.account_circle_outlined
+  ),
+  MenuItem(
     title: "Cerrar Sesión", 
     link: '/login', 
     icon: Icons.logout_outlined

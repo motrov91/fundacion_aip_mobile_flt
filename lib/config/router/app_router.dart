@@ -1,4 +1,5 @@
 
+import 'package:fundacion_aip_mobile/features/farm/presentation/screens/agricultural_registry_screen.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/create_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/edit_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/tutorial/screens/tutorial_screen.dart';
@@ -50,6 +51,11 @@ final appRouter = GoRouter(
       path: '/edit_farm',
       name: EditFarmScreen.name,
       builder: (context, state) =>  const EditFarmScreen()
+    ),
+    GoRoute(
+      path: '/agriculturalRegistry',
+      name: AgriculturalRegistryScreen.name,
+      builder: (context, state) =>  const AgriculturalRegistryScreen()
     ),
 
   ]);

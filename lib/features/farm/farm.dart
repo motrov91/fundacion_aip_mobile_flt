@@ -2,15 +2,15 @@ export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/search_f
 
 export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/item_list.dart';
 
-export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/datos_visita.dart';
-export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/Datos_lote2.dart';
-export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/datos_lote1.dart';
-export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/datos_lote3.dart';
-export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/datos_lote4.dart';
-export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/datos_lote5.dart';
-export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/datos_aprendizaje.dart';
-export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/datos_contacto_titular.dart';
-export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/datos_predio.dart';
+export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/createFarmWidgets/datos_visita.dart';
+export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/createFarmWidgets/Datos_lote2.dart';
+export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/createFarmWidgets/datos_lote1.dart';
+export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/createFarmWidgets/datos_lote3.dart';
+export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/createFarmWidgets/datos_lote4.dart';
+export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/createFarmWidgets/datos_lote5.dart';
+export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/createFarmWidgets/datos_aprendizaje.dart';
+export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/createFarmWidgets/datos_contacto_titular.dart';
+export 'package:fundacion_aip_mobile/features/farm/presentation/widgets/createFarmWidgets/datos_predio.dart';
 
 
 //SERVICE
