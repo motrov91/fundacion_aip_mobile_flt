@@ -74,7 +74,6 @@ class _QuestionItemState extends State<QuestionItem> {
                           value: e.key,
                           groupValue: selectedOptions,
                           onChanged: (value) {
-                            print('respuesta${index + widget.index}');
                             agriculturalProvider.setSelectedOption('respuesta${index + widget.index}', value);
                           });
                     }).toList(),
@@ -90,7 +89,6 @@ class _QuestionItemState extends State<QuestionItem> {
                       )
                     ),
                     onChanged: (value){
-                      print('comment${index + widget.index}');
                       agriculturalProvider.setSelectedOption('comment${index + widget.index}', value);
                     },
                   )

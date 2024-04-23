@@ -23,5 +23,10 @@ class LocalStorageRepositoryImpl extends LocalStorageRepository{
   Future<List<Farm>> loadFarms() {
     return datasource.loadFarms();
   }
+  
+  @override
+  Future<List<Farm>> getSinchronizationPending() {
+    return datasource.getSinchronizationPending();
+  }
 
 }

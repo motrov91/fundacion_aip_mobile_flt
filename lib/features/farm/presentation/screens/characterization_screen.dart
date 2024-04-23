@@ -121,7 +121,8 @@ class Characterizationcreen extends StatelessWidget {
                         ),
                       ))),
             ),
-          )
+          ),
+          const SizedBox(height: 40,)
         ],
       ),
     );

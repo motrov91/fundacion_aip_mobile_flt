@@ -65,6 +65,7 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
       //Insertar
       if(farm.id_farm != null){
         farm.isModified = false;
+        farm.haveAgriculturalRegistry = false;
         test = isar.writeTxnSync(() => isar.farms.putSync(farm));
       } else {
         test = isar.writeTxnSync(() => isar.farms.putSync(farm));
@@ -122,6 +123,19 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
     final List<Farm> localDataList = await isar.farms.where().findAll();
 
     return localDataList;
+  }
+  
+  @override
+  Future<List<Farm>> getSinchronizationPending() async{
+    //Creamos una instancia de la base de datos
+    final isar = await db;
+
+    List<Farm>? farmsPendings = await isar.farms
+      .filter()
+      .isModifiedEqualTo(true)
+      .findAll();
+
+    return farmsPendings;
   }
 
 }

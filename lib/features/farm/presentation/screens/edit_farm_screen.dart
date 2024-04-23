@@ -32,7 +32,6 @@ class EditFarmScreen extends StatelessWidget {
 
     final editFarm = Provider.of<CreateFarmProvider>(context).createNewFarm;
     Uint8List bytes = base64Decode('');
-    
 
     final color = Theme.of(context).colorScheme.primary;
 
@@ -48,11 +47,15 @@ class EditFarmScreen extends StatelessWidget {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FilledButton.icon(onPressed: (){
-
-            context.pushReplacementNamed(AgriculturalRegistryScreen.name);
-
-          }, icon: const Icon(Icons.note_alt_outlined), label: const Text('Reg. Agrícola')),
+          FilledButton.icon(
+            onPressed: editFarm.haveAgriculturalRegistry == true 
+              ? null
+              : (){
+                  
+                  context.pushReplacementNamed(AgriculturalRegistryScreen.name);
+                }, 
+              icon: const Icon(Icons.note_alt_outlined), label: const Text('Reg. Agrícola')
+          ),
           //FilledButton.icon(onPressed: (){}, icon: const Icon(Icons.note_alt_outlined), label: const Text('Reg. Piscicola')),
 
           FilledButton.icon(

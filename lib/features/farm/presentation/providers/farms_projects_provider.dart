@@ -14,6 +14,7 @@ class FarmsProjectProvider extends ChangeNotifier{
 
   List<Farm> farmCharacterizationList = [];
   List<Farm> localstorageFarmsList = [];
+  List<Farm> sinchronizationPendingFarmsList = [];
 
   int? _projectId;
   bool isLoading = false;
@@ -35,7 +36,6 @@ class FarmsProjectProvider extends ChangeNotifier{
     notifyListeners();
 
     return;
-
   }
 
 
@@ -80,6 +80,14 @@ class FarmsProjectProvider extends ChangeNotifier{
       notifyListeners();
 
       return;
+  }
+
+  Future<List<Farm>> pendingSinchronization() async{
+    
+    sinchronizationPendingFarmsList = await _isarRepository.getSinchronizationPending();
+    notifyListeners();
+
+    return sinchronizationPendingFarmsList;
   }
 
 }

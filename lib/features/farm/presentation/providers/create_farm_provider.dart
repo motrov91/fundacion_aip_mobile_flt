@@ -86,6 +86,7 @@ class CreateFarmProvider extends ChangeNotifier{
     createNewFarm.userId = int.parse(user!);
     createNewFarm.isarId = null;
     createNewFarm.isModified = true;
+    createNewFarm.haveAgriculturalRegistry = false;
 
     final farm = await _isarRepository.createFarm(createNewFarm);
 
@@ -102,6 +103,8 @@ class CreateFarmProvider extends ChangeNotifier{
       createNewFarm.imgSignature = base64Encode(_imageSignature!);
     }
 
+    print('DESDE CREATE_FARM_PROVIDER  ${createNewFarm.haveAgriculturalRegistry}');
+
     //Recibe el farm que se va a editar y se guarda en createNewFarm porque
     //tiene la estructura del farm
     final farmEdited = await _isarRepository.editFarm(createNewFarm);
@@ -112,4 +115,5 @@ class CreateFarmProvider extends ChangeNotifier{
       return null;
     }
   }
+
 }

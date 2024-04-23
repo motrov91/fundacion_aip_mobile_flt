@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/auth/auth.dart';
 import '../../features/farm/presentation/screens/characterization_screen.dart';
+import '../../features/farm/presentation/screens/sincronization_pending_farms_screen.dart';
 import '../../features/projects/projects.dart';
 
 final appRouter = GoRouter(
@@ -39,6 +40,12 @@ final appRouter = GoRouter(
       path: '/',
       name: Characterizationcreen.name,
       builder: (context, state) => const Characterizationcreen()
+    ),
+
+    GoRoute(
+      path: '/synchronization_pending',
+      name: SincronizationPendingFarmScreen.name,
+      builder: (context, state) => SincronizationPendingFarmScreen()
     ),
     //* Create farm
     GoRoute(

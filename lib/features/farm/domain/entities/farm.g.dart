@@ -387,373 +387,378 @@ const FarmSchema = CollectionSchema(
       name: r'groovesDistance3',
       type: IsarType.string,
     ),
-    r'id_farm': PropertySchema(
+    r'haveAgriculturalRegistry': PropertySchema(
       id: 74,
+      name: r'haveAgriculturalRegistry',
+      type: IsarType.bool,
+    ),
+    r'id_farm': PropertySchema(
+      id: 75,
       name: r'id_farm',
       type: IsarType.long,
     ),
     r'imgBeneficiario': PropertySchema(
-      id: 75,
+      id: 76,
       name: r'imgBeneficiario',
       type: IsarType.string,
     ),
     r'imgSignature': PropertySchema(
-      id: 76,
+      id: 77,
       name: r'imgSignature',
       type: IsarType.string,
     ),
     r'implementationTecnologyLevel': PropertySchema(
-      id: 77,
+      id: 78,
       name: r'implementationTecnologyLevel',
       type: IsarType.string,
     ),
     r'irrigationSystem': PropertySchema(
-      id: 78,
+      id: 79,
       name: r'irrigationSystem',
       type: IsarType.string,
     ),
     r'isModified': PropertySchema(
-      id: 79,
+      id: 80,
       name: r'isModified',
       type: IsarType.bool,
     ),
     r'knowPeoductiveLine3': PropertySchema(
-      id: 80,
+      id: 81,
       name: r'knowPeoductiveLine3',
       type: IsarType.string,
     ),
     r'knowProductiveLine1': PropertySchema(
-      id: 81,
+      id: 82,
       name: r'knowProductiveLine1',
       type: IsarType.string,
     ),
     r'knowProductiveLine2': PropertySchema(
-      id: 82,
+      id: 83,
       name: r'knowProductiveLine2',
       type: IsarType.string,
     ),
     r'knowProductiveLine4': PropertySchema(
-      id: 83,
+      id: 84,
       name: r'knowProductiveLine4',
       type: IsarType.string,
     ),
     r'knowProductiveLine5': PropertySchema(
-      id: 84,
+      id: 85,
       name: r'knowProductiveLine5',
       type: IsarType.string,
     ),
     r'latitudeLongitude': PropertySchema(
-      id: 85,
+      id: 86,
       name: r'latitudeLongitude',
       type: IsarType.string,
     ),
     r'machines': PropertySchema(
-      id: 86,
+      id: 87,
       name: r'machines',
       type: IsarType.string,
     ),
     r'maritalStatus': PropertySchema(
-      id: 87,
+      id: 88,
       name: r'maritalStatus',
       type: IsarType.string,
     ),
     r'municipality': PropertySchema(
-      id: 88,
+      id: 89,
       name: r'municipality',
       type: IsarType.string,
     ),
     r'nameFarm': PropertySchema(
-      id: 89,
+      id: 90,
       name: r'nameFarm',
       type: IsarType.string,
     ),
     r'nitProducer': PropertySchema(
-      id: 90,
+      id: 91,
       name: r'nitProducer',
       type: IsarType.string,
     ),
     r'nitSpouse': PropertySchema(
-      id: 91,
+      id: 92,
       name: r'nitSpouse',
       type: IsarType.string,
     ),
     r'numberPlaces': PropertySchema(
-      id: 92,
+      id: 93,
       name: r'numberPlaces',
       type: IsarType.string,
     ),
     r'numberPlaces5': PropertySchema(
-      id: 93,
+      id: 94,
       name: r'numberPlaces5',
       type: IsarType.string,
     ),
     r'nutritionType': PropertySchema(
-      id: 94,
+      id: 95,
       name: r'nutritionType',
       type: IsarType.string,
     ),
     r'nutritionType5': PropertySchema(
-      id: 95,
+      id: 96,
       name: r'nutritionType5',
       type: IsarType.string,
     ),
     r'organization': PropertySchema(
-      id: 96,
+      id: 97,
       name: r'organization',
       type: IsarType.string,
     ),
     r'otherAreas': PropertySchema(
-      id: 97,
+      id: 98,
       name: r'otherAreas',
       type: IsarType.string,
     ),
     r'participateInProyects': PropertySchema(
-      id: 98,
+      id: 99,
       name: r'participateInProyects',
       type: IsarType.string,
     ),
     r'plantsDistance1': PropertySchema(
-      id: 99,
+      id: 100,
       name: r'plantsDistance1',
       type: IsarType.string,
     ),
     r'plantsDistance2': PropertySchema(
-      id: 100,
+      id: 101,
       name: r'plantsDistance2',
       type: IsarType.string,
     ),
     r'plantsDistance3': PropertySchema(
-      id: 101,
+      id: 102,
       name: r'plantsDistance3',
       type: IsarType.string,
     ),
     r'possession': PropertySchema(
-      id: 102,
+      id: 103,
       name: r'possession',
       type: IsarType.string,
     ),
     r'priceKgSoldLote4': PropertySchema(
-      id: 103,
+      id: 104,
       name: r'priceKgSoldLote4',
       type: IsarType.string,
     ),
     r'priceKgSoldLote5': PropertySchema(
-      id: 104,
+      id: 105,
       name: r'priceKgSoldLote5',
       type: IsarType.string,
     ),
     r'productLine1': PropertySchema(
-      id: 105,
+      id: 106,
       name: r'productLine1',
       type: IsarType.string,
     ),
     r'productLine2': PropertySchema(
-      id: 106,
+      id: 107,
       name: r'productLine2',
       type: IsarType.string,
     ),
     r'productLine3': PropertySchema(
-      id: 107,
+      id: 108,
       name: r'productLine3',
       type: IsarType.string,
     ),
     r'productLine4Pecuaria': PropertySchema(
-      id: 108,
+      id: 109,
       name: r'productLine4Pecuaria',
       type: IsarType.string,
     ),
     r'productLine5Pecuaria': PropertySchema(
-      id: 109,
+      id: 110,
       name: r'productLine5Pecuaria',
       type: IsarType.string,
     ),
     r'productiveLine': PropertySchema(
-      id: 110,
+      id: 111,
       name: r'productiveLine',
       type: IsarType.string,
     ),
     r'productiveLine1': PropertySchema(
-      id: 111,
+      id: 112,
       name: r'productiveLine1',
       type: IsarType.string,
     ),
     r'productiveLine2': PropertySchema(
-      id: 112,
+      id: 113,
       name: r'productiveLine2',
       type: IsarType.string,
     ),
     r'productiveLine3': PropertySchema(
-      id: 113,
+      id: 114,
       name: r'productiveLine3',
       type: IsarType.string,
     ),
     r'productiveLine4': PropertySchema(
-      id: 114,
+      id: 115,
       name: r'productiveLine4',
       type: IsarType.string,
     ),
     r'productiveLine5': PropertySchema(
-      id: 115,
+      id: 116,
       name: r'productiveLine5',
       type: IsarType.string,
     ),
     r'projectId': PropertySchema(
-      id: 116,
+      id: 117,
       name: r'projectId',
       type: IsarType.long,
     ),
     r'projectParticipation': PropertySchema(
-      id: 117,
+      id: 118,
       name: r'projectParticipation',
       type: IsarType.string,
     ),
     r'promKgComercializateValu2': PropertySchema(
-      id: 118,
+      id: 119,
       name: r'promKgComercializateValu2',
       type: IsarType.string,
     ),
     r'promKgComercializateValu3': PropertySchema(
-      id: 119,
+      id: 120,
       name: r'promKgComercializateValu3',
       type: IsarType.string,
     ),
     r'promKgComercializateValu4': PropertySchema(
-      id: 120,
+      id: 121,
       name: r'promKgComercializateValu4',
       type: IsarType.string,
     ),
     r'promKgComercializateValu5': PropertySchema(
-      id: 121,
+      id: 122,
       name: r'promKgComercializateValu5',
       type: IsarType.string,
     ),
     r'promKgComercializateValue': PropertySchema(
-      id: 122,
+      id: 123,
       name: r'promKgComercializateValue',
       type: IsarType.string,
     ),
     r'purlieuEast': PropertySchema(
-      id: 123,
+      id: 124,
       name: r'purlieuEast',
       type: IsarType.string,
     ),
     r'purlieuNorth': PropertySchema(
-      id: 124,
+      id: 125,
       name: r'purlieuNorth',
       type: IsarType.string,
     ),
     r'purlieuSouth': PropertySchema(
-      id: 125,
+      id: 126,
       name: r'purlieuSouth',
       type: IsarType.string,
     ),
     r'purlieuWest': PropertySchema(
-      id: 126,
+      id: 127,
       name: r'purlieuWest',
       type: IsarType.string,
     ),
     r'scholarLevel': PropertySchema(
-      id: 127,
+      id: 128,
       name: r'scholarLevel',
       type: IsarType.string,
     ),
     r'secondName': PropertySchema(
-      id: 128,
+      id: 129,
       name: r'secondName',
       type: IsarType.string,
     ),
     r'secondSurname': PropertySchema(
-      id: 129,
+      id: 130,
       name: r'secondSurname',
       type: IsarType.string,
     ),
     r'stageCrop1': PropertySchema(
-      id: 130,
+      id: 131,
       name: r'stageCrop1',
       type: IsarType.string,
     ),
     r'stageCrop2': PropertySchema(
-      id: 131,
+      id: 132,
       name: r'stageCrop2',
       type: IsarType.string,
     ),
     r'stageCrop3': PropertySchema(
-      id: 132,
+      id: 133,
       name: r'stageCrop3',
       type: IsarType.string,
     ),
     r'timeCreation': PropertySchema(
-      id: 133,
+      id: 134,
       name: r'timeCreation',
       type: IsarType.string,
     ),
     r'totalExtension': PropertySchema(
-      id: 134,
+      id: 135,
       name: r'totalExtension',
       type: IsarType.string,
     ),
     r'typeofanimal': PropertySchema(
-      id: 135,
+      id: 136,
       name: r'typeofanimal',
       type: IsarType.string,
     ),
     r'typeofanimal5': PropertySchema(
-      id: 136,
+      id: 137,
       name: r'typeofanimal5',
       type: IsarType.string,
     ),
     r'useType': PropertySchema(
-      id: 137,
+      id: 138,
       name: r'useType',
       type: IsarType.string,
     ),
     r'useType2': PropertySchema(
-      id: 138,
+      id: 139,
       name: r'useType2',
       type: IsarType.string,
     ),
     r'useType3': PropertySchema(
-      id: 139,
+      id: 140,
       name: r'useType3',
       type: IsarType.string,
     ),
     r'userId': PropertySchema(
-      id: 140,
+      id: 141,
       name: r'userId',
       type: IsarType.long,
     ),
     r'variety1': PropertySchema(
-      id: 141,
+      id: 142,
       name: r'variety1',
       type: IsarType.string,
     ),
     r'variety2': PropertySchema(
-      id: 142,
+      id: 143,
       name: r'variety2',
       type: IsarType.string,
     ),
     r'variety3': PropertySchema(
-      id: 143,
+      id: 144,
       name: r'variety3',
       type: IsarType.string,
     ),
     r'vereda': PropertySchema(
-      id: 144,
+      id: 145,
       name: r'vereda',
       type: IsarType.string,
     ),
     r'vocationAndLandUse': PropertySchema(
-      id: 145,
+      id: 146,
       name: r'vocationAndLandUse',
       type: IsarType.string,
     ),
     r'waterAvailable': PropertySchema(
-      id: 146,
+      id: 147,
       name: r'waterAvailable',
       type: IsarType.string,
     ),
     r'workingCapital': PropertySchema(
-      id: 147,
+      id: 148,
       name: r'workingCapital',
       type: IsarType.string,
     )
@@ -1733,80 +1738,81 @@ void _farmSerialize(
   writer.writeString(offsets[71], object.groovesDistance1);
   writer.writeString(offsets[72], object.groovesDistance2);
   writer.writeString(offsets[73], object.groovesDistance3);
-  writer.writeLong(offsets[74], object.id_farm);
-  writer.writeString(offsets[75], object.imgBeneficiario);
-  writer.writeString(offsets[76], object.imgSignature);
-  writer.writeString(offsets[77], object.implementationTecnologyLevel);
-  writer.writeString(offsets[78], object.irrigationSystem);
-  writer.writeBool(offsets[79], object.isModified);
-  writer.writeString(offsets[80], object.knowPeoductiveLine3);
-  writer.writeString(offsets[81], object.knowProductiveLine1);
-  writer.writeString(offsets[82], object.knowProductiveLine2);
-  writer.writeString(offsets[83], object.knowProductiveLine4);
-  writer.writeString(offsets[84], object.knowProductiveLine5);
-  writer.writeString(offsets[85], object.latitudeLongitude);
-  writer.writeString(offsets[86], object.machines);
-  writer.writeString(offsets[87], object.maritalStatus);
-  writer.writeString(offsets[88], object.municipality);
-  writer.writeString(offsets[89], object.nameFarm);
-  writer.writeString(offsets[90], object.nitProducer);
-  writer.writeString(offsets[91], object.nitSpouse);
-  writer.writeString(offsets[92], object.numberPlaces);
-  writer.writeString(offsets[93], object.numberPlaces5);
-  writer.writeString(offsets[94], object.nutritionType);
-  writer.writeString(offsets[95], object.nutritionType5);
-  writer.writeString(offsets[96], object.organization);
-  writer.writeString(offsets[97], object.otherAreas);
-  writer.writeString(offsets[98], object.participateInProyects);
-  writer.writeString(offsets[99], object.plantsDistance1);
-  writer.writeString(offsets[100], object.plantsDistance2);
-  writer.writeString(offsets[101], object.plantsDistance3);
-  writer.writeString(offsets[102], object.possession);
-  writer.writeString(offsets[103], object.priceKgSoldLote4);
-  writer.writeString(offsets[104], object.priceKgSoldLote5);
-  writer.writeString(offsets[105], object.productLine1);
-  writer.writeString(offsets[106], object.productLine2);
-  writer.writeString(offsets[107], object.productLine3);
-  writer.writeString(offsets[108], object.productLine4Pecuaria);
-  writer.writeString(offsets[109], object.productLine5Pecuaria);
-  writer.writeString(offsets[110], object.productiveLine);
-  writer.writeString(offsets[111], object.productiveLine1);
-  writer.writeString(offsets[112], object.productiveLine2);
-  writer.writeString(offsets[113], object.productiveLine3);
-  writer.writeString(offsets[114], object.productiveLine4);
-  writer.writeString(offsets[115], object.productiveLine5);
-  writer.writeLong(offsets[116], object.projectId);
-  writer.writeString(offsets[117], object.projectParticipation);
-  writer.writeString(offsets[118], object.promKgComercializateValu2);
-  writer.writeString(offsets[119], object.promKgComercializateValu3);
-  writer.writeString(offsets[120], object.promKgComercializateValu4);
-  writer.writeString(offsets[121], object.promKgComercializateValu5);
-  writer.writeString(offsets[122], object.promKgComercializateValue);
-  writer.writeString(offsets[123], object.purlieuEast);
-  writer.writeString(offsets[124], object.purlieuNorth);
-  writer.writeString(offsets[125], object.purlieuSouth);
-  writer.writeString(offsets[126], object.purlieuWest);
-  writer.writeString(offsets[127], object.scholarLevel);
-  writer.writeString(offsets[128], object.secondName);
-  writer.writeString(offsets[129], object.secondSurname);
-  writer.writeString(offsets[130], object.stageCrop1);
-  writer.writeString(offsets[131], object.stageCrop2);
-  writer.writeString(offsets[132], object.stageCrop3);
-  writer.writeString(offsets[133], object.timeCreation);
-  writer.writeString(offsets[134], object.totalExtension);
-  writer.writeString(offsets[135], object.typeofanimal);
-  writer.writeString(offsets[136], object.typeofanimal5);
-  writer.writeString(offsets[137], object.useType);
-  writer.writeString(offsets[138], object.useType2);
-  writer.writeString(offsets[139], object.useType3);
-  writer.writeLong(offsets[140], object.userId);
-  writer.writeString(offsets[141], object.variety1);
-  writer.writeString(offsets[142], object.variety2);
-  writer.writeString(offsets[143], object.variety3);
-  writer.writeString(offsets[144], object.vereda);
-  writer.writeString(offsets[145], object.vocationAndLandUse);
-  writer.writeString(offsets[146], object.waterAvailable);
-  writer.writeString(offsets[147], object.workingCapital);
+  writer.writeBool(offsets[74], object.haveAgriculturalRegistry);
+  writer.writeLong(offsets[75], object.id_farm);
+  writer.writeString(offsets[76], object.imgBeneficiario);
+  writer.writeString(offsets[77], object.imgSignature);
+  writer.writeString(offsets[78], object.implementationTecnologyLevel);
+  writer.writeString(offsets[79], object.irrigationSystem);
+  writer.writeBool(offsets[80], object.isModified);
+  writer.writeString(offsets[81], object.knowPeoductiveLine3);
+  writer.writeString(offsets[82], object.knowProductiveLine1);
+  writer.writeString(offsets[83], object.knowProductiveLine2);
+  writer.writeString(offsets[84], object.knowProductiveLine4);
+  writer.writeString(offsets[85], object.knowProductiveLine5);
+  writer.writeString(offsets[86], object.latitudeLongitude);
+  writer.writeString(offsets[87], object.machines);
+  writer.writeString(offsets[88], object.maritalStatus);
+  writer.writeString(offsets[89], object.municipality);
+  writer.writeString(offsets[90], object.nameFarm);
+  writer.writeString(offsets[91], object.nitProducer);
+  writer.writeString(offsets[92], object.nitSpouse);
+  writer.writeString(offsets[93], object.numberPlaces);
+  writer.writeString(offsets[94], object.numberPlaces5);
+  writer.writeString(offsets[95], object.nutritionType);
+  writer.writeString(offsets[96], object.nutritionType5);
+  writer.writeString(offsets[97], object.organization);
+  writer.writeString(offsets[98], object.otherAreas);
+  writer.writeString(offsets[99], object.participateInProyects);
+  writer.writeString(offsets[100], object.plantsDistance1);
+  writer.writeString(offsets[101], object.plantsDistance2);
+  writer.writeString(offsets[102], object.plantsDistance3);
+  writer.writeString(offsets[103], object.possession);
+  writer.writeString(offsets[104], object.priceKgSoldLote4);
+  writer.writeString(offsets[105], object.priceKgSoldLote5);
+  writer.writeString(offsets[106], object.productLine1);
+  writer.writeString(offsets[107], object.productLine2);
+  writer.writeString(offsets[108], object.productLine3);
+  writer.writeString(offsets[109], object.productLine4Pecuaria);
+  writer.writeString(offsets[110], object.productLine5Pecuaria);
+  writer.writeString(offsets[111], object.productiveLine);
+  writer.writeString(offsets[112], object.productiveLine1);
+  writer.writeString(offsets[113], object.productiveLine2);
+  writer.writeString(offsets[114], object.productiveLine3);
+  writer.writeString(offsets[115], object.productiveLine4);
+  writer.writeString(offsets[116], object.productiveLine5);
+  writer.writeLong(offsets[117], object.projectId);
+  writer.writeString(offsets[118], object.projectParticipation);
+  writer.writeString(offsets[119], object.promKgComercializateValu2);
+  writer.writeString(offsets[120], object.promKgComercializateValu3);
+  writer.writeString(offsets[121], object.promKgComercializateValu4);
+  writer.writeString(offsets[122], object.promKgComercializateValu5);
+  writer.writeString(offsets[123], object.promKgComercializateValue);
+  writer.writeString(offsets[124], object.purlieuEast);
+  writer.writeString(offsets[125], object.purlieuNorth);
+  writer.writeString(offsets[126], object.purlieuSouth);
+  writer.writeString(offsets[127], object.purlieuWest);
+  writer.writeString(offsets[128], object.scholarLevel);
+  writer.writeString(offsets[129], object.secondName);
+  writer.writeString(offsets[130], object.secondSurname);
+  writer.writeString(offsets[131], object.stageCrop1);
+  writer.writeString(offsets[132], object.stageCrop2);
+  writer.writeString(offsets[133], object.stageCrop3);
+  writer.writeString(offsets[134], object.timeCreation);
+  writer.writeString(offsets[135], object.totalExtension);
+  writer.writeString(offsets[136], object.typeofanimal);
+  writer.writeString(offsets[137], object.typeofanimal5);
+  writer.writeString(offsets[138], object.useType);
+  writer.writeString(offsets[139], object.useType2);
+  writer.writeString(offsets[140], object.useType3);
+  writer.writeLong(offsets[141], object.userId);
+  writer.writeString(offsets[142], object.variety1);
+  writer.writeString(offsets[143], object.variety2);
+  writer.writeString(offsets[144], object.variety3);
+  writer.writeString(offsets[145], object.vereda);
+  writer.writeString(offsets[146], object.vocationAndLandUse);
+  writer.writeString(offsets[147], object.waterAvailable);
+  writer.writeString(offsets[148], object.workingCapital);
 }
 
 Farm _farmDeserialize(
@@ -1890,80 +1896,81 @@ Farm _farmDeserialize(
     groovesDistance1: reader.readStringOrNull(offsets[71]),
     groovesDistance2: reader.readStringOrNull(offsets[72]),
     groovesDistance3: reader.readStringOrNull(offsets[73]),
-    id_farm: reader.readLongOrNull(offsets[74]),
-    imgBeneficiario: reader.readStringOrNull(offsets[75]),
-    imgSignature: reader.readStringOrNull(offsets[76]),
-    implementationTecnologyLevel: reader.readStringOrNull(offsets[77]),
-    irrigationSystem: reader.readStringOrNull(offsets[78]),
-    isModified: reader.readBoolOrNull(offsets[79]),
-    knowPeoductiveLine3: reader.readStringOrNull(offsets[80]),
-    knowProductiveLine1: reader.readStringOrNull(offsets[81]),
-    knowProductiveLine2: reader.readStringOrNull(offsets[82]),
-    knowProductiveLine4: reader.readStringOrNull(offsets[83]),
-    knowProductiveLine5: reader.readStringOrNull(offsets[84]),
-    latitudeLongitude: reader.readStringOrNull(offsets[85]),
-    machines: reader.readStringOrNull(offsets[86]),
-    maritalStatus: reader.readStringOrNull(offsets[87]),
-    municipality: reader.readStringOrNull(offsets[88]),
-    nameFarm: reader.readStringOrNull(offsets[89]),
-    nitProducer: reader.readStringOrNull(offsets[90]),
-    nitSpouse: reader.readStringOrNull(offsets[91]),
-    numberPlaces: reader.readStringOrNull(offsets[92]),
-    numberPlaces5: reader.readStringOrNull(offsets[93]),
-    nutritionType: reader.readStringOrNull(offsets[94]),
-    nutritionType5: reader.readStringOrNull(offsets[95]),
-    organization: reader.readStringOrNull(offsets[96]),
-    otherAreas: reader.readStringOrNull(offsets[97]),
-    participateInProyects: reader.readStringOrNull(offsets[98]),
-    plantsDistance1: reader.readStringOrNull(offsets[99]),
-    plantsDistance2: reader.readStringOrNull(offsets[100]),
-    plantsDistance3: reader.readStringOrNull(offsets[101]),
-    possession: reader.readStringOrNull(offsets[102]),
-    priceKgSoldLote4: reader.readStringOrNull(offsets[103]),
-    priceKgSoldLote5: reader.readStringOrNull(offsets[104]),
-    productLine1: reader.readStringOrNull(offsets[105]),
-    productLine2: reader.readStringOrNull(offsets[106]),
-    productLine3: reader.readStringOrNull(offsets[107]),
-    productLine4Pecuaria: reader.readStringOrNull(offsets[108]),
-    productLine5Pecuaria: reader.readStringOrNull(offsets[109]),
-    productiveLine: reader.readStringOrNull(offsets[110]),
-    productiveLine1: reader.readStringOrNull(offsets[111]),
-    productiveLine2: reader.readStringOrNull(offsets[112]),
-    productiveLine3: reader.readStringOrNull(offsets[113]),
-    productiveLine4: reader.readStringOrNull(offsets[114]),
-    productiveLine5: reader.readStringOrNull(offsets[115]),
-    projectId: reader.readLongOrNull(offsets[116]),
-    projectParticipation: reader.readStringOrNull(offsets[117]),
-    promKgComercializateValu2: reader.readStringOrNull(offsets[118]),
-    promKgComercializateValu3: reader.readStringOrNull(offsets[119]),
-    promKgComercializateValu4: reader.readStringOrNull(offsets[120]),
-    promKgComercializateValu5: reader.readStringOrNull(offsets[121]),
-    promKgComercializateValue: reader.readStringOrNull(offsets[122]),
-    purlieuEast: reader.readStringOrNull(offsets[123]),
-    purlieuNorth: reader.readStringOrNull(offsets[124]),
-    purlieuSouth: reader.readStringOrNull(offsets[125]),
-    purlieuWest: reader.readStringOrNull(offsets[126]),
-    scholarLevel: reader.readStringOrNull(offsets[127]),
-    secondName: reader.readStringOrNull(offsets[128]),
-    secondSurname: reader.readStringOrNull(offsets[129]),
-    stageCrop1: reader.readStringOrNull(offsets[130]),
-    stageCrop2: reader.readStringOrNull(offsets[131]),
-    stageCrop3: reader.readStringOrNull(offsets[132]),
-    timeCreation: reader.readStringOrNull(offsets[133]),
-    totalExtension: reader.readStringOrNull(offsets[134]),
-    typeofanimal: reader.readStringOrNull(offsets[135]),
-    typeofanimal5: reader.readStringOrNull(offsets[136]),
-    useType: reader.readStringOrNull(offsets[137]),
-    useType2: reader.readStringOrNull(offsets[138]),
-    useType3: reader.readStringOrNull(offsets[139]),
-    userId: reader.readLongOrNull(offsets[140]),
-    variety1: reader.readStringOrNull(offsets[141]),
-    variety2: reader.readStringOrNull(offsets[142]),
-    variety3: reader.readStringOrNull(offsets[143]),
-    vereda: reader.readStringOrNull(offsets[144]),
-    vocationAndLandUse: reader.readStringOrNull(offsets[145]),
-    waterAvailable: reader.readStringOrNull(offsets[146]),
-    workingCapital: reader.readStringOrNull(offsets[147]),
+    haveAgriculturalRegistry: reader.readBoolOrNull(offsets[74]),
+    id_farm: reader.readLongOrNull(offsets[75]),
+    imgBeneficiario: reader.readStringOrNull(offsets[76]),
+    imgSignature: reader.readStringOrNull(offsets[77]),
+    implementationTecnologyLevel: reader.readStringOrNull(offsets[78]),
+    irrigationSystem: reader.readStringOrNull(offsets[79]),
+    isModified: reader.readBoolOrNull(offsets[80]),
+    knowPeoductiveLine3: reader.readStringOrNull(offsets[81]),
+    knowProductiveLine1: reader.readStringOrNull(offsets[82]),
+    knowProductiveLine2: reader.readStringOrNull(offsets[83]),
+    knowProductiveLine4: reader.readStringOrNull(offsets[84]),
+    knowProductiveLine5: reader.readStringOrNull(offsets[85]),
+    latitudeLongitude: reader.readStringOrNull(offsets[86]),
+    machines: reader.readStringOrNull(offsets[87]),
+    maritalStatus: reader.readStringOrNull(offsets[88]),
+    municipality: reader.readStringOrNull(offsets[89]),
+    nameFarm: reader.readStringOrNull(offsets[90]),
+    nitProducer: reader.readStringOrNull(offsets[91]),
+    nitSpouse: reader.readStringOrNull(offsets[92]),
+    numberPlaces: reader.readStringOrNull(offsets[93]),
+    numberPlaces5: reader.readStringOrNull(offsets[94]),
+    nutritionType: reader.readStringOrNull(offsets[95]),
+    nutritionType5: reader.readStringOrNull(offsets[96]),
+    organization: reader.readStringOrNull(offsets[97]),
+    otherAreas: reader.readStringOrNull(offsets[98]),
+    participateInProyects: reader.readStringOrNull(offsets[99]),
+    plantsDistance1: reader.readStringOrNull(offsets[100]),
+    plantsDistance2: reader.readStringOrNull(offsets[101]),
+    plantsDistance3: reader.readStringOrNull(offsets[102]),
+    possession: reader.readStringOrNull(offsets[103]),
+    priceKgSoldLote4: reader.readStringOrNull(offsets[104]),
+    priceKgSoldLote5: reader.readStringOrNull(offsets[105]),
+    productLine1: reader.readStringOrNull(offsets[106]),
+    productLine2: reader.readStringOrNull(offsets[107]),
+    productLine3: reader.readStringOrNull(offsets[108]),
+    productLine4Pecuaria: reader.readStringOrNull(offsets[109]),
+    productLine5Pecuaria: reader.readStringOrNull(offsets[110]),
+    productiveLine: reader.readStringOrNull(offsets[111]),
+    productiveLine1: reader.readStringOrNull(offsets[112]),
+    productiveLine2: reader.readStringOrNull(offsets[113]),
+    productiveLine3: reader.readStringOrNull(offsets[114]),
+    productiveLine4: reader.readStringOrNull(offsets[115]),
+    productiveLine5: reader.readStringOrNull(offsets[116]),
+    projectId: reader.readLongOrNull(offsets[117]),
+    projectParticipation: reader.readStringOrNull(offsets[118]),
+    promKgComercializateValu2: reader.readStringOrNull(offsets[119]),
+    promKgComercializateValu3: reader.readStringOrNull(offsets[120]),
+    promKgComercializateValu4: reader.readStringOrNull(offsets[121]),
+    promKgComercializateValu5: reader.readStringOrNull(offsets[122]),
+    promKgComercializateValue: reader.readStringOrNull(offsets[123]),
+    purlieuEast: reader.readStringOrNull(offsets[124]),
+    purlieuNorth: reader.readStringOrNull(offsets[125]),
+    purlieuSouth: reader.readStringOrNull(offsets[126]),
+    purlieuWest: reader.readStringOrNull(offsets[127]),
+    scholarLevel: reader.readStringOrNull(offsets[128]),
+    secondName: reader.readStringOrNull(offsets[129]),
+    secondSurname: reader.readStringOrNull(offsets[130]),
+    stageCrop1: reader.readStringOrNull(offsets[131]),
+    stageCrop2: reader.readStringOrNull(offsets[132]),
+    stageCrop3: reader.readStringOrNull(offsets[133]),
+    timeCreation: reader.readStringOrNull(offsets[134]),
+    totalExtension: reader.readStringOrNull(offsets[135]),
+    typeofanimal: reader.readStringOrNull(offsets[136]),
+    typeofanimal5: reader.readStringOrNull(offsets[137]),
+    useType: reader.readStringOrNull(offsets[138]),
+    useType2: reader.readStringOrNull(offsets[139]),
+    useType3: reader.readStringOrNull(offsets[140]),
+    userId: reader.readLongOrNull(offsets[141]),
+    variety1: reader.readStringOrNull(offsets[142]),
+    variety2: reader.readStringOrNull(offsets[143]),
+    variety3: reader.readStringOrNull(offsets[144]),
+    vereda: reader.readStringOrNull(offsets[145]),
+    vocationAndLandUse: reader.readStringOrNull(offsets[146]),
+    waterAvailable: reader.readStringOrNull(offsets[147]),
+    workingCapital: reader.readStringOrNull(offsets[148]),
   );
   object.isarId = id;
   return object;
@@ -2125,9 +2132,9 @@ P _farmDeserializeProp<P>(
     case 73:
       return (reader.readStringOrNull(offset)) as P;
     case 74:
-      return (reader.readLongOrNull(offset)) as P;
+      return (reader.readBoolOrNull(offset)) as P;
     case 75:
-      return (reader.readStringOrNull(offset)) as P;
+      return (reader.readLongOrNull(offset)) as P;
     case 76:
       return (reader.readStringOrNull(offset)) as P;
     case 77:
@@ -2135,9 +2142,9 @@ P _farmDeserializeProp<P>(
     case 78:
       return (reader.readStringOrNull(offset)) as P;
     case 79:
-      return (reader.readBoolOrNull(offset)) as P;
-    case 80:
       return (reader.readStringOrNull(offset)) as P;
+    case 80:
+      return (reader.readBoolOrNull(offset)) as P;
     case 81:
       return (reader.readStringOrNull(offset)) as P;
     case 82:
@@ -2209,9 +2216,9 @@ P _farmDeserializeProp<P>(
     case 115:
       return (reader.readStringOrNull(offset)) as P;
     case 116:
-      return (reader.readLongOrNull(offset)) as P;
-    case 117:
       return (reader.readStringOrNull(offset)) as P;
+    case 117:
+      return (reader.readLongOrNull(offset)) as P;
     case 118:
       return (reader.readStringOrNull(offset)) as P;
     case 119:
@@ -2257,9 +2264,9 @@ P _farmDeserializeProp<P>(
     case 139:
       return (reader.readStringOrNull(offset)) as P;
     case 140:
-      return (reader.readLongOrNull(offset)) as P;
-    case 141:
       return (reader.readStringOrNull(offset)) as P;
+    case 141:
+      return (reader.readLongOrNull(offset)) as P;
     case 142:
       return (reader.readStringOrNull(offset)) as P;
     case 143:
@@ -2271,6 +2278,8 @@ P _farmDeserializeProp<P>(
     case 146:
       return (reader.readStringOrNull(offset)) as P;
     case 147:
+      return (reader.readStringOrNull(offset)) as P;
+    case 148:
       return (reader.readStringOrNull(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
@@ -13217,6 +13226,34 @@ extension FarmQueryFilter on QueryBuilder<Farm, Farm, QFilterCondition> {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'groovesDistance3',
         value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition>
+      haveAgriculturalRegistryIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'haveAgriculturalRegistry',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition>
+      haveAgriculturalRegistryIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'haveAgriculturalRegistry',
+      ));
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterFilterCondition>
+      haveAgriculturalRegistryEqualTo(bool? value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'haveAgriculturalRegistry',
+        value: value,
       ));
     });
   }
@@ -24734,6 +24771,18 @@ extension FarmQuerySortBy on QueryBuilder<Farm, Farm, QSortBy> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterSortBy> sortByHaveAgriculturalRegistry() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'haveAgriculturalRegistry', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterSortBy> sortByHaveAgriculturalRegistryDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'haveAgriculturalRegistry', Sort.desc);
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterSortBy> sortById_farm() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id_farm', Sort.asc);
@@ -26513,6 +26562,18 @@ extension FarmQuerySortThenBy on QueryBuilder<Farm, Farm, QSortThenBy> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QAfterSortBy> thenByHaveAgriculturalRegistry() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'haveAgriculturalRegistry', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Farm, Farm, QAfterSortBy> thenByHaveAgriculturalRegistryDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'haveAgriculturalRegistry', Sort.desc);
+    });
+  }
+
   QueryBuilder<Farm, Farm, QAfterSortBy> thenById_farm() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id_farm', Sort.asc);
@@ -27959,6 +28020,12 @@ extension FarmQueryWhereDistinct on QueryBuilder<Farm, Farm, QDistinct> {
     });
   }
 
+  QueryBuilder<Farm, Farm, QDistinct> distinctByHaveAgriculturalRegistry() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'haveAgriculturalRegistry');
+    });
+  }
+
   QueryBuilder<Farm, Farm, QDistinct> distinctById_farm() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'id_farm');
@@ -28969,6 +29036,13 @@ extension FarmQueryProperty on QueryBuilder<Farm, Farm, QQueryProperty> {
   QueryBuilder<Farm, String?, QQueryOperations> groovesDistance3Property() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'groovesDistance3');
+    });
+  }
+
+  QueryBuilder<Farm, bool?, QQueryOperations>
+      haveAgriculturalRegistryProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'haveAgriculturalRegistry');
     });
   }
 

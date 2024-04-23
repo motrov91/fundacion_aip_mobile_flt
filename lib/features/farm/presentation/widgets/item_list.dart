@@ -52,9 +52,9 @@ class ItemList extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          SizedBox(
+          SizedBox( 
             width: 50,
-            child: item.imgBeneficiario == null && item.imgSignature == null
+            child: item.imgBeneficiario == null || item.imgSignature == null
               ? const SizedBox()
               : item.isModified == true 
                 ? IconButton(

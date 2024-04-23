@@ -34,7 +34,7 @@ class AgriculturalRegistryProvider extends ChangeNotifier{
     return true;
   }
 
-  void addAgriculturalRegistry(Farm data) async {
+  Future<bool> addAgriculturalRegistry(Farm data) async {
     AgriculturalRegistry agriculturalRegistry = AgriculturalRegistry();
 
     const storage = FlutterSecureStorage();
@@ -136,12 +136,12 @@ class AgriculturalRegistryProvider extends ChangeNotifier{
 
     final response = await _localAgricultural.createNewAgriculturalRegistry(agriculturalRegistry);
 
-    print('response $response');
-
-    print('guardadp');
-    //TODO: FALTA VALIDAR SI SE CREA EL REGISTRO AGRICOLA REGRESE AL HOME O AL EDIT
-    //TODO: CAMBIAR EL ESTADO DEL BOTON PARA DESHABILITARLO Y QUE NO SE PUEDA CREAR OTRO REGISTRO PARA ESTE PREDIO
-    
+    if(response == null){
+      return false;
+    }else{
+      _selectedOptions.clear();
+      return true;
+    }  
   }
 
 }

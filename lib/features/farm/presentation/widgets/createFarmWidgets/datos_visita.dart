@@ -4,6 +4,7 @@ import 'dart:typed_data';
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/providers/create_farm_provider.dart';
 import 'package:fundacion_aip_mobile/features/shared/infrastructure/modals/signature_modal.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
@@ -164,24 +165,26 @@ class DatosVisita extends StatelessWidget {
         
             const SizedBox(height: 40,),
 
-            FilledButton(
-              onPressed: (){
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextFormField(
+                maxLines: 4,
+                maxLength: 100,
+                initialValue: farmService.createNewFarm.comments != '' ? farmService.createNewFarm.comments : null,
+                decoration: const InputDecoration(
+                  hintText: "Observaciones finales de la visita",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                  )
+                ),
+                onChanged: (value){
+                  farmService.createNewFarm.comments = value;
+                },
+              ),
+            ),
 
-                /*
-                 * Validamos los campos que son requeridos para la creacion del predio.
-                 * En caso de que no cumpla mostramos el snackbar con el error.
-                */
-                if(farmService.isValidForm()){
-                  //TODO: Realizar el almacenamiento en local.
-                  //TODO: Navegar a los predios
-                }else{
-                  showCumtomSnackbar(context);
-                }
-              },
-              child: const Text('Crear predio'),
-            )
-              
-        
+            const SizedBox(height: 110,)
+
           ],
         ),
       ),

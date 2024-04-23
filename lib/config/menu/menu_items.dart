@@ -21,7 +21,7 @@ const appMenuItems = <MenuItem>[
   ),
   MenuItem(
     title: "Predios sin sincronizar", 
-    link: '/pending_synchronization', 
+    link: '/synchronization_pending', 
     icon: Icons.upload_outlined
   ),
   MenuItem(
