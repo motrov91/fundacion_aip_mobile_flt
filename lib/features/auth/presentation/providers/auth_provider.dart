@@ -3,11 +3,18 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fundacion_aip_mobile/features/auth/domain/domain.dart';
 import 'package:fundacion_aip_mobile/features/auth/infrastructure/errors/auth_errors.dart';
 
+
+enum AuthStatus { checking, authenticated, notAuthenticated }
+
 class AuthProvider extends ChangeNotifier{
 
-  final AuthRepository _authRepository;
+  final AuthRepository authRepository;
 
   GlobalKey<FormState> formkeyLogin = GlobalKey<FormState>();
+
+  AuthStatus authStatus;
+
+  final storage = const FlutterSecureStorage();
 
   User? user;
   bool isLoading = false;
@@ -18,7 +25,10 @@ class AuthProvider extends ChangeNotifier{
   String? errorMesage;
 
   //Constructor
-  AuthProvider(this._authRepository);
+  AuthProvider({
+    this.authStatus = AuthStatus.checking,
+    required this.authRepository
+  });
 
   String? get getUsername => _username;
   String? get getPassword => _password;
@@ -37,7 +47,7 @@ class AuthProvider extends ChangeNotifier{
     try{
       isLoading = true;
       notifyListeners();
-      user = await _authRepository.login(username, password);
+      user = await authRepository.login(username, password);
 
       /**
         * Una vez se ha obtenido el usuario obtenemos los proyectos que tiene vinculados
@@ -54,6 +64,8 @@ class AuthProvider extends ChangeNotifier{
         projectsList = user!.projectByUser;
         isLoading = false;
         errorMesage = null;
+
+        authStatus = AuthStatus.authenticated;
         notifyListeners();
       }else{
         errorMesage = 'No se ha podido obtener el usuario';
@@ -79,7 +91,13 @@ class AuthProvider extends ChangeNotifier{
   }
 
   Future<void> logout([String? errorMesage]) async {
-    //TODO: Limpiar el token que se almeca persistentemente
+    const storage = FlutterSecureStorage();
+    await storage.delete(key: 'token');
+    authStatus = AuthStatus.notAuthenticated;
+  }
+
+  Future <String> readToken() async{
+    return await storage.read(key: 'token') ?? '';
   }
 
 }

@@ -24,7 +24,7 @@ Future<void> main() async{
     providers: [
       ChangeNotifierProvider(create: (context) => CreateFarmProvider(LocalStorageRepositoryImpl(datasource: IsarDatasourceImpl()))),
       ChangeNotifierProvider(create: (context) => ControlDotsPageviesProvider()),
-      ChangeNotifierProvider(create: (context) => AuthProvider(AuthRepositoryImpl()),),
+      ChangeNotifierProvider(create: (context) => AuthProvider(authRepository: AuthRepositoryImpl()),),
       ChangeNotifierProvider(create: (context) => ProjectsProvider()),
       ChangeNotifierProvider(create: (context) => FarmsProjectProvider(FarmRepositoryImpl(), LocalStorageRepositoryImpl(datasource: IsarDatasourceImpl()))),
       ChangeNotifierProvider(create: (context) => AgriculturalRegistryProvider(LocalAgriculturalRepositoryImpl(datasource: LocalAgriculturalRegistryDatasourceImpl())))

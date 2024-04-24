@@ -34,7 +34,11 @@ class UserMapper {
           projectNom: item['project_nom']
         )))
     );
+
+    
 }
+
+ 
 
 class DataSignin {
     final String token;
@@ -78,4 +82,9 @@ class DataSignin {
         "rol": rol,
         "projectsByUser": List<dynamic>.from(projectsByUser.map((x) => x.toJson())),
     };
+
+    @override
+    String toString() {
+    return 'user { token : $token } - {id : $id} - {username : $username';
+  }
 }

@@ -1,4 +1,5 @@
 
+import 'package:fundacion_aip_mobile/features/auth/presentation/screens/check_auth_status_screen.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/agricultural_registry_screen.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/create_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/edit_farm_screen.dart';
@@ -11,8 +12,15 @@ import '../../features/farm/presentation/screens/sincronization_pending_farms_sc
 import '../../features/projects/projects.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/tutorial',
+  initialLocation: '/cheking',
   routes: [
+
+    //* Primera pantalla (Verificación)
+    GoRoute(
+      path: '/cheking',
+      builder: (context, state) => const CheckAuthStatusScreen(),
+    ),
+
 
     //* Tutorial route
     GoRoute(
@@ -64,5 +72,5 @@ final appRouter = GoRouter(
       name: AgriculturalRegistryScreen.name,
       builder: (context, state) =>  const AgriculturalRegistryScreen()
     ),
-
-  ]);
+  ],
+);

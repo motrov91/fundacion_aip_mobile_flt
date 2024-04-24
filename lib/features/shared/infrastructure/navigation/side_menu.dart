@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/config/menu/menu_items.dart';
+import 'package:fundacion_aip_mobile/features/auth/auth.dart';
+import 'package:fundacion_aip_mobile/features/auth/presentation/providers/auth_provider.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class SideMenu extends StatelessWidget {
 
@@ -17,6 +20,8 @@ class SideMenu extends StatelessWidget {
     int navDrawerIndex = 0;
 
     final hasNotch = MediaQuery.of(context).viewPadding.top > 35;
+
+    final authService = Provider.of<AuthProvider>(context, listen: false);
 
     return NavigationDrawer(
       selectedIndex: navDrawerIndex,
@@ -59,6 +64,16 @@ class SideMenu extends StatelessWidget {
           label: Text(item.title)
         ),),
         
+        TextButton.icon(
+          onPressed: (){
+
+            authService.logout();
+            context.pushReplacementNamed(LoginScreen.name);
+
+          }, 
+          icon: const Icon(Icons.logout_rounded), 
+          label: const Text('Cerrar Sesión')
+        ),
       ]
     );
   }
