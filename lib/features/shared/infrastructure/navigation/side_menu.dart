@@ -63,6 +63,16 @@ class SideMenu extends StatelessWidget {
           icon: Icon(item.icon), 
           label: Text(item.title)
         ),),
+
+
+        TextButton.icon(
+          onPressed: (){
+            Provider.of<AuthProvider>(context, listen: false).logout();
+            context.pushReplacementNamed(LoginScreen.name);
+          }, 
+          icon: const Icon(Icons.logout_outlined), 
+          label: const Text('Cerrar Sesión')
+        )
         
         TextButton.icon(
           onPressed: (){

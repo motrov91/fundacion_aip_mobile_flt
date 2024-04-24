@@ -34,11 +34,5 @@ const appMenuItems = <MenuItem>[
     link: '/buttons', 
     icon: Icons.info_outline
   ),
-  // MenuItem(
-  //   title: "Registro agricola", 
-  //   link: '/agriculturalRegistry', 
-  //   icon: Icons.account_circle_outlined
-  // ),
-
 
 ];

@@ -48,7 +48,6 @@ class DropdownFormField extends StatelessWidget {
         ).toList(), 
         onChanged: (value){
           projectSelected = value!;
-
           farmService.setProjectId = projectSelected!;
         }
       ),

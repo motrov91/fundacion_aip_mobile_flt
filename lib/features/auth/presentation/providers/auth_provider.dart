@@ -33,6 +33,8 @@ class AuthProvider extends ChangeNotifier{
   String? get getUsername => _username;
   String? get getPassword => _password;
 
+  final storage = const FlutterSecureStorage();
+
   set setUsername(String value) {
     _username = value;
     notifyListeners();
@@ -55,8 +57,6 @@ class AuthProvider extends ChangeNotifier{
         * esto con el fin de mostrarlos en el dropdown de seleccionar el proyecto.
       */
       if(user != null){
-
-        const storage = FlutterSecureStorage();
 
         await storage.write(key: 'userId', value: user!.id.toString());
         await storage.write(key: 'token', value: user!.token.toString());
@@ -91,12 +91,11 @@ class AuthProvider extends ChangeNotifier{
   }
 
   Future<void> logout([String? errorMesage]) async {
-    const storage = FlutterSecureStorage();
     await storage.delete(key: 'token');
-    authStatus = AuthStatus.notAuthenticated;
+    return;
   }
 
-  Future <String> readToken() async{
+  Future<String> readToken() async {
     return await storage.read(key: 'token') ?? '';
   }
 
