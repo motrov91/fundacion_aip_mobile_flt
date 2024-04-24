@@ -90,11 +90,8 @@ class ProjectsScreen extends StatelessWidget {
                             width: 150,
                             child: FilledButton.tonal(
                               onPressed: () async {
-                                
-                                final user = userService!.id;
-                                final project = projectService.getProjectId;
                             
-                                await projectService.getCharaterizarionFarmsList(user, project!);
+                                await projectService.getCharaterizarionFarmsList();
                             
                                 if (projectService.isLoading) return;
                             

@@ -12,6 +12,10 @@ class DropdownFormField extends StatelessWidget {
 
   DropdownFormField({super.key});
 
+  void uploadProjectSelected(FarmsProjectProvider farmService) async {
+    await farmService.saveSelectedProject();
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -49,6 +53,8 @@ class DropdownFormField extends StatelessWidget {
         onChanged: (value){
           projectSelected = value!;
           farmService.setProjectId = projectSelected!;
+
+          uploadProjectSelected(farmService);
         }
       ),
     );

@@ -18,7 +18,6 @@ class Characterizationcreen extends StatelessWidget {
 
   const Characterizationcreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
 
@@ -30,6 +29,7 @@ class Characterizationcreen extends StatelessWidget {
         .copyWith(color: Theme.of(context).colorScheme.primary);
 
     final colors = Theme.of(context).colorScheme.primary;
+
     final farmListService =
         Provider.of<FarmsProjectProvider>(context).localstorageFarmsList;
     

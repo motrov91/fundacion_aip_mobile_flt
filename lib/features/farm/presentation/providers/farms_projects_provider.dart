@@ -12,20 +12,22 @@ class FarmsProjectProvider extends ChangeNotifier{
   //Instancia de la base de datos local
   final LocalStorageRepository _isarRepository;
 
+  final storage = FlutterSecureStorage();
+
   List<Farm> farmCharacterizationList = [];
   List<Farm> localstorageFarmsList = [];
   List<Farm> sinchronizationPendingFarmsList = [];
 
-  int? _projectId;
+  int? projectId;
   bool isLoading = false;
 
   //Constructor
   FarmsProjectProvider(this._farmRepository, this._isarRepository);
 
-  int? get getProjectId => _projectId;
+  int? get getProjectId => projectId;
 
   set setProjectId(int value) {
-    _projectId = value;
+    projectId = value;
     notifyListeners();
   }
 
@@ -38,16 +40,25 @@ class FarmsProjectProvider extends ChangeNotifier{
     return;
   }
 
+  Future<void> saveSelectedProject()async{
+    await storage.write(key: 'projectId', value: projectId.toString());
+  }
 
-  Future<List<Farm>>? getCharaterizarionFarmsList(int userId, int projectId) async{
+
+  Future<List<Farm>>? getCharaterizarionFarmsList() async{
     try{ 
       isLoading = true;
       notifyListeners();
 
-      const storage = FlutterSecureStorage();
-      await storage.write(key: 'projectId', value: projectId.toString());
+      final user = await storage.read(key: 'userId');
+      final project = await storage.read(key: 'projectId');
 
-      final response = await _farmRepository.getFarmsCharacterization(userId, projectId);
+      print('user $user');
+      print('project $project');
+
+      // await storage.write(key: 'projectId', value: projectId.toString());
+
+      final response = await _farmRepository.getFarmsCharacterization(int.parse(user!), int.parse(project!));
       
       farmCharacterizationList = response!;
 
