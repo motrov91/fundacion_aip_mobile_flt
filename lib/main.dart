@@ -8,12 +8,16 @@ import 'package:fundacion_aip_mobile/features/farm/infrastructure/repositories/l
 import 'package:fundacion_aip_mobile/features/farm/infrastructure/repositories/local_stororage_repository_impl.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/providers/agricultural_registry_provider.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/providers/farms_projects_provider.dart';
+import 'package:fundacion_aip_mobile/features/internetConnection/infrastructure/datasources/internet_connection_datasource_impl.dart';
+import 'package:fundacion_aip_mobile/features/internetConnection/presentation/providers/connection_status_provider.dart';
 import 'package:fundacion_aip_mobile/features/projects/presentation/providers/projects_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:fundacion_aip_mobile/config/router/app_router.dart';
 import 'package:fundacion_aip_mobile/config/theme/app_theme.dart';
 import 'package:fundacion_aip_mobile/features/farm/farm.dart';
+
+final internetChecker = CheckInternetConnection();
 
 Future<void> main() async{
 
@@ -27,7 +31,8 @@ Future<void> main() async{
       ChangeNotifierProvider(create: (context) => AuthProvider(authRepository: AuthRepositoryImpl()),),
       ChangeNotifierProvider(create: (context) => ProjectsProvider()),
       ChangeNotifierProvider(create: (context) => FarmsProjectProvider(FarmRepositoryImpl(), LocalStorageRepositoryImpl(datasource: IsarDatasourceImpl()))),
-      ChangeNotifierProvider(create: (context) => AgriculturalRegistryProvider(LocalAgriculturalRepositoryImpl(datasource: LocalAgriculturalRegistryDatasourceImpl())))
+      ChangeNotifierProvider(create: (context) => AgriculturalRegistryProvider(LocalAgriculturalRepositoryImpl(datasource: LocalAgriculturalRegistryDatasourceImpl()))),
+      ChangeNotifierProvider(create: (context) => ConnectionStatusProvider()),
     ],
     child: const MyApp(),
   )

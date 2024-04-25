@@ -33,8 +33,6 @@ class AuthProvider extends ChangeNotifier{
   String? get getUsername => _username;
   String? get getPassword => _password;
 
-  final storage = const FlutterSecureStorage();
-
   set setUsername(String value) {
     _username = value;
     notifyListeners();

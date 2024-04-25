@@ -12,7 +12,7 @@ class FarmsProjectProvider extends ChangeNotifier{
   //Instancia de la base de datos local
   final LocalStorageRepository _isarRepository;
 
-  final storage = FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
 
   List<Farm> farmCharacterizationList = [];
   List<Farm> localstorageFarmsList = [];
@@ -52,11 +52,6 @@ class FarmsProjectProvider extends ChangeNotifier{
 
       final user = await storage.read(key: 'userId');
       final project = await storage.read(key: 'projectId');
-
-      print('user $user');
-      print('project $project');
-
-      // await storage.write(key: 'projectId', value: projectId.toString());
 
       final response = await _farmRepository.getFarmsCharacterization(int.parse(user!), int.parse(project!));
       

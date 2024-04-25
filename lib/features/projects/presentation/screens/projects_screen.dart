@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:fundacion_aip_mobile/features/auth/presentation/providers/auth_provider.dart';
 import 'package:fundacion_aip_mobile/features/projects/projects.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +25,6 @@ class ProjectsScreen extends StatelessWidget {
     
     final  textStyleBottom = TextStyle(color: Colors.green.shade700, fontSize: 16, fontWeight: FontWeight.normal);
 
-    final userService = Provider.of<AuthProvider>(context).user;
     final projectService = Provider.of<FarmsProjectProvider>(context);
 
     return Scaffold(

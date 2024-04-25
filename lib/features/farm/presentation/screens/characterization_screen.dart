@@ -7,6 +7,7 @@ import 'package:fundacion_aip_mobile/features/farm/domain/entities/farm.dart';
 import 'package:fundacion_aip_mobile/features/farm/farm.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/create_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/edit_farm_screen.dart';
+import 'package:fundacion_aip_mobile/features/shared/infrastructure/connection_status_widget.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -55,6 +56,7 @@ class Characterizationcreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const ConnectionStatusWidget(),
           const SearchFarm(),
           const SizedBox(
             height: 8,
