@@ -6,7 +6,6 @@ import 'package:fundacion_aip_mobile/features/farm/presentation/widgets/agricult
 import 'package:fundacion_aip_mobile/features/farm/presentation/widgets/agriculturalRegistryWidgets/organization.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/widgets/agriculturalRegistryWidgets/participationMechanism.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/widgets/agriculturalRegistryWidgets/principalActivity.dart';
-import 'package:fundacion_aip_mobile/features/shared/infrastructure/connection_status_widget.dart';
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';

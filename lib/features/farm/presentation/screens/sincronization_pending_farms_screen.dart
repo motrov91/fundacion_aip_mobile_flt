@@ -4,6 +4,7 @@ import 'package:fundacion_aip_mobile/features/farm/presentation/providers/farms_
 import 'package:fundacion_aip_mobile/features/shared/shared.dart';
 import 'package:provider/provider.dart';
 
+import '../../../shared/infrastructure/connection_status_widget.dart';
 import '../widgets/item_list.dart';
 
 class SincronizationPendingFarmScreen extends StatefulWidget {
@@ -35,6 +36,7 @@ class _SincronizationPendingFarmScreenState
       appBar: const CustomAppbar(),
       body: Column(
         children: [
+          const ConnectionStatusWidget(),
           const SizedBox(height: 30,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -73,19 +75,19 @@ class _SincronizationPendingFarmScreenState
                         onTap: () {
                           //Le asigna a createNewFarm el item seleccionado de la lista para editarlo
                           // createFarmService.createNewFarm = farmListService[index];
-          //
+          
                           // if(farmListService[index].imgSignature != null){
                           // final decodeSignature = base64.decode(farmListService[index].imgSignature!);
                           // createFarmService.setImgSignature = decodeSignature;
                           // }
-          //
+          
                           // if(farmListService[index].imgBeneficiario != null){
                           // final Uint8List decodeFarm = base64.decode(farmListService[index].imgBeneficiario!);
                           //
-          //
+          
                           // createFarmService.setImgFarm = MemoryImage(decodeFarm);
                           // }
-          //
+          
                           // context.pushNamed(EditFarmScreen.name);
                         },
                         child: ItemList(

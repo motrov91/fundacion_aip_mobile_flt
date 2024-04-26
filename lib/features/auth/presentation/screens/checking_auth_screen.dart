@@ -17,7 +17,7 @@ class CheckingOutScreen extends StatelessWidget {
     return Scaffold(
         body: FutureBuilder(
       future: authService.readToken(),
-      builder: (context, snapshot) {
+      builder: (context, snapshot) { 
 
         if( !snapshot.hasData){
           return Center(
@@ -34,7 +34,12 @@ class CheckingOutScreen extends StatelessWidget {
           });
         } else{
           Future.microtask(()async{
-
+            /* 
+              * Agrego el Future.delayed porque el metodo que escanea permanentemente el estado de la 
+              * Conexion tiene un delay  de 5 segundos para confirmar el estado, entonces aca se lo ponemos de 
+              * 10 segundos para asegurarnos que tenga el estado oficial de la red 
+            */
+            await Future.delayed(const Duration(seconds: 10));
             await projectService.getCharaterizarionFarmsList();
                             
             if (projectService.isLoading) return;

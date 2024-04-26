@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/repositories/farm_Repository.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/repositories/local_storage_repository.dart';
+import 'package:fundacion_aip_mobile/features/internetConnection/infrastructure/datasources/internet_connection_datasource_impl.dart';
 
+import '../../../internetConnection/presentation/providers/connection_status_provider.dart';
 import '../../domain/entities/farm.dart';
 
 class FarmsProjectProvider extends ChangeNotifier{
@@ -11,6 +13,9 @@ class FarmsProjectProvider extends ChangeNotifier{
   final FarmRepository _farmRepository;
   //Instancia de la base de datos local
   final LocalStorageRepository _isarRepository;
+
+  //Instancia del provider de connectionStatus
+  ConnectionStatusProvider _connection;
 
   final storage = const FlutterSecureStorage();
 
@@ -22,7 +27,7 @@ class FarmsProjectProvider extends ChangeNotifier{
   bool isLoading = false;
 
   //Constructor
-  FarmsProjectProvider(this._farmRepository, this._isarRepository);
+  FarmsProjectProvider(this._farmRepository, this._isarRepository, this._connection);
 
   int? get getProjectId => projectId;
 
@@ -46,6 +51,7 @@ class FarmsProjectProvider extends ChangeNotifier{
 
 
   Future<List<Farm>>? getCharaterizarionFarmsList() async{
+    
     try{ 
       isLoading = true;
       notifyListeners();
@@ -53,13 +59,47 @@ class FarmsProjectProvider extends ChangeNotifier{
       final user = await storage.read(key: 'userId');
       final project = await storage.read(key: 'projectId');
 
-      final response = await _farmRepository.getFarmsCharacterization(int.parse(user!), int.parse(project!));
+      if(_connection.status == ConnectionStatus.online){
+        print('ONLINE*****');
+        final response = await _farmRepository.getFarmsCharacterization(int.parse(user!), int.parse(project!));
       
-      farmCharacterizationList = response!;
+        farmCharacterizationList = response!;
 
-      for(var farm in farmCharacterizationList){
-         await _isarRepository.createFarm(farm);
+        for(var farm in farmCharacterizationList){
+          await _isarRepository.createFarm(farm);
+        }
+
+        localstorageFarmsList = await _isarRepository.loadFarms();
+
+        isLoading = false;
+        notifyListeners();
+
+        return farmCharacterizationList;
+      } else{
+        print('OFFLINE');
+        isLoading = true;
+        notifyListeners();
+
+        localstorageFarmsList = await _isarRepository.loadFarms();
+
+        isLoading = false;
+        notifyListeners();
+
+        return farmCharacterizationList;
       }
+
+      
+
+    } catch(e){
+      throw e;
+    }
+  }
+
+  Future<List<Farm>>? getDataOffline() async{
+    print('GETDATAOFFLINE');
+    try{ 
+      isLoading = true;
+      notifyListeners();
 
       localstorageFarmsList = await _isarRepository.loadFarms();
 

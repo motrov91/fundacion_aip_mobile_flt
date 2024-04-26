@@ -30,7 +30,7 @@ Future<void> main() async{
       ChangeNotifierProvider(create: (context) => ControlDotsPageviesProvider()),
       ChangeNotifierProvider(create: (context) => AuthProvider(authRepository: AuthRepositoryImpl()),),
       ChangeNotifierProvider(create: (context) => ProjectsProvider()),
-      ChangeNotifierProvider(create: (context) => FarmsProjectProvider(FarmRepositoryImpl(), LocalStorageRepositoryImpl(datasource: IsarDatasourceImpl()))),
+      ChangeNotifierProvider(create: (context) => FarmsProjectProvider(FarmRepositoryImpl(), LocalStorageRepositoryImpl(datasource: IsarDatasourceImpl()), ConnectionStatusProvider())),
       ChangeNotifierProvider(create: (context) => AgriculturalRegistryProvider(LocalAgriculturalRepositoryImpl(datasource: LocalAgriculturalRegistryDatasourceImpl()))),
       ChangeNotifierProvider(create: (context) => ConnectionStatusProvider()),
     ],
