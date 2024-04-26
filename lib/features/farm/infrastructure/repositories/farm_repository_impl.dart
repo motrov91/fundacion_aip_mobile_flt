@@ -14,14 +14,13 @@ class FarmRepositoryImpl extends FarmRepository{
 
 
   @override
-  Future<Farm> createNewFarm() {
-    // TODO: implement createNewFarm
-    throw UnimplementedError();
-  }
-
-  @override
   Future<List<Farm>?> getFarmsCharacterization(int userId, int projectId) {
     return datasource.getFarmsCharacterization(userId, projectId);
+  }
+  
+  @override
+  Future<Farm?> createNewFarmInCloud(Farm farm) {
+    return datasource.createNewFarmInCloud(farm);
   }
 
 }

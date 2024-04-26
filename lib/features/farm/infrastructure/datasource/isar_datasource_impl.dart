@@ -70,9 +70,7 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
       } else {
         test = isar.writeTxnSync(() => isar.farms.putSync(farm));
       }
-       
-
-
+      
 
       Farm? newFarmCreated = await isar.farms
       .filter()
@@ -89,7 +87,7 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
   }
 
   @override
-  Future<Farm?> editFarm(Farm farm) async{
+  Future<Farm?> editFarm(Farm farm, TypeEdit editionType) async{
     //Creamos una instancia de la base de datos
     final isar = await db;
 
@@ -98,22 +96,35 @@ class IsarDatasourceImpl extends LocalStorageDatasource{
       .isarIdEqualTo(farm.isarId)
       .findFirst();
 
-    if( farmToEdit?.isarId != null){
+    if(editionType == TypeEdit.editFromLocal){
 
-      isar.writeTxnSync(() async {
+      if( farmToEdit?.isarId != null && farmToEdit?.id_farm == null){
 
-        Farm.extractAsignations(farmToEdit!, farm);
-        farmToEdit.isModified = true;
-        isar.farms.putSync(farmToEdit);
-        return farmToEdit;
+        isar.writeTxnSync(() async {
 
-      });
+          Farm.extractAsignations(farmToEdit!, farm);
+          farmToEdit.isModified = true;
+          isar.farms.putSync(farmToEdit);
+          return farmToEdit;
 
-      return null;
+        });
+      }
+    }
 
-    }else{
-      return null;
-    }  
+    if(editionType == TypeEdit.editFromUpdateToCloud){
+      if(farmToEdit?.isarId != null && farm.id_farm != null){
+
+        isar.writeTxnSync(() async {
+
+          Farm.extractAsignations(farmToEdit!, farm);
+          farmToEdit.isModified = false;
+          isar.farms.putSync(farmToEdit);
+          return farmToEdit;
+
+        });
+      }
+    }
+    return null;
   }
 
   @override

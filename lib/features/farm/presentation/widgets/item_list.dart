@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fundacion_aip_mobile/features/farm/presentation/providers/farms_projects_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../../domain/entities/farm.dart';
 
@@ -9,9 +11,20 @@ class ItemList extends StatelessWidget {
 
   final style = const TextStyle(color: Colors.grey);
 
+  /*  
+   * Este metodo ayuda a subir el registro del predio a la nube y actualiza el predio en los
+   * datos guardados en local y actualiza la lista de predios caracterizados.
+  */
+  Future<Farm?> uploadFarm(FarmsProjectProvider provider) async {
+    final data = await provider.uploadFarmToCloud(item);
+   return data;
+  }
+
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme.primary;
+
+    final farmsProjectService = Provider.of<FarmsProjectProvider>(context);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 10, left: 10, right: 10, top: 10),
@@ -54,11 +67,28 @@ class ItemList extends StatelessWidget {
           const Spacer(),
           SizedBox( 
             width: 50,
+            height: 50,
             child: item.imgBeneficiario == null || item.imgSignature == null
               ? const SizedBox()
               : item.isModified == true 
-                ? IconButton(
-                    onPressed: () {},
+                //Vamos a condicionar si se sube el registro a la nube mostrará un circularProgress mientras 
+                //hace el proceso.
+                ? farmsProjectService.isLoading
+                  ? Container(
+                    width: 2,
+                    height: 10,
+                    padding: const EdgeInsets.all(20),
+                    child: const Center(
+                      child: CircularProgressIndicator( 
+                        strokeAlign: 2,
+                      ),
+                    ),
+                  )
+                  : IconButton(
+                    onPressed: () async{
+                      final farmService = Provider.of<FarmsProjectProvider>(context, listen: false);
+                      final farmUploaded = uploadFarm(farmService);
+                    },
                     icon: Icon(
                       Icons.file_upload,
                       color: colors,

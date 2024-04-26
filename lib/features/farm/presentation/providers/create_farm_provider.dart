@@ -5,6 +5,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:fundacion_aip_mobile/features/farm/domain/datasources/local_storage_datasource.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/entities/farm.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/repositories/local_storage_repository.dart';
 
@@ -103,11 +104,9 @@ class CreateFarmProvider extends ChangeNotifier{
       createNewFarm.imgSignature = base64Encode(_imageSignature!);
     }
 
-    print('DESDE CREATE_FARM_PROVIDER  ${createNewFarm.haveAgriculturalRegistry}');
-
     //Recibe el farm que se va a editar y se guarda en createNewFarm porque
     //tiene la estructura del farm
-    final farmEdited = await _isarRepository.editFarm(createNewFarm);
+    final farmEdited = await _isarRepository.editFarm(createNewFarm, TypeEdit.editFromLocal);
 
     if(farmEdited != null){
       return farmEdited;
