@@ -10,13 +10,11 @@ class DatosContactoTitular extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final farmService = Provider.of<CreateFarmProvider>(context);
 
     final txtText = Theme.of(context).textTheme.bodyMedium!.copyWith(
-      fontWeight: FontWeight.w500,
-      color: Theme.of(context).colorScheme.primary
-    );
+        fontWeight: FontWeight.w500,
+        color: Theme.of(context).colorScheme.primary);
 
     const sizedBox = SizedBox(height: 9);
 
@@ -27,126 +25,127 @@ class DatosContactoTitular extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-        
             Container(
-              margin: const EdgeInsets.only(top: 5, bottom: 10),
-              child: Center(
-                child: Text('Datos del titular del predio', style: txtText))),
-        
+                margin: const EdgeInsets.only(top: 5, bottom: 10),
+                child: Center(
+                    child:
+                        Text('Datos del titular del predio', style: txtText))),
             CustomTextFormField(
               label: 'Primer Nombre',
-              initalValueData: farmService.createNewFarm.firstName, 
-              onChanged: (value){
+              initalValueData: farmService.createNewFarm.firstName,
+              onChanged: (value) {
                 farmService.createNewFarm.firstName = value;
               },
-              validator: (value){
-                return (value != null && value != '') 
-                  ? null 
-                  : 'Este campo no puede estar vacío';
-              }, 
-              isValidator: true, 
+              validator: (value) {
+                return (value != null && value != '')
+                    ? null
+                    : 'Este campo no puede estar vacío';
+              },
+              isValidator: true,
             ),
             sizedBox,
             CustomTextFormField(
               label: 'Segundo Nombre',
               initalValueData: farmService.createNewFarm.secondName,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.secondName = value;
               },
             ),
             sizedBox,
             CustomTextFormField(
-              label: 'Primer Apellido', 
+              label: 'Primer Apellido',
               initalValueData: farmService.createNewFarm.firstSurname,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.firstSurname = value;
               },
-              validator: (value){
-                return (value != null && value != '') 
-                  ? null 
-                  : 'Este campo no puede estar vacío';
-              }, 
-              isValidator: true, 
+              validator: (value) {
+                return (value != null && value != '')
+                    ? null
+                    : 'Este campo no puede estar vacío';
+              },
+              isValidator: true,
             ),
             sizedBox,
             CustomTextFormField(
               label: 'Segundo Apellido',
               initalValueData: farmService.createNewFarm.secondSurname,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.secondSurname = value;
               },
             ),
             sizedBox,
             CustomTextFormField(
-              label: 'Cedula', keyType: TextInputType.number,
-              initalValueData: farmService.createNewFarm.nitProducer,  
-              onChanged: (value){
+              label: 'Cedula',
+              keyType: TextInputType.number,
+              initalValueData: farmService.createNewFarm.nitProducer,
+              onChanged: (value) {
                 farmService.createNewFarm.nitProducer = value;
               },
-              validator: (value){
-                return (value != null && value != '') 
-                  ? null 
-                  : 'Este campo no puede estar vacío';
-              }, 
-              isValidator: true,   
+              validator: (value) {
+                return (value != null && value != '')
+                    ? null
+                    : 'Este campo no puede estar vacío';
+              },
+              isValidator: true,
             ),
             sizedBox,
             CustomTextFormField(
               label: 'Lugar de Expedición',
-              initalValueData: farmService.createNewFarm.expedition,  
-              onChanged: (value){
+              initalValueData: farmService.createNewFarm.expedition,
+              onChanged: (value) {
                 farmService.createNewFarm.expedition = value;
               },
-              validator: (value){
-                return (value != null && value != '') 
-                  ? null 
-                  : 'Este campo no puede estar vacío';
-              }, 
-              isValidator: true,     
+              validator: (value) {
+                return (value != null && value != '')
+                    ? null
+                    : 'Este campo no puede estar vacío';
+              },
+              isValidator: true,
             ),
             sizedBox,
             CustomTextFormField(
               label: 'Fecha de nacimiento',
-              initalValueData: farmService.createNewFarm.birthdate,  
-              onChanged: (value){
+              initalValueData: farmService.createNewFarm.birthdate,
+              onChanged: (value) {
                 farmService.createNewFarm.birthdate = value;
               },
-              validator: (value){
-                return (value != null && value != '') 
-                  ? null 
-                  : 'Este campo no puede estar vacío';
-              }, 
-              isValidator: true,     
+              validator: (value) {
+                return (value != null && value != '')
+                    ? null
+                    : 'Este campo no puede estar vacío';
+              },
+              isValidator: true,
             ),
             sizedBox,
             CustomDropdownField(
               labelText: 'Etnia',
               initialValue: farmService.createNewFarm.ethnicity,
               dropdownItems: DropdownOptionsProvider.getDropdownsEtnia(),
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.ethnicity = value;
               },
             ),
             sizedBox,
             CustomTextFormField(
-              label: 'Celular 1', keyType: TextInputType.number,
-              initalValueData: farmService.createNewFarm.celphone1,  
-              onChanged: (value){
+              label: 'Celular 1',
+              keyType: TextInputType.number,
+              initalValueData: farmService.createNewFarm.celphone1,
+              onChanged: (value) {
                 farmService.createNewFarm.celphone1 = value;
               },
-              validator: (value){
-                return (value != null && value != '') 
-                  ? null 
-                  : 'Este campo no puede estar vacío';
-              }, 
-              isValidator: true,     
+              validator: (value) {
+                return (value != null && value != '')
+                    ? null
+                    : 'Este campo no puede estar vacío';
+              },
+              isValidator: true,
             ),
             sizedBox,
             CustomTextFormField(
-              label: 'Celular 2', 
+              label: 'Celular 2',
               keyType: TextInputType.number,
               initalValueData: farmService.createNewFarm.celphone2,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.celphone2 = value;
               },
             ),
@@ -154,7 +153,7 @@ class DatosContactoTitular extends StatelessWidget {
             CustomTextFormField(
               label: 'Correo Electrónico',
               initalValueData: farmService.createNewFarm.email,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.email = value;
               },
             ),
@@ -163,7 +162,7 @@ class DatosContactoTitular extends StatelessWidget {
               labelText: 'Genero',
               initialValue: farmService.createNewFarm.gender,
               dropdownItems: DropdownOptionsProvider.getGender(),
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.gender = value;
               },
             ),
@@ -172,7 +171,7 @@ class DatosContactoTitular extends StatelessWidget {
               labelText: 'Estudios',
               initialValue: farmService.createNewFarm.scholarLevel,
               dropdownItems: DropdownOptionsProvider.getDataStudies(),
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.scholarLevel = value;
               },
             ),
@@ -180,7 +179,7 @@ class DatosContactoTitular extends StatelessWidget {
             CustomTextFormField(
               label: 'Organización',
               initalValueData: farmService.createNewFarm.organization,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.organization = value;
               },
             ),
@@ -189,7 +188,7 @@ class DatosContactoTitular extends StatelessWidget {
               labelText: 'Estado Civil',
               initialValue: farmService.createNewFarm.maritalStatus,
               dropdownItems: DropdownOptionsProvider.getStatusMaried(),
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.maritalStatus = value;
               },
             ),
@@ -197,16 +196,16 @@ class DatosContactoTitular extends StatelessWidget {
             CustomTextFormField(
               label: 'Nombres y apellidos del conyuge',
               initalValueData: farmService.createNewFarm.fullnameSpouse,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.fullnameSpouse = value;
               },
             ),
             sizedBox,
             CustomTextFormField(
-              label: 'Cedula conyuge', 
+              label: 'Cedula conyuge',
               keyType: TextInputType.number,
               initalValueData: farmService.createNewFarm.nitSpouse,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.nitSpouse = value;
               },
             ),
@@ -214,7 +213,7 @@ class DatosContactoTitular extends StatelessWidget {
             CustomTextFormField(
               label: 'Lugar de expedición',
               initalValueData: farmService.createNewFarm.expeditionSpouse,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.expeditionSpouse = value;
               },
             ),
@@ -222,16 +221,16 @@ class DatosContactoTitular extends StatelessWidget {
             CustomTextFormField(
               label: 'Fecha de nacimiento del conyuge',
               initalValueData: farmService.createNewFarm.dateSpouse,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.dateSpouse = value;
               },
             ),
             sizedBox,
             CustomTextFormField(
-              label: 'Celular', 
+              label: 'Celular',
               keyType: TextInputType.number,
               initalValueData: farmService.createNewFarm.celphoneSpouse,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.celphoneSpouse = value;
               },
             ),
@@ -239,7 +238,7 @@ class DatosContactoTitular extends StatelessWidget {
             CustomTextFormField(
               label: 'Correo Electrónico',
               initalValueData: farmService.createNewFarm.emailSpouse,
-              onChanged: (value){
+              onChanged: (value) {
                 farmService.createNewFarm.emailSpouse = value;
               },
             ),

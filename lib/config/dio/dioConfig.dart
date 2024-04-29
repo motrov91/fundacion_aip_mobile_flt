@@ -3,17 +3,13 @@
 import 'package:dio/dio.dart';
 import 'package:fundacion_aip_mobile/config/constants/enviroment.dart';
 
-class DioConfig{
-
-  static final Dio _dio = Dio(
-    BaseOptions(
+class DioConfig {
+  static final Dio _dio = Dio(BaseOptions(
       baseUrl: Enviroment.aipUrl,
       contentType: 'application/json',
       headers: {
         //TODO: Configurar los headers para las peticiones
-      }
-    )
-  );
+      }));
 
   //Peticiones get
   static Future httpGet(String path) async {}
@@ -25,8 +21,8 @@ class DioConfig{
       print(e);
       throw e;
     }
-
   }
+
   static Future httpPut(String path, Map<String, dynamic> data) async {}
   static Future httpDelete(String path, Map<String, dynamic> data) async {}
 }

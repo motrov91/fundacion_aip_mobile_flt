@@ -12,14 +12,14 @@ class CheckingOutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthProvider>(context, listen: false);
-    final projectService = Provider.of<FarmsProjectProvider>(context, listen: false);
+    final projectService =
+        Provider.of<FarmsProjectProvider>(context, listen: false);
 
     return Scaffold(
         body: FutureBuilder(
       future: authService.readToken(),
-      builder: (context, snapshot) { 
-
-        if( !snapshot.hasData){
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
           return Center(
             child: CircularProgressIndicator(
               strokeWidth: 3,
@@ -28,12 +28,12 @@ class CheckingOutScreen extends StatelessWidget {
           );
         }
 
-        if( snapshot.data == '' ){
-          Future.microtask((){
+        if (snapshot.data == '') {
+          Future.microtask(() {
             context.pushReplacementNamed(LoginScreen.name);
           });
-        } else{
-          Future.microtask(()async{
+        } else {
+          Future.microtask(() async {
             /* 
               * Agrego el Future.delayed porque el metodo que escanea permanentemente el estado de la 
               * Conexion tiene un delay  de 5 segundos para confirmar el estado, entonces aca se lo ponemos de 
@@ -41,11 +41,11 @@ class CheckingOutScreen extends StatelessWidget {
             */
             await Future.delayed(const Duration(seconds: 10));
             await projectService.getCharaterizarionFarmsList();
-                            
+
             if (projectService.isLoading) return;
 
             context.pushReplacementNamed(Characterizationcreen.name);
-          });    
+          });
         }
 
         return Container(
@@ -59,13 +59,17 @@ class CheckingOutScreen extends StatelessWidget {
                 strokeWidth: 4,
                 color: Colors.white,
               ),
-
-              const SizedBox(height: 10,),
-
-              FadeInDown(child: const Text('Cargando....', style: TextStyle(color: Colors.white),))
+              const SizedBox(
+                height: 10,
+              ),
+              FadeInDown(
+                  child: const Text(
+                'Cargando....',
+                style: TextStyle(color: Colors.white),
+              ))
             ],
           ),
-        ); 
+        );
       },
     ));
   }
