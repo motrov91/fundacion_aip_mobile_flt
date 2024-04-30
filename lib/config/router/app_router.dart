@@ -1,5 +1,5 @@
-
 import 'package:fundacion_aip_mobile/features/auth/presentation/screens/checking_auth_screen.dart';
+import 'package:fundacion_aip_mobile/features/farm/presentation/screens/Agricultural_registry_list.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/agricultural_registry_screen.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/create_farm_screen.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/screens/edit_farm_screen.dart';
@@ -43,32 +43,33 @@ final appRouter = GoRouter(
 
     //* Characterization route
     GoRoute(
-      path: '/',
-      name: Characterizationcreen.name,
-      builder: (context, state) => const Characterizationcreen()
-    ),
+        path: '/',
+        name: Characterizationcreen.name,
+        builder: (context, state) => const Characterizationcreen()),
 
     GoRoute(
-      path: '/synchronization_pending',
-      name: SincronizationPendingFarmScreen.name,
-      builder: (context, state) => SincronizationPendingFarmScreen()
-    ),
+        path: '/synchronization_pending',
+        name: SincronizationPendingFarmScreen.name,
+        builder: (context, state) => SincronizationPendingFarmScreen()),
     //* Create farm
     GoRoute(
-      path: '/create_farm',
-      name: CreateFarmScreen.name,
-      builder: (context, state) =>  CreateFarmScreen()
-    ),
+        path: '/create_farm',
+        name: CreateFarmScreen.name,
+        builder: (context, state) => CreateFarmScreen()),
     //* Edit farm
     GoRoute(
-      path: '/edit_farm',
-      name: EditFarmScreen.name,
-      builder: (context, state) =>  const EditFarmScreen()
-    ),
+        path: '/edit_farm',
+        name: EditFarmScreen.name,
+        builder: (context, state) => const EditFarmScreen()),
+    //* Formulario de registro agricola
     GoRoute(
-      path: '/agriculturalRegistry',
-      name: AgriculturalRegistryScreen.name,
-      builder: (context, state) =>  const AgriculturalRegistryScreen()
-    ),
+        path: '/agriculturalRegistry',
+        name: AgriculturalRegistryScreen.name,
+        builder: (context, state) => const AgriculturalRegistryScreen()),
+    //* Listado de registro agricola sincronizados y por sincronizar
+    GoRoute(
+        path: '/agricultural_registry_list',
+        name: AgriculturalRegistryList.name,
+        builder: (context, state) => const AgriculturalRegistryList()),
   ],
 );

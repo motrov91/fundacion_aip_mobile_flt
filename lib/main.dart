@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/features/auth/infrastructure/repositories/auth_repository_impl.dart';
 import 'package:fundacion_aip_mobile/features/auth/presentation/providers/auth_provider.dart';
-import 'package:fundacion_aip_mobile/features/farm/infrastructure/datasource/isar_datasource_impl.dart';
+import 'package:fundacion_aip_mobile/features/farm/infrastructure/datasource/local_storage_datasource_impl.dart';
 import 'package:fundacion_aip_mobile/features/farm/infrastructure/datasource/local_agricultural_registry_datasource_impl.dart';
 import 'package:fundacion_aip_mobile/features/farm/infrastructure/repositories/farm_repository_impl.dart';
 import 'package:fundacion_aip_mobile/features/farm/infrastructure/repositories/local_agricultural_registry_repository_impl.dart';
@@ -19,24 +19,39 @@ import 'package:fundacion_aip_mobile/features/farm/farm.dart';
 
 final internetChecker = CheckInternetConnection();
 
-Future<void> main() async{
-
+Future<void> main() async {
   await dotenv.load(fileName: ".env");
 
-  runApp(
-  MultiProvider(
+  runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (context) => CreateFarmProvider(LocalStorageRepositoryImpl(datasource: IsarDatasourceImpl()))),
-      ChangeNotifierProvider(create: (context) => ControlDotsPageviesProvider()),
-      ChangeNotifierProvider(create: (context) => AuthProvider(authRepository: AuthRepositoryImpl()),),
+      ChangeNotifierProvider(
+          create: (context) => CreateFarmProvider(LocalStorageRepositoryImpl(
+              datasource: LocalStorageDatasourceImpl()))),
+      ChangeNotifierProvider(
+          create: (context) => ControlDotsPageviesProvider()),
+      ChangeNotifierProvider(
+        create: (context) => AuthProvider(authRepository: AuthRepositoryImpl()),
+      ),
       ChangeNotifierProvider(create: (context) => ProjectsProvider()),
-      ChangeNotifierProvider(create: (context) => FarmsProjectProvider(FarmRepositoryImpl(), LocalStorageRepositoryImpl(datasource: IsarDatasourceImpl()), ConnectionStatusProvider())),
-      ChangeNotifierProvider(create: (context) => AgriculturalRegistryProvider(LocalAgriculturalRepositoryImpl(datasource: LocalAgriculturalRegistryDatasourceImpl()))),
+      ChangeNotifierProvider(
+          create: (context) => FarmsProjectProvider(
+                FarmRepositoryImpl(),
+                LocalStorageRepositoryImpl(
+                    datasource: LocalStorageDatasourceImpl()),
+                ConnectionStatusProvider(),
+                LocalAgriculturalRepositoryImpl(
+                    datasource: LocalAgriculturalRegistryDatasourceImpl()),
+              )),
+      ChangeNotifierProvider(
+          create: (context) => AgriculturalRegistryProvider(
+              LocalAgriculturalRepositoryImpl(
+                  datasource: LocalAgriculturalRegistryDatasourceImpl()),
+              LocalStorageRepositoryImpl(
+                  datasource: LocalStorageDatasourceImpl()))),
       ChangeNotifierProvider(create: (context) => ConnectionStatusProvider()),
     ],
     child: const MyApp(),
-  )
-);
+  ));
 }
 
 class MyApp extends StatelessWidget {

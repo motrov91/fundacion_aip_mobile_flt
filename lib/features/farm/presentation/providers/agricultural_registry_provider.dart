@@ -1,20 +1,22 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:fundacion_aip_mobile/features/farm/domain/datasources/local_storage_datasource.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/entities/agricultural_registry.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/repositories/local_agricultural_registry_repository.dart';
 
 import '../../domain/entities/farm.dart';
+import '../../domain/repositories/local_storage_repository.dart';
 
-class AgriculturalRegistryProvider extends ChangeNotifier{
-
+class AgriculturalRegistryProvider extends ChangeNotifier {
   GlobalKey<FormState> formkeyAgricultural = GlobalKey<FormState>();
 
   final Map<String, String?> _selectedOptions = {};
 
   LocalAgriculturalRepository _localAgricultural;
 
-  AgriculturalRegistryProvider(this._localAgricultural);
+  LocalStorageRepository _isarRepository;
+
+  AgriculturalRegistryProvider(this._localAgricultural, this._isarRepository);
 
   Map<String, String?> get selectedOptions => _selectedOptions;
 
@@ -23,14 +25,18 @@ class AgriculturalRegistryProvider extends ChangeNotifier{
     notifyListeners();
   }
 
-  bool isValidForm(){
+  bool isValidForm() {
     //Verifica que en el Map _selecetedOptions lleguen todas las respuestas.
     //en caso de que no lo haga retorna falso
-    for(int i = 1; i <= 45; i++){
-      if(!_selectedOptions.containsKey('respuesta$i')) return false;
-      if(!_selectedOptions.containsKey('comment$i')) return false;
+    for (int i = 1; i <= 45; i++) {
+      if (!_selectedOptions.containsKey('respuesta$i')) return false;
+      /*  
+        * Comentamos la veficacion de los comentarios porque no la van a necesitar
+        * por el momento. 
+      */
+      //if (!_selectedOptions.containsKey('comment$i')) return false;
     }
-    
+
     return true;
   }
 
@@ -39,19 +45,19 @@ class AgriculturalRegistryProvider extends ChangeNotifier{
 
     const storage = FlutterSecureStorage();
     final user = await storage.read(key: 'userId');
-    final project= await storage.read(key: 'projectId');
+    final project = await storage.read(key: 'projectId');
     agriculturalRegistry.userId = int.parse(user!);
-    agriculturalRegistry.projectId =  int.parse(project!);
+    agriculturalRegistry.projectId = int.parse(project!);
     agriculturalRegistry.farmFK.value = data;
-    agriculturalRegistry.respuesta1  = _selectedOptions['respuesta1'];
-    agriculturalRegistry.respuesta2  = _selectedOptions['respuesta2'];
-    agriculturalRegistry.respuesta3  = _selectedOptions['respuesta3'];
-    agriculturalRegistry.respuesta4  = _selectedOptions['respuesta4'];
-    agriculturalRegistry.respuesta5  = _selectedOptions['respuesta5'];
-    agriculturalRegistry.respuesta6  = _selectedOptions['respuesta6'];
-    agriculturalRegistry.respuesta7  = _selectedOptions['respuesta7'];
-    agriculturalRegistry.respuesta8  = _selectedOptions['respuesta8'];
-    agriculturalRegistry.respuesta9  = _selectedOptions['respuesta9'];
+    agriculturalRegistry.respuesta1 = _selectedOptions['respuesta1'];
+    agriculturalRegistry.respuesta2 = _selectedOptions['respuesta2'];
+    agriculturalRegistry.respuesta3 = _selectedOptions['respuesta3'];
+    agriculturalRegistry.respuesta4 = _selectedOptions['respuesta4'];
+    agriculturalRegistry.respuesta5 = _selectedOptions['respuesta5'];
+    agriculturalRegistry.respuesta6 = _selectedOptions['respuesta6'];
+    agriculturalRegistry.respuesta7 = _selectedOptions['respuesta7'];
+    agriculturalRegistry.respuesta8 = _selectedOptions['respuesta8'];
+    agriculturalRegistry.respuesta9 = _selectedOptions['respuesta9'];
     agriculturalRegistry.respuesta10 = _selectedOptions['respuesta10'];
     agriculturalRegistry.respuesta11 = _selectedOptions['respuesta11'];
     agriculturalRegistry.respuesta12 = _selectedOptions['respuesta12'];
@@ -88,15 +94,15 @@ class AgriculturalRegistryProvider extends ChangeNotifier{
     agriculturalRegistry.respuesta43 = _selectedOptions['respuesta43'];
     agriculturalRegistry.respuesta44 = _selectedOptions['respuesta44'];
     agriculturalRegistry.respuesta45 = _selectedOptions['respuesta45'];
-    agriculturalRegistry.comment1  = _selectedOptions['comment1'];
-    agriculturalRegistry.comment2  = _selectedOptions['comment2'];
-    agriculturalRegistry.comment3  = _selectedOptions['comment3'];
-    agriculturalRegistry.comment4  = _selectedOptions['comment4'];
-    agriculturalRegistry.comment5  = _selectedOptions['comment5'];
-    agriculturalRegistry.comment6  = _selectedOptions['comment6'];
-    agriculturalRegistry.comment7  = _selectedOptions['comment7'];
-    agriculturalRegistry.comment8  = _selectedOptions['comment8'];
-    agriculturalRegistry.comment9  = _selectedOptions['comment9'];
+    agriculturalRegistry.comment1 = _selectedOptions['comment1'];
+    agriculturalRegistry.comment2 = _selectedOptions['comment2'];
+    agriculturalRegistry.comment3 = _selectedOptions['comment3'];
+    agriculturalRegistry.comment4 = _selectedOptions['comment4'];
+    agriculturalRegistry.comment5 = _selectedOptions['comment5'];
+    agriculturalRegistry.comment6 = _selectedOptions['comment6'];
+    agriculturalRegistry.comment7 = _selectedOptions['comment7'];
+    agriculturalRegistry.comment8 = _selectedOptions['comment8'];
+    agriculturalRegistry.comment9 = _selectedOptions['comment9'];
     agriculturalRegistry.comment10 = _selectedOptions['comment10'];
     agriculturalRegistry.comment11 = _selectedOptions['comment11'];
     agriculturalRegistry.comment12 = _selectedOptions['comment12'];
@@ -133,15 +139,18 @@ class AgriculturalRegistryProvider extends ChangeNotifier{
     agriculturalRegistry.comment43 = _selectedOptions['comment43'];
     agriculturalRegistry.comment44 = _selectedOptions['comment44'];
     agriculturalRegistry.comment45 = _selectedOptions['comment45'];
+    agriculturalRegistry.predio = data.isarId;
 
-    final response = await _localAgricultural.createNewAgriculturalRegistry(agriculturalRegistry);
+    final response = await _localAgricultural
+        .createNewAgriculturalRegistry(agriculturalRegistry);
 
-    if(response == null){
+    await _isarRepository.editFarm(data, TypeEdit.editFromLocal);
+
+    if (response == null) {
       return false;
-    }else{
+    } else {
       _selectedOptions.clear();
       return true;
-    }  
+    }
   }
-
 }

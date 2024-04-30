@@ -263,238 +263,243 @@ const AgriculturalRegistrySchema = CollectionSchema(
       name: r'id_answerFormatProducer',
       type: IsarType.long,
     ),
-    r'projectId': PropertySchema(
+    r'predio': PropertySchema(
       id: 49,
+      name: r'predio',
+      type: IsarType.long,
+    ),
+    r'projectId': PropertySchema(
+      id: 50,
       name: r'projectId',
       type: IsarType.long,
     ),
     r'respuesta1': PropertySchema(
-      id: 50,
+      id: 51,
       name: r'respuesta1',
       type: IsarType.string,
     ),
     r'respuesta10': PropertySchema(
-      id: 51,
+      id: 52,
       name: r'respuesta10',
       type: IsarType.string,
     ),
     r'respuesta11': PropertySchema(
-      id: 52,
+      id: 53,
       name: r'respuesta11',
       type: IsarType.string,
     ),
     r'respuesta12': PropertySchema(
-      id: 53,
+      id: 54,
       name: r'respuesta12',
       type: IsarType.string,
     ),
     r'respuesta13': PropertySchema(
-      id: 54,
+      id: 55,
       name: r'respuesta13',
       type: IsarType.string,
     ),
     r'respuesta14': PropertySchema(
-      id: 55,
+      id: 56,
       name: r'respuesta14',
       type: IsarType.string,
     ),
     r'respuesta15': PropertySchema(
-      id: 56,
+      id: 57,
       name: r'respuesta15',
       type: IsarType.string,
     ),
     r'respuesta16': PropertySchema(
-      id: 57,
+      id: 58,
       name: r'respuesta16',
       type: IsarType.string,
     ),
     r'respuesta17': PropertySchema(
-      id: 58,
+      id: 59,
       name: r'respuesta17',
       type: IsarType.string,
     ),
     r'respuesta18': PropertySchema(
-      id: 59,
+      id: 60,
       name: r'respuesta18',
       type: IsarType.string,
     ),
     r'respuesta19': PropertySchema(
-      id: 60,
+      id: 61,
       name: r'respuesta19',
       type: IsarType.string,
     ),
     r'respuesta2': PropertySchema(
-      id: 61,
+      id: 62,
       name: r'respuesta2',
       type: IsarType.string,
     ),
     r'respuesta20': PropertySchema(
-      id: 62,
+      id: 63,
       name: r'respuesta20',
       type: IsarType.string,
     ),
     r'respuesta21': PropertySchema(
-      id: 63,
+      id: 64,
       name: r'respuesta21',
       type: IsarType.string,
     ),
     r'respuesta22': PropertySchema(
-      id: 64,
+      id: 65,
       name: r'respuesta22',
       type: IsarType.string,
     ),
     r'respuesta23': PropertySchema(
-      id: 65,
+      id: 66,
       name: r'respuesta23',
       type: IsarType.string,
     ),
     r'respuesta24': PropertySchema(
-      id: 66,
+      id: 67,
       name: r'respuesta24',
       type: IsarType.string,
     ),
     r'respuesta25': PropertySchema(
-      id: 67,
+      id: 68,
       name: r'respuesta25',
       type: IsarType.string,
     ),
     r'respuesta26': PropertySchema(
-      id: 68,
+      id: 69,
       name: r'respuesta26',
       type: IsarType.string,
     ),
     r'respuesta27': PropertySchema(
-      id: 69,
+      id: 70,
       name: r'respuesta27',
       type: IsarType.string,
     ),
     r'respuesta28': PropertySchema(
-      id: 70,
+      id: 71,
       name: r'respuesta28',
       type: IsarType.string,
     ),
     r'respuesta29': PropertySchema(
-      id: 71,
+      id: 72,
       name: r'respuesta29',
       type: IsarType.string,
     ),
     r'respuesta3': PropertySchema(
-      id: 72,
+      id: 73,
       name: r'respuesta3',
       type: IsarType.string,
     ),
     r'respuesta30': PropertySchema(
-      id: 73,
+      id: 74,
       name: r'respuesta30',
       type: IsarType.string,
     ),
     r'respuesta31': PropertySchema(
-      id: 74,
+      id: 75,
       name: r'respuesta31',
       type: IsarType.string,
     ),
     r'respuesta32': PropertySchema(
-      id: 75,
+      id: 76,
       name: r'respuesta32',
       type: IsarType.string,
     ),
     r'respuesta33': PropertySchema(
-      id: 76,
+      id: 77,
       name: r'respuesta33',
       type: IsarType.string,
     ),
     r'respuesta34': PropertySchema(
-      id: 77,
+      id: 78,
       name: r'respuesta34',
       type: IsarType.string,
     ),
     r'respuesta35': PropertySchema(
-      id: 78,
+      id: 79,
       name: r'respuesta35',
       type: IsarType.string,
     ),
     r'respuesta36': PropertySchema(
-      id: 79,
+      id: 80,
       name: r'respuesta36',
       type: IsarType.string,
     ),
     r'respuesta37': PropertySchema(
-      id: 80,
+      id: 81,
       name: r'respuesta37',
       type: IsarType.string,
     ),
     r'respuesta38': PropertySchema(
-      id: 81,
+      id: 82,
       name: r'respuesta38',
       type: IsarType.string,
     ),
     r'respuesta39': PropertySchema(
-      id: 82,
+      id: 83,
       name: r'respuesta39',
       type: IsarType.string,
     ),
     r'respuesta4': PropertySchema(
-      id: 83,
+      id: 84,
       name: r'respuesta4',
       type: IsarType.string,
     ),
     r'respuesta40': PropertySchema(
-      id: 84,
+      id: 85,
       name: r'respuesta40',
       type: IsarType.string,
     ),
     r'respuesta41': PropertySchema(
-      id: 85,
+      id: 86,
       name: r'respuesta41',
       type: IsarType.string,
     ),
     r'respuesta42': PropertySchema(
-      id: 86,
+      id: 87,
       name: r'respuesta42',
       type: IsarType.string,
     ),
     r'respuesta43': PropertySchema(
-      id: 87,
+      id: 88,
       name: r'respuesta43',
       type: IsarType.string,
     ),
     r'respuesta44': PropertySchema(
-      id: 88,
+      id: 89,
       name: r'respuesta44',
       type: IsarType.string,
     ),
     r'respuesta45': PropertySchema(
-      id: 89,
+      id: 90,
       name: r'respuesta45',
       type: IsarType.string,
     ),
     r'respuesta5': PropertySchema(
-      id: 90,
+      id: 91,
       name: r'respuesta5',
       type: IsarType.string,
     ),
     r'respuesta6': PropertySchema(
-      id: 91,
+      id: 92,
       name: r'respuesta6',
       type: IsarType.string,
     ),
     r'respuesta7': PropertySchema(
-      id: 92,
+      id: 93,
       name: r'respuesta7',
       type: IsarType.string,
     ),
     r'respuesta8': PropertySchema(
-      id: 93,
+      id: 94,
       name: r'respuesta8',
       type: IsarType.string,
     ),
     r'respuesta9': PropertySchema(
-      id: 94,
+      id: 95,
       name: r'respuesta9',
       type: IsarType.string,
     ),
     r'userId': PropertySchema(
-      id: 95,
+      id: 96,
       name: r'userId',
       type: IsarType.long,
     )
@@ -1130,53 +1135,54 @@ void _agriculturalRegistrySerialize(
   writer.writeLong(offsets[46], object.farm_id);
   writer.writeLong(offsets[47], object.id_answerFormat);
   writer.writeLong(offsets[48], object.id_answerFormatProducer);
-  writer.writeLong(offsets[49], object.projectId);
-  writer.writeString(offsets[50], object.respuesta1);
-  writer.writeString(offsets[51], object.respuesta10);
-  writer.writeString(offsets[52], object.respuesta11);
-  writer.writeString(offsets[53], object.respuesta12);
-  writer.writeString(offsets[54], object.respuesta13);
-  writer.writeString(offsets[55], object.respuesta14);
-  writer.writeString(offsets[56], object.respuesta15);
-  writer.writeString(offsets[57], object.respuesta16);
-  writer.writeString(offsets[58], object.respuesta17);
-  writer.writeString(offsets[59], object.respuesta18);
-  writer.writeString(offsets[60], object.respuesta19);
-  writer.writeString(offsets[61], object.respuesta2);
-  writer.writeString(offsets[62], object.respuesta20);
-  writer.writeString(offsets[63], object.respuesta21);
-  writer.writeString(offsets[64], object.respuesta22);
-  writer.writeString(offsets[65], object.respuesta23);
-  writer.writeString(offsets[66], object.respuesta24);
-  writer.writeString(offsets[67], object.respuesta25);
-  writer.writeString(offsets[68], object.respuesta26);
-  writer.writeString(offsets[69], object.respuesta27);
-  writer.writeString(offsets[70], object.respuesta28);
-  writer.writeString(offsets[71], object.respuesta29);
-  writer.writeString(offsets[72], object.respuesta3);
-  writer.writeString(offsets[73], object.respuesta30);
-  writer.writeString(offsets[74], object.respuesta31);
-  writer.writeString(offsets[75], object.respuesta32);
-  writer.writeString(offsets[76], object.respuesta33);
-  writer.writeString(offsets[77], object.respuesta34);
-  writer.writeString(offsets[78], object.respuesta35);
-  writer.writeString(offsets[79], object.respuesta36);
-  writer.writeString(offsets[80], object.respuesta37);
-  writer.writeString(offsets[81], object.respuesta38);
-  writer.writeString(offsets[82], object.respuesta39);
-  writer.writeString(offsets[83], object.respuesta4);
-  writer.writeString(offsets[84], object.respuesta40);
-  writer.writeString(offsets[85], object.respuesta41);
-  writer.writeString(offsets[86], object.respuesta42);
-  writer.writeString(offsets[87], object.respuesta43);
-  writer.writeString(offsets[88], object.respuesta44);
-  writer.writeString(offsets[89], object.respuesta45);
-  writer.writeString(offsets[90], object.respuesta5);
-  writer.writeString(offsets[91], object.respuesta6);
-  writer.writeString(offsets[92], object.respuesta7);
-  writer.writeString(offsets[93], object.respuesta8);
-  writer.writeString(offsets[94], object.respuesta9);
-  writer.writeLong(offsets[95], object.userId);
+  writer.writeLong(offsets[49], object.predio);
+  writer.writeLong(offsets[50], object.projectId);
+  writer.writeString(offsets[51], object.respuesta1);
+  writer.writeString(offsets[52], object.respuesta10);
+  writer.writeString(offsets[53], object.respuesta11);
+  writer.writeString(offsets[54], object.respuesta12);
+  writer.writeString(offsets[55], object.respuesta13);
+  writer.writeString(offsets[56], object.respuesta14);
+  writer.writeString(offsets[57], object.respuesta15);
+  writer.writeString(offsets[58], object.respuesta16);
+  writer.writeString(offsets[59], object.respuesta17);
+  writer.writeString(offsets[60], object.respuesta18);
+  writer.writeString(offsets[61], object.respuesta19);
+  writer.writeString(offsets[62], object.respuesta2);
+  writer.writeString(offsets[63], object.respuesta20);
+  writer.writeString(offsets[64], object.respuesta21);
+  writer.writeString(offsets[65], object.respuesta22);
+  writer.writeString(offsets[66], object.respuesta23);
+  writer.writeString(offsets[67], object.respuesta24);
+  writer.writeString(offsets[68], object.respuesta25);
+  writer.writeString(offsets[69], object.respuesta26);
+  writer.writeString(offsets[70], object.respuesta27);
+  writer.writeString(offsets[71], object.respuesta28);
+  writer.writeString(offsets[72], object.respuesta29);
+  writer.writeString(offsets[73], object.respuesta3);
+  writer.writeString(offsets[74], object.respuesta30);
+  writer.writeString(offsets[75], object.respuesta31);
+  writer.writeString(offsets[76], object.respuesta32);
+  writer.writeString(offsets[77], object.respuesta33);
+  writer.writeString(offsets[78], object.respuesta34);
+  writer.writeString(offsets[79], object.respuesta35);
+  writer.writeString(offsets[80], object.respuesta36);
+  writer.writeString(offsets[81], object.respuesta37);
+  writer.writeString(offsets[82], object.respuesta38);
+  writer.writeString(offsets[83], object.respuesta39);
+  writer.writeString(offsets[84], object.respuesta4);
+  writer.writeString(offsets[85], object.respuesta40);
+  writer.writeString(offsets[86], object.respuesta41);
+  writer.writeString(offsets[87], object.respuesta42);
+  writer.writeString(offsets[88], object.respuesta43);
+  writer.writeString(offsets[89], object.respuesta44);
+  writer.writeString(offsets[90], object.respuesta45);
+  writer.writeString(offsets[91], object.respuesta5);
+  writer.writeString(offsets[92], object.respuesta6);
+  writer.writeString(offsets[93], object.respuesta7);
+  writer.writeString(offsets[94], object.respuesta8);
+  writer.writeString(offsets[95], object.respuesta9);
+  writer.writeLong(offsets[96], object.userId);
 }
 
 AgriculturalRegistry _agriculturalRegistryDeserialize(
@@ -1235,53 +1241,54 @@ AgriculturalRegistry _agriculturalRegistryDeserialize(
     farm_id: reader.readLongOrNull(offsets[46]),
     id_answerFormat: reader.readLongOrNull(offsets[47]),
     id_answerFormatProducer: reader.readLongOrNull(offsets[48]),
-    projectId: reader.readLongOrNull(offsets[49]),
-    respuesta1: reader.readStringOrNull(offsets[50]),
-    respuesta10: reader.readStringOrNull(offsets[51]),
-    respuesta11: reader.readStringOrNull(offsets[52]),
-    respuesta12: reader.readStringOrNull(offsets[53]),
-    respuesta13: reader.readStringOrNull(offsets[54]),
-    respuesta14: reader.readStringOrNull(offsets[55]),
-    respuesta15: reader.readStringOrNull(offsets[56]),
-    respuesta16: reader.readStringOrNull(offsets[57]),
-    respuesta17: reader.readStringOrNull(offsets[58]),
-    respuesta18: reader.readStringOrNull(offsets[59]),
-    respuesta19: reader.readStringOrNull(offsets[60]),
-    respuesta2: reader.readStringOrNull(offsets[61]),
-    respuesta20: reader.readStringOrNull(offsets[62]),
-    respuesta21: reader.readStringOrNull(offsets[63]),
-    respuesta22: reader.readStringOrNull(offsets[64]),
-    respuesta23: reader.readStringOrNull(offsets[65]),
-    respuesta24: reader.readStringOrNull(offsets[66]),
-    respuesta25: reader.readStringOrNull(offsets[67]),
-    respuesta26: reader.readStringOrNull(offsets[68]),
-    respuesta27: reader.readStringOrNull(offsets[69]),
-    respuesta28: reader.readStringOrNull(offsets[70]),
-    respuesta29: reader.readStringOrNull(offsets[71]),
-    respuesta3: reader.readStringOrNull(offsets[72]),
-    respuesta30: reader.readStringOrNull(offsets[73]),
-    respuesta31: reader.readStringOrNull(offsets[74]),
-    respuesta32: reader.readStringOrNull(offsets[75]),
-    respuesta33: reader.readStringOrNull(offsets[76]),
-    respuesta34: reader.readStringOrNull(offsets[77]),
-    respuesta35: reader.readStringOrNull(offsets[78]),
-    respuesta36: reader.readStringOrNull(offsets[79]),
-    respuesta37: reader.readStringOrNull(offsets[80]),
-    respuesta38: reader.readStringOrNull(offsets[81]),
-    respuesta39: reader.readStringOrNull(offsets[82]),
-    respuesta4: reader.readStringOrNull(offsets[83]),
-    respuesta40: reader.readStringOrNull(offsets[84]),
-    respuesta41: reader.readStringOrNull(offsets[85]),
-    respuesta42: reader.readStringOrNull(offsets[86]),
-    respuesta43: reader.readStringOrNull(offsets[87]),
-    respuesta44: reader.readStringOrNull(offsets[88]),
-    respuesta45: reader.readStringOrNull(offsets[89]),
-    respuesta5: reader.readStringOrNull(offsets[90]),
-    respuesta6: reader.readStringOrNull(offsets[91]),
-    respuesta7: reader.readStringOrNull(offsets[92]),
-    respuesta8: reader.readStringOrNull(offsets[93]),
-    respuesta9: reader.readStringOrNull(offsets[94]),
-    userId: reader.readLongOrNull(offsets[95]),
+    predio: reader.readLongOrNull(offsets[49]),
+    projectId: reader.readLongOrNull(offsets[50]),
+    respuesta1: reader.readStringOrNull(offsets[51]),
+    respuesta10: reader.readStringOrNull(offsets[52]),
+    respuesta11: reader.readStringOrNull(offsets[53]),
+    respuesta12: reader.readStringOrNull(offsets[54]),
+    respuesta13: reader.readStringOrNull(offsets[55]),
+    respuesta14: reader.readStringOrNull(offsets[56]),
+    respuesta15: reader.readStringOrNull(offsets[57]),
+    respuesta16: reader.readStringOrNull(offsets[58]),
+    respuesta17: reader.readStringOrNull(offsets[59]),
+    respuesta18: reader.readStringOrNull(offsets[60]),
+    respuesta19: reader.readStringOrNull(offsets[61]),
+    respuesta2: reader.readStringOrNull(offsets[62]),
+    respuesta20: reader.readStringOrNull(offsets[63]),
+    respuesta21: reader.readStringOrNull(offsets[64]),
+    respuesta22: reader.readStringOrNull(offsets[65]),
+    respuesta23: reader.readStringOrNull(offsets[66]),
+    respuesta24: reader.readStringOrNull(offsets[67]),
+    respuesta25: reader.readStringOrNull(offsets[68]),
+    respuesta26: reader.readStringOrNull(offsets[69]),
+    respuesta27: reader.readStringOrNull(offsets[70]),
+    respuesta28: reader.readStringOrNull(offsets[71]),
+    respuesta29: reader.readStringOrNull(offsets[72]),
+    respuesta3: reader.readStringOrNull(offsets[73]),
+    respuesta30: reader.readStringOrNull(offsets[74]),
+    respuesta31: reader.readStringOrNull(offsets[75]),
+    respuesta32: reader.readStringOrNull(offsets[76]),
+    respuesta33: reader.readStringOrNull(offsets[77]),
+    respuesta34: reader.readStringOrNull(offsets[78]),
+    respuesta35: reader.readStringOrNull(offsets[79]),
+    respuesta36: reader.readStringOrNull(offsets[80]),
+    respuesta37: reader.readStringOrNull(offsets[81]),
+    respuesta38: reader.readStringOrNull(offsets[82]),
+    respuesta39: reader.readStringOrNull(offsets[83]),
+    respuesta4: reader.readStringOrNull(offsets[84]),
+    respuesta40: reader.readStringOrNull(offsets[85]),
+    respuesta41: reader.readStringOrNull(offsets[86]),
+    respuesta42: reader.readStringOrNull(offsets[87]),
+    respuesta43: reader.readStringOrNull(offsets[88]),
+    respuesta44: reader.readStringOrNull(offsets[89]),
+    respuesta45: reader.readStringOrNull(offsets[90]),
+    respuesta5: reader.readStringOrNull(offsets[91]),
+    respuesta6: reader.readStringOrNull(offsets[92]),
+    respuesta7: reader.readStringOrNull(offsets[93]),
+    respuesta8: reader.readStringOrNull(offsets[94]),
+    respuesta9: reader.readStringOrNull(offsets[95]),
+    userId: reader.readLongOrNull(offsets[96]),
   );
   object.isarIdAgricultural = id;
   return object;
@@ -1395,7 +1402,7 @@ P _agriculturalRegistryDeserializeProp<P>(
     case 49:
       return (reader.readLongOrNull(offset)) as P;
     case 50:
-      return (reader.readStringOrNull(offset)) as P;
+      return (reader.readLongOrNull(offset)) as P;
     case 51:
       return (reader.readStringOrNull(offset)) as P;
     case 52:
@@ -1485,6 +1492,8 @@ P _agriculturalRegistryDeserializeProp<P>(
     case 94:
       return (reader.readStringOrNull(offset)) as P;
     case 95:
+      return (reader.readStringOrNull(offset)) as P;
+    case 96:
       return (reader.readLongOrNull(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
@@ -9061,6 +9070,80 @@ extension AgriculturalRegistryQueryFilter on QueryBuilder<AgriculturalRegistry,
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.between(
         property: r'isarIdAgricultural',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+      ));
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry,
+      QAfterFilterCondition> predioIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'predio',
+      ));
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry,
+      QAfterFilterCondition> predioIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'predio',
+      ));
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry,
+      QAfterFilterCondition> predioEqualTo(int? value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'predio',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry,
+      QAfterFilterCondition> predioGreaterThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'predio',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry,
+      QAfterFilterCondition> predioLessThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'predio',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry,
+      QAfterFilterCondition> predioBetween(
+    int? lower,
+    int? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'predio',
         lower: lower,
         includeLower: includeLower,
         upper: upper,
@@ -16947,6 +17030,20 @@ extension AgriculturalRegistryQuerySortBy
   }
 
   QueryBuilder<AgriculturalRegistry, AgriculturalRegistry, QAfterSortBy>
+      sortByPredio() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'predio', Sort.asc);
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry, QAfterSortBy>
+      sortByPredioDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'predio', Sort.desc);
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry, QAfterSortBy>
       sortByProjectId() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'projectId', Sort.asc);
@@ -18308,6 +18405,20 @@ extension AgriculturalRegistryQuerySortThenBy
   }
 
   QueryBuilder<AgriculturalRegistry, AgriculturalRegistry, QAfterSortBy>
+      thenByPredio() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'predio', Sort.asc);
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry, QAfterSortBy>
+      thenByPredioDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'predio', Sort.desc);
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry, QAfterSortBy>
       thenByProjectId() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'projectId', Sort.asc);
@@ -19312,6 +19423,13 @@ extension AgriculturalRegistryQueryWhereDistinct
   }
 
   QueryBuilder<AgriculturalRegistry, AgriculturalRegistry, QDistinct>
+      distinctByPredio() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'predio');
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, AgriculturalRegistry, QDistinct>
       distinctByProjectId() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'projectId');
@@ -19989,6 +20107,12 @@ extension AgriculturalRegistryQueryProperty on QueryBuilder<
       id_answerFormatProducerProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'id_answerFormatProducer');
+    });
+  }
+
+  QueryBuilder<AgriculturalRegistry, int?, QQueryOperations> predioProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'predio');
     });
   }
 

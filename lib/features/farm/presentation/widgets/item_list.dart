@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fundacion_aip_mobile/features/farm/presentation/providers/farms_projects_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../../../internetConnection/infrastructure/datasources/internet_connection_datasource_impl.dart';
+import '../../../internetConnection/presentation/providers/connection_status_provider.dart';
 import '../../domain/entities/farm.dart';
 
 class ItemList extends StatelessWidget {
@@ -24,6 +26,8 @@ class ItemList extends StatelessWidget {
     final colors = Theme.of(context).colorScheme.primary;
 
     final farmsProjectService = Provider.of<FarmsProjectProvider>(context);
+    final statusConnection =
+        Provider.of<ConnectionStatusProvider>(context).status;
 
     return Container(
       margin: const EdgeInsets.only(bottom: 10, left: 10, right: 10, top: 10),
@@ -87,15 +91,18 @@ class ItemList extends StatelessWidget {
                             ),
                           )
                         : IconButton(
-                            onPressed: () async {
-                              final farmService =
-                                  Provider.of<FarmsProjectProvider>(context,
-                                      listen: false);
-                              await uploadFarm(farmService);
-                              Provider.of<FarmsProjectProvider>(context,
-                                      listen: false)
-                                  .pendingSinchronization();
-                            },
+                            onPressed:
+                                statusConnection != ConnectionStatus.online
+                                    ? () {}
+                                    : () async {
+                                        final farmService =
+                                            Provider.of<FarmsProjectProvider>(
+                                                context,
+                                                listen: false);
+                                        await uploadFarm(farmService);
+                                        farmsProjectService
+                                            .pendingSinchronization();
+                                      },
                             icon: Icon(
                               Icons.file_upload,
                               color: colors,

@@ -5,10 +5,10 @@ import 'package:path_provider/path_provider.dart';
 
 import '../../domain/entities/agricultural_registry.dart';
 
-class IsarDatasourceImpl extends LocalStorageDatasource {
+class LocalStorageDatasourceImpl extends LocalStorageDatasource {
   late Future<Isar> db;
 
-  IsarDatasourceImpl() {
+  LocalStorageDatasourceImpl() {
     db = openDB();
   }
 
@@ -84,29 +84,44 @@ class IsarDatasourceImpl extends LocalStorageDatasource {
 
     Farm? farmToEdit =
         await isar.farms.filter().isarIdEqualTo(farm.isarId).findFirst();
-
+    /*
+      * En este punto puede llegar el id_farm nulo si esta guardado en local,
+      * y con id_farm si ya se sincronizó la caracterización. entonces condicionamos
+      * si tiene el id_farm porque puede ser que se sincronize sin registro y luego
+      * se envie el registro, entonces necesitamos verificar si ya tiene el registro 
+    */
+    Farm? result;
     if (editionType == TypeEdit.editFromLocal) {
       if (farmToEdit?.isarId != null && farmToEdit?.id_farm == null) {
         isar.writeTxnSync(() async {
           Farm.extractAsignations(farmToEdit!, farm);
           farmToEdit.isModified = true;
+          farmToEdit.haveAgriculturalRegistry = true;
           isar.farms.putSync(farmToEdit);
-          return farmToEdit;
+          result = farmToEdit;
         });
-      }
-    }
-
-    if (editionType == TypeEdit.editFromUpdateToCloud) {
-      if (farmToEdit?.isarId != null && farm.id_farm != null) {
+      } else if (farmToEdit?.isarId != null && farmToEdit?.id_farm != null) {
         isar.writeTxnSync(() async {
           Farm.extractAsignations(farmToEdit!, farm);
-          farmToEdit.isModified = false;
+          farmToEdit.isModified = true;
+          farmToEdit.haveAgriculturalRegistry = true;
           isar.farms.putSync(farmToEdit);
-          return farmToEdit;
+          result = farmToEdit;
         });
       }
+    } else {
+      if (editionType == TypeEdit.editFromUpdateToCloud) {
+        if (farmToEdit?.isarId != null && farm.id_farm != null) {
+          isar.writeTxnSync(() async {
+            Farm.extractAsignations(farmToEdit!, farm);
+            farmToEdit.isModified = false;
+            isar.farms.putSync(farmToEdit);
+            result = farmToEdit;
+          });
+        }
+      }
     }
-    return null;
+    return result;
   }
 
   @override

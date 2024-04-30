@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/datasources/local_storage_datasource.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/repositories/farm_Repository.dart';
+import 'package:fundacion_aip_mobile/features/farm/domain/repositories/local_agricultural_registry_repository.dart';
 import 'package:fundacion_aip_mobile/features/farm/domain/repositories/local_storage_repository.dart';
 import 'package:fundacion_aip_mobile/features/internetConnection/infrastructure/datasources/internet_connection_datasource_impl.dart';
 
@@ -12,6 +13,7 @@ class FarmsProjectProvider extends ChangeNotifier {
   final FarmRepository _farmRepository;
   //Instancia de la base de datos local
   final LocalStorageRepository _isarRepository;
+  final LocalAgriculturalRepository _agriculturalRepository;
 
   //Instancia del provider de connectionStatus
   ConnectionStatusProvider _connection;
@@ -26,8 +28,8 @@ class FarmsProjectProvider extends ChangeNotifier {
   bool isLoading = false;
 
   //Constructor
-  FarmsProjectProvider(
-      this._farmRepository, this._isarRepository, this._connection);
+  FarmsProjectProvider(this._farmRepository, this._isarRepository,
+      this._connection, this._agriculturalRepository);
 
   int? get getProjectId => projectId;
 
@@ -41,6 +43,7 @@ class FarmsProjectProvider extends ChangeNotifier {
     notifyListeners();
 
     final response = await _farmRepository.createNewFarmInCloud(farm);
+
     if (response != null) {
       /*Le pasamos el isarId que tenemos en local para que al momento de enviar a editar 
         el registro almacenado en local pueda buscarlo y saber que predio editar */
@@ -58,9 +61,24 @@ class FarmsProjectProvider extends ChangeNotifier {
         return e;
       }).toList();
 
-      localstorageFarmsList
+      sinchronizationPendingFarmsList
           .removeWhere((element) => element.isarId == response.isarId);
       notifyListeners();
+
+      //* Buscamos si el predio tiene un registro de productor, lo buscamos por
+      //* medio de la clave de isarId.
+      final registry = await _agriculturalRepository
+          .getAgriculturalRegistryOfFarm(response.isarId!);
+
+      //* Si registry retorna algo indica que encontro un registro y lo sincronizamos
+      //* al servidor para almacenarlo, adicionalmente le pasamos registry el predio
+      //* que es la clave de isar del predio que se acaba de crear en el servidor,
+      //* Esto para enlazar el predio y enviar la informacion completa a la funcion
+      //* createAgriculturalRegistryInCloud(registry) la cual sincroniza en la nube
+      if (registry != null) {
+        registry.predio = response.isarId;
+        _farmRepository.createAgriculturalRegistryInCloud(registry);
+      }
 
       isLoading = false;
       notifyListeners();
@@ -129,6 +147,8 @@ class FarmsProjectProvider extends ChangeNotifier {
       if (e.isarId != farm.isarId) return e;
 
       Farm.extractAsignations(e, farm);
+      e.isModified = true;
+      notifyListeners();
 
       return e;
     }).toList();

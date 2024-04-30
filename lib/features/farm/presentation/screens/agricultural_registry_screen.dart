@@ -13,45 +13,47 @@ import '../providers/create_farm_provider.dart';
 import '../providers/farms_projects_provider.dart';
 
 class AgriculturalRegistryScreen extends StatelessWidget {
-
   static const String name = 'agricultural_registry_screen';
 
-  const AgriculturalRegistryScreen({super.key,});
+  const AgriculturalRegistryScreen({
+    super.key,
+  });
 
   /*
    * Función que ejecuta el snackbar si no se cumple con los campos obligatorios
   */
-  void showCumtomSnackbar(BuildContext ctx, String message, Color colorStatus){
-
+  void showCumtomSnackbar(BuildContext ctx, String message, Color colorStatus) {
     ScaffoldMessenger.of(ctx).clearSnackBars();
 
     final snackBar = SnackBar(
       backgroundColor: colorStatus,
       content: Text(message),
-      duration: const Duration(seconds: 5),  
+      duration: const Duration(seconds: 5),
       action: SnackBarAction(
-        label: 'Ok', onPressed: (){}, textColor: Colors.amber,),
+        label: 'Ok',
+        onPressed: () {},
+        textColor: Colors.amber,
+      ),
     );
 
     ScaffoldMessenger.of(ctx).showSnackBar(snackBar);
   }
 
-  void updateFarm(CreateFarmProvider farmProvider, FarmsProjectProvider projectProvider )async{
-    
+  void updateFarm(CreateFarmProvider farmProvider,
+      FarmsProjectProvider projectProvider) async {
     final farmUpdated = await farmProvider.updateFarm();
 
-    if(farmUpdated != null){
-      projectProvider.updateFarmInList(farmUpdated);
+    if (farmUpdated != null) {
+      await projectProvider.updateFarmInList(farmUpdated);
       return;
     }
-    
   }
 
   @override
   Widget build(BuildContext context) {
-
     final scaffoldKey = GlobalKey<ScaffoldState>();
-    final agriculturalService = Provider.of<AgriculturalRegistryProvider>(context);
+    final agriculturalService =
+        Provider.of<AgriculturalRegistryProvider>(context);
     //para ingresar hasta esta vista tenemos que pasar por el editFarm de ahi obtenemos los datos para pasarlos a la creacion de
     //de nuestro agriculturalRegistry
     final editFarm = Provider.of<CreateFarmProvider>(context);
@@ -59,53 +61,57 @@ class AgriculturalRegistryScreen extends StatelessWidget {
 
     return Scaffold(
       key: scaffoldKey,
-      appBar: const CustomAppbar(),  
+      appBar: const CustomAppbar(),
       drawer: SideMenu(scaffoldKey: scaffoldKey),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).primaryColor,
-        onPressed: ()async{
+        onPressed: () async {
+          if (agriculturalService.isValidForm()) {
+            final result = await agriculturalService
+                .addAgriculturalRegistry(editFarm.createNewFarm);
 
-          if(agriculturalService.isValidForm()){
-            final result = await agriculturalService.addAgriculturalRegistry(editFarm.createNewFarm);
-
-            if(result == false){
-              showCumtomSnackbar(context, 'No se ha podido crear el registro', Colors.red[400]!);
+            if (result == false) {
+              showCumtomSnackbar(context, 'No se ha podido crear el registro',
+                  Colors.red[400]!);
               context.pushReplacementNamed(Characterizationcreen.name);
-            }else{
+            } else {
               editFarm.createNewFarm.haveAgriculturalRegistry = true;
-              
+
               updateFarm(editFarm, projectService);
 
-              showCumtomSnackbar(context, 'Registro creado exitosamente', Colors.green[400]!);
+              showCumtomSnackbar(
+                  context, 'Registro creado exitosamente', Colors.green[400]!);
               context.pushReplacementNamed(Characterizationcreen.name);
             }
-           
-          }else{
-            showCumtomSnackbar(context, 'Recuerda que es importante diligencias todos los campos', Colors.red[400]!);
+          } else {
+            showCumtomSnackbar(
+                context,
+                'Recuerda que es importante diligencias todos los campos',
+                Colors.red[400]!);
           }
-          
         },
-        child: const Icon(Icons.save, color: Colors.white,),
+        child: const Icon(
+          Icons.save,
+          color: Colors.white,
+        ),
       ),
       body: Column(
         children: [
           Expanded(
             child: Form(
-              key: agriculturalService.formkeyAgricultural,
-              child: PageView(
-                children: const [
-                  PrincipalActivity(),
-                  Organization(),
-                  InformationAccess(),
-                  NaturalEnviroment(),
-                  ParticipationMechanism()
-                ],
-              )
-            ),
+                key: agriculturalService.formkeyAgricultural,
+                child: PageView(
+                  children: const [
+                    PrincipalActivity(),
+                    Organization(),
+                    InformationAccess(),
+                    NaturalEnviroment(),
+                    ParticipationMechanism()
+                  ],
+                )),
           )
         ],
       ),
-
     );
   }
 }
